@@ -1,0 +1,42 @@
+{
+  "defaultSeverity": "error",
+  "extends": [ "tslint:latest" ],
+
+  "jsRules": {
+    "arrow-parens": true,
+    "arrow-return-shorthand": true,
+    "binary-expression-operand-order": true,
+    "curly": false,
+    "eofline": true,
+    "import-spacing": true,
+    "no-console": false,
+    "no-duplicate-imports": true,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
+    "no-unused-expression": false,
+    "no-var-requires": false,
+    "prefer-for-of": false,
+    "quotemark": [true, "single"],
+    "semicolon": true,
+    "whitespace": false
+  },
+
+  "rules": {
+    "arrow-parens": true,
+    "arrow-return-shorthand": true,
+    "binary-expression-operand-order": true,
+    "curly": false,
+    "eofline": true,
+    "import-spacing": true,
+    "no-console": false,
+    "no-duplicate-imports": true,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
+    "no-unused-expression": false,
+    "no-var-requires": false,
+    "prefer-for-of": false,
+    "quotemark": [true, "single"],
+    "semicolon": true,
+    "whitespace": false
+  }
+}
