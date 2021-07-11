@@ -12,7 +12,10 @@ module.exports = {
       root: ['./src'],
 
       // Read more about babel-plugin-module-resolver: https://github.com/tleunen/babel-plugin-module-resolver
-      alias: {}
+      alias: {
+        "@interfaces": "./interfaces",
+        "@models": "./models",
+      }
     }]
   ],
 

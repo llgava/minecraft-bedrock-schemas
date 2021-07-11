@@ -1,15 +1,21 @@
-/** A example of a "complex" "Hello World". */
-export class ComplexHelloWorld {
+import { Blocks } from './models/Blocks';
+import Convert from './utils/Convert';
+import fs from 'fs/promises';
 
-  /**
-   * @param message Defines a message to show on console.
-   * @returns A console log with message.
-   */
-  public sendMessage(message: string): void {
-    return console.log(message);
+const TSschema = require('generate-schema');
+
+class ComplexHelloWorld {
+  public init() {
+    const blocksSchema = TSschema.json('Blocks Schema', Convert.toJSON(new Blocks()));
+
+    fs.writeFile('blocks.json', JSON.stringify(new Blocks(), null, 2), 'utf-8');
+    fs.writeFile('blocks.schema.json', JSON.stringify(blocksSchema, null, 2), 'utf-8');
+
+
+    console.clear();
+    console.log(blocksSchema);
   }
 }
 
 const app = new ComplexHelloWorld();
-
-app.sendMessage('Hello World!');
+app.init();

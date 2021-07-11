@@ -22,6 +22,7 @@
   },
 
   "rules": {
+    "variable-name": false,
     "arrow-parens": true,
     "arrow-return-shorthand": true,
     "binary-expression-operand-order": true,
