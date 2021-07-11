@@ -212,6 +212,180 @@
               "type": "boolean"
             }
           }
+        },
+        "events": {
+          "type": "object",
+          "properties": {
+            "namespace:event_name": {
+              "type": "object",
+              "properties": {
+                "add_mob_effect": {
+                  "type": "object",
+                  "properties": {
+                    "amplifier": {
+                      "type": "number"
+                    },
+                    "duration": {
+                      "type": "number"
+                    },
+                    "effect": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "damage": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number"
+                    },
+                    "target": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "decrement_stack": {
+                  "type": "boolean"
+                },
+                "die": {
+                  "type": "object",
+                  "properties": {
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "play_effect": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "number"
+                    },
+                    "effect": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "play_sound": {
+                  "type": "object",
+                  "properties": {
+                    "sound": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "remove_mob_effect": {
+                  "type": "object",
+                  "properties": {
+                    "effect": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "run_command": {
+                  "type": "object",
+                  "properties": {
+                    "command": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "set_block": {
+                  "type": "object",
+                  "properties": {
+                    "block_type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "set_block_at_pos": {
+                  "type": "object",
+                  "properties": {
+                    "block_offset": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "block_type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "set_block_property": {
+                  "type": "object",
+                  "properties": {
+                    "property": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "spawn_loot": {
+                  "type": "object",
+                  "properties": {
+                    "table": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "swing": {
+                  "type": "string"
+                },
+                "teleport": {
+                  "type": "object",
+                  "properties": {
+                    "avoid_water": {
+                      "type": "boolean"
+                    },
+                    "destination": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "land_on_block": {
+                      "type": "boolean"
+                    },
+                    "max_range": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "tranform_item": {
+                  "type": "object",
+                  "properties": {
+                    "transform": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

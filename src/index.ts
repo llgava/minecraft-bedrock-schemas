@@ -1,19 +1,22 @@
 import { Blocks } from './models/Blocks';
 import Convert from './utils/Convert';
-import fs from 'fs/promises';
+import chalk from 'chalk';
+import fs from 'fs';
 
 const TSschema = require('generate-schema');
 
 class ComplexHelloWorld {
+
+  /** Initialize app. */
   public init() {
+    console.clear();
+    console.log(`${chalk.green('✔')} Generating schemas...`);
+
+    if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
+
     const blocksSchema = TSschema.json('Blocks Schema', Convert.toJSON(new Blocks()));
 
-    fs.writeFile('blocks.json', JSON.stringify(new Blocks(), null, 2), 'utf-8');
-    fs.writeFile('blocks.schema.json', JSON.stringify(blocksSchema, null, 2), 'utf-8');
-
-
-    console.clear();
-    console.log(blocksSchema);
+    fs.writeFileSync('schemas/blocks.schema.json', JSON.stringify(blocksSchema, null, 2), { encoding: 'utf-8' });
   }
 }
 
