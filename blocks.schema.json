@@ -1,0 +1,219 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Blocks Schema",
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "minecraft:block": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "object",
+          "properties": {
+            "identifier": {
+              "type": "string"
+            },
+            "is_experimental": {
+              "type": "boolean"
+            },
+            "register_to_creative_menu": {
+              "type": "boolean"
+            }
+          }
+        },
+        "components": {
+          "type": "object",
+          "properties": {
+            "minecraft:block_light_absorption": {
+              "type": "number"
+            },
+            "minecraft:block_light_emission": {
+              "type": "number"
+            },
+            "minecraft:breakonpush": {
+              "type": "boolean"
+            },
+            "minecraft:breathability": {
+              "type": "string"
+            },
+            "minecraft:destroy_time": {
+              "type": "number"
+            },
+            "minecraft:display_name": {
+              "type": "string"
+            },
+            "minecraft:entity_collision": {
+              "type": "object",
+              "properties": {
+                "origin": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "size": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "minecraft:explosion_resistance": {
+              "type": "number"
+            },
+            "minecraft:flammable": {
+              "type": "object",
+              "properties": {
+                "burn_odds": {
+                  "type": "number"
+                },
+                "flame_odds": {
+                  "type": "number"
+                }
+              }
+            },
+            "minecraft:friction": {
+              "type": "number"
+            },
+            "minecraft:geometry": {
+              "type": "string"
+            },
+            "minecraft:immovable": {
+              "type": "boolean"
+            },
+            "minecraft:map_color": {
+              "type": "string"
+            },
+            "minecraft:material_instances": {
+              "type": "object",
+              "properties": {
+                "*": {
+                  "type": "object",
+                  "properties": {
+                    "render_method": {
+                      "type": "string"
+                    },
+                    "texture": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "minecraft:onlypistonpush": {
+              "type": "boolean"
+            },
+            "minecraft:pick_collision": {
+              "type": "object",
+              "properties": {
+                "origin": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "size": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "minecraft:placement_filter": {
+              "type": "object",
+              "properties": {
+                "allowed_faces": {
+                  "type": "string"
+                },
+                "block_filter": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "minecraft:preventsjumping": {
+              "type": "boolean"
+            },
+            "minecraft:random_ticking": {
+              "type": "object",
+              "properties": {
+                "on_tick": {
+                  "type": "object",
+                  "properties": {
+                    "condition": {
+                      "type": "string"
+                    },
+                    "event": {
+                      "type": "string"
+                    },
+                    "range": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "minecraft:rotation": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "minecraft:ticking": {
+              "type": "object",
+              "properties": {
+                "looping": {
+                  "type": "boolean"
+                },
+                "range": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "on_tick": {
+                  "type": "object",
+                  "properties": {
+                    "condition": {
+                      "type": "string"
+                    },
+                    "event": {
+                      "type": "string"
+                    },
+                    "range": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "minecraft:unit_cube": {
+              "type": "string"
+            },
+            "minecraft:unwalkable": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}
