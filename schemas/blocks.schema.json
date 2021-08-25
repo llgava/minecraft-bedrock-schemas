@@ -19,6 +19,12 @@
         "description": {
           "$ref": "#/definitions/IBlocksDescription"
         },
+        "permutations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IBlocksPermutations"
+          }
+        },
         "components": {
           "$ref": "#/definitions/IBlocksComponents"
         },
@@ -65,6 +71,21 @@
           }
         ]
       }
+    },
+    "IBlocksPermutations": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string"
+        },
+        "components": {
+          "$ref": "#/definitions/IBlocksComponents"
+        }
+      },
+      "required": [
+        "components",
+        "condition"
+      ]
     },
     "IBlocksComponents": {
       "type": "object",
@@ -386,27 +407,13 @@
       "additionalProperties": {
         "anyOf": [
           {
-            "$ref": "#/definitions/IBlocksEventsSequence"
+            "$ref": "#/definitions/IEventsResponse"
           },
           {
-            "$ref": "#/definitions/IEventsResponse"
+            "$ref": "#/definitions/IBlocksEventsInSequence"
           }
         ]
       }
-    },
-    "IBlocksEventsSequence": {
-      "type": "object",
-      "properties": {
-        "sequence": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/IEventsResponse"
-          }
-        }
-      },
-      "required": [
-        "sequence"
-      ]
     },
     "IEventsResponse": {
       "type": "object",
@@ -689,6 +696,17 @@
       "properties": {
         "transform": {
           "type": "string"
+        }
+      }
+    },
+    "IBlocksEventsInSequence": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IEventsResponse"
+          }
         }
       }
     }

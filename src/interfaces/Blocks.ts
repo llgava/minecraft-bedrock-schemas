@@ -7,6 +7,11 @@ export interface IBlocksDescription {
   properties?: IProperties;
 }
 
+export interface IBlocksPermutations {
+  condition: string;
+  components: IBlocksComponents;
+}
+
 export interface IBlocksComponents {
   ['minecraft:block_light_absorption']?: number;
   ['minecraft:block_light_emission']?: number;
@@ -33,27 +38,7 @@ export interface IBlocksComponents {
   ['minecraft:unwalkable']?: boolean;
 }
 
-export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlocksEventsSequence; }
-
-interface IBlocksEventsSequence { sequence: IEventsResponse[]; }
-
-interface IEventsResponse {
-  add_mob_effect?: IAddMobEffect;
-  damage?: IDamage;
-  decrement_stack?: object;
-  die?: MinecraftTarget;
-  play_effect?: IPlayEffect;
-  play_sound?: IPlaySound;
-  remove_mob_effect?: IRemoveMobEffect;
-  run_command?: IRunCommand;
-  set_block?: ISetBlock;
-  set_block_at_pos?: ISetBlockAtPos;
-  set_block_property?: ISetBlockProperty;
-  spawn_loot?: ISpawnLoot;
-  swing?: object;
-  teleport?: ITeleport;
-  transform_item?: ITransformItem;
-}
+export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlocksEventsInSequence; }
 
 /* BLOCK DESCRIPTION */
 interface IProperties { [property_name: string]: number[] | boolean[]; }
@@ -142,3 +127,23 @@ interface ITeleport extends MinecraftTarget {
 }
 
 interface ITransformItem { transform?: string; }
+
+interface IEventsResponse {
+  add_mob_effect?: IAddMobEffect;
+  damage?: IDamage;
+  decrement_stack?: object;
+  die?: MinecraftTarget;
+  play_effect?: IPlayEffect;
+  play_sound?: IPlaySound;
+  remove_mob_effect?: IRemoveMobEffect;
+  run_command?: IRunCommand;
+  set_block?: ISetBlock;
+  set_block_at_pos?: ISetBlockAtPos;
+  set_block_property?: ISetBlockProperty;
+  spawn_loot?: ISpawnLoot;
+  swing?: object;
+  teleport?: ITeleport;
+  transform_item?: ITransformItem;
+}
+
+interface IBlocksEventsInSequence { sequence?: IEventsResponse[]; }
