@@ -28,7 +28,7 @@ export interface IBlocksComponents {
   ['minecraft:immovable']?: boolean;
 
   /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
-  ['minecraft:map_color']?: '#FF00FF' | string;
+  ['minecraft:map_color']?: string;
 
   ['minecraft:material_instances']?: IMaterialInstances;
   ['minecraft:onlypistonpush']?: boolean;
@@ -45,12 +45,15 @@ export interface IBlocksComponents {
   ['minecraft:on_fall_on']?: IOnFallOn;
 }
 
+/* ====== IN DEVELOPMENT ====== */
+
 interface IOnFallOn extends MinecraftTarget {
   condition: string;
-  event: IBlocksEvents;
+  event: string;
   min_fall_distance: number;
 }
 
+/* ============================ */
 
 export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlocksEventsInSequence; }
 

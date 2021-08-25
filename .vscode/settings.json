@@ -3,6 +3,18 @@
     "**/.editorconfig": true,
     "**/yarn.lock": true,
     "**/package-lock.json": true,
-    "**/.vscode/": true
-  }
+    "**/.vscode/": false
+  },
+
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "__tests__/bp/blocks/*.json",
+        "behavior_packs/*/blocks/*.json",
+        "development_behavior_packs/*/blocks/*.json"
+      ],
+
+      "url": "./schemas/blocks.schema.json"
+    }
+  ]
 }
