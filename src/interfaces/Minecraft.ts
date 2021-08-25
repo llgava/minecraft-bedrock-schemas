@@ -1,3 +1,10 @@
+export interface MinecraftTarget { target?: MinecraftSubjects; }
+
+export interface MinecraftCondition {
+  /** Conditions use Minecraft Queries. Read more about at: https://llgava.net/minecraft/queries  */
+  condition?: string;
+}
+
 export type MinecraftBlocks =
   | 'minecraft:air'
   | 'minecraft:stone'
@@ -12,8 +19,6 @@ export type MinecraftSubjects =
   | 'player'
   | 'self'
   | 'target';
-
-export interface MinecraftTarget { target: MinecraftSubjects; }
 
 export type MinecraftEffects =
   | 'absorption'

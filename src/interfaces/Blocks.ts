@@ -1,4 +1,4 @@
-import { MinecraftBlocks, MinecraftSubjects, MinecraftTarget } from './Minecraft';
+import { MinecraftCondition, MinecraftTarget, MinecraftBlocks, MinecraftSubjects } from './Minecraft';
 
 export interface IBlocksDescription {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
@@ -8,10 +8,7 @@ export interface IBlocksDescription {
   properties?: IProperties;
 }
 
-export interface IBlocksPermutations {
-  condition: string;
-  components: IBlocksComponents;
-}
+export interface IBlocksPermutations extends MinecraftCondition { components: IBlocksComponents; }
 
 export interface IBlocksComponents {
   ['minecraft:block_light_absorption']?: number;
@@ -43,19 +40,15 @@ export interface IBlocksComponents {
 
   /* Trigger Components */
   ['minecraft:on_fall_on']?: IOnFallOn;
+  ['minecraft:on_interact']?: ITriggerComponent;
+  ['minecraft:on_placed']?: ITriggerComponent;
+  ['minecraft:on_player_destroyed']?: ITriggerComponent;
+  ['minecraft:on_player_placing']?: ITriggerComponent;
+  ['minecraft:on_step_off']?: ITriggerComponent;
+  ['minecraft:on_step_on']?: ITriggerComponent;
 }
 
-/* ====== IN DEVELOPMENT ====== */
-
-interface IOnFallOn extends MinecraftTarget {
-  condition: string;
-  event: string;
-  min_fall_distance: number;
-}
-
-/* ============================ */
-
-export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlocksEventsInSequence; }
+export interface IBlocksEvents { [property_name: string]: IEventsResponse; }
 
 /* BLOCK DESCRIPTION */
 interface IProperties { [property_name: string]: number[] | boolean[]; }
@@ -107,6 +100,9 @@ interface ITicking extends IOnTick {
   range?: [number, number];
 }
 
+/* BLOCKS TRIGGER COMPONENTS */
+interface ITriggerComponent extends MinecraftCondition, MinecraftTarget { event: string; }
+interface IOnFallOn extends ITriggerComponent { min_fall_distance: number; }
 
 /* BLOCK EVENTS RESPONSE */
 interface IAddMobEffect extends MinecraftTarget {
@@ -144,7 +140,7 @@ interface ITeleport extends MinecraftTarget {
 
 interface ITransformItem { transform?: string; }
 
-interface IEventsResponse {
+interface IEventsResponse extends IBlocksEventsInSequence {
   add_mob_effect?: IAddMobEffect;
   damage?: IDamage;
   decrement_stack?: object;

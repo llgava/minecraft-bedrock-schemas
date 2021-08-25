@@ -1,4 +1,5 @@
 {
+  "description": "You need to turn on the Holiday Creator Features Experiment on your World Settings.",
   "type": "object",
   "properties": {
     "format_version": {
@@ -76,16 +77,16 @@
     "IBlocksPermutations": {
       "type": "object",
       "properties": {
-        "condition": {
-          "type": "string"
-        },
         "components": {
           "$ref": "#/definitions/IBlocksComponents"
+        },
+        "condition": {
+          "description": "Conditions use Minecraft Queries. Read more about at: https://llgava.net/minecraft/queries",
+          "type": "string"
         }
       },
       "required": [
-        "components",
-        "condition"
+        "components"
       ]
     },
     "IBlocksComponents": {
@@ -200,6 +201,24 @@
         },
         "minecraft:on_fall_on": {
           "$ref": "#/definitions/IOnFallOn"
+        },
+        "minecraft:on_interact": {
+          "$ref": "#/definitions/ITriggerComponent"
+        },
+        "minecraft:on_placed": {
+          "$ref": "#/definitions/ITriggerComponent"
+        },
+        "minecraft:on_player_destroyed": {
+          "$ref": "#/definitions/ITriggerComponent"
+        },
+        "minecraft:on_player_placing": {
+          "$ref": "#/definitions/ITriggerComponent"
+        },
+        "minecraft:on_step_off": {
+          "$ref": "#/definitions/ITriggerComponent"
+        },
+        "minecraft:on_step_on": {
+          "$ref": "#/definitions/ITriggerComponent"
         }
       }
     },
@@ -410,37 +429,67 @@
     "IOnFallOn": {
       "type": "object",
       "properties": {
-        "condition": {
-          "type": "string"
-        },
-        "event": {
-          "$ref": "#/definitions/IBlocksEvents"
-        },
         "min_fall_distance": {
           "type": "number"
         },
+        "event": {
+          "type": "string"
+        },
+        "condition": {
+          "description": "Conditions use Minecraft Queries. Read more about at: https://llgava.net/minecraft/queries",
+          "type": "string"
+        },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
       },
       "required": [
-        "condition",
         "event",
-        "min_fall_distance",
-        "target"
+        "min_fall_distance"
+      ]
+    },
+    "ITriggerComponent": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "type": "string"
+        },
+        "condition": {
+          "description": "Conditions use Minecraft Queries. Read more about at: https://llgava.net/minecraft/queries",
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "event"
       ]
     },
     "IBlocksEvents": {
       "type": "object",
       "additionalProperties": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/IEventsResponse"
-          },
-          {
-            "$ref": "#/definitions/IBlocksEventsInSequence"
-          }
-        ]
+        "$ref": "#/definitions/IEventsResponse"
       }
     },
     "IEventsResponse": {
@@ -494,6 +543,12 @@
         },
         "transform_item": {
           "$ref": "#/definitions/ITransformItem"
+        },
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IEventsResponse"
+          }
         }
       }
     },
@@ -510,25 +565,19 @@
           "type": "string"
         },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
-    },
-    "MinecraftSubjects": {
-      "enum": [
-        "block",
-        "damager",
-        "item",
-        "other",
-        "parent",
-        "player",
-        "self",
-        "target"
-      ],
-      "type": "string"
+      }
     },
     "IDamage": {
       "type": "object",
@@ -543,23 +592,37 @@
           "type": "string"
         },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
+      }
     },
     "MinecraftTarget": {
       "type": "object",
       "properties": {
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
+      }
     },
     "IPlayEffect": {
       "type": "object",
@@ -571,12 +634,19 @@
           "type": "string"
         },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
+      }
     },
     "IPlaySound": {
       "type": "object",
@@ -585,12 +655,19 @@
           "type": "string"
         },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
+      }
     },
     "IRemoveMobEffect": {
       "type": "object",
@@ -610,12 +687,19 @@
           }
         },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
+      }
     },
     "ISetBlock": {
       "type": "object",
@@ -705,29 +789,25 @@
           "maxItems": 3
         },
         "target": {
-          "$ref": "#/definitions/MinecraftSubjects"
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
         }
-      },
-      "required": [
-        "target"
-      ]
+      }
     },
     "ITransformItem": {
       "type": "object",
       "properties": {
         "transform": {
           "type": "string"
-        }
-      }
-    },
-    "IBlocksEventsInSequence": {
-      "type": "object",
-      "properties": {
-        "sequence": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/IEventsResponse"
-          }
         }
       }
     }
