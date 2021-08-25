@@ -1,6 +1,7 @@
 import { MinecraftBlocks, MinecraftSubjects, MinecraftTarget } from './Minecraft';
 
 export interface IBlocksDescription {
+  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
   identifier?: string;
   is_experimental?: boolean;
   register_to_creative_menu?: boolean;
@@ -26,7 +27,7 @@ export interface IBlocksComponents {
   ['minecraft:geometry']?: string;
   ['minecraft:immovable']?: boolean;
 
-  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
+  /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
   ['minecraft:map_color']?: '#FF00FF' | string;
 
   ['minecraft:material_instances']?: IMaterialInstances;

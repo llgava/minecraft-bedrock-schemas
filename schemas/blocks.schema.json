@@ -40,6 +40,7 @@
       "type": "object",
       "properties": {
         "identifier": {
+          "pattern": "^(?:(?:(?!minecraft|minecon)\\w(?!minecon\\w))+[a-z]*:[a-z_]*)+$",
           "type": "string"
         },
         "is_experimental": {
@@ -141,7 +142,7 @@
           "type": "boolean"
         },
         "minecraft:map_color": {
-          "pattern": "^(?:(?:(?!minecraft|minecon)\\w(?!minecon\\w))+[a-z]*:[a-z_]*)+$",
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
           "type": "string"
         },
         "minecraft:material_instances": {
