@@ -197,6 +197,9 @@
         },
         "minecraft:unwalkable": {
           "type": "boolean"
+        },
+        "minecraft:on_fall_on": {
+          "$ref": "#/definitions/IOnFallOn"
         }
       }
     },
@@ -404,6 +407,29 @@
         }
       }
     },
+    "IOnFallOn": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string"
+        },
+        "event": {
+          "$ref": "#/definitions/IBlocksEvents"
+        },
+        "min_fall_distance": {
+          "type": "number"
+        },
+        "target": {
+          "$ref": "#/definitions/MinecraftSubjects"
+        }
+      },
+      "required": [
+        "condition",
+        "event",
+        "min_fall_distance",
+        "target"
+      ]
+    },
     "IBlocksEvents": {
       "type": "object",
       "additionalProperties": {
@@ -578,17 +604,10 @@
       "type": "object",
       "properties": {
         "command": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "target": {
           "$ref": "#/definitions/MinecraftSubjects"

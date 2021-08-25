@@ -40,7 +40,17 @@ export interface IBlocksComponents {
   ['minecraft:ticking']?: ITicking;
   ['minecraft:unit_cube']?: string;
   ['minecraft:unwalkable']?: boolean;
+
+  /* Trigger Components */
+  ['minecraft:on_fall_on']?: IOnFallOn;
 }
+
+interface IOnFallOn extends MinecraftTarget {
+  condition: string;
+  event: IBlocksEvents;
+  min_fall_distance: number;
+}
+
 
 export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlocksEventsInSequence; }
 
@@ -114,7 +124,7 @@ interface IPlayEffect extends MinecraftTarget {
 
 interface IPlaySound extends MinecraftTarget { sound?: string; }
 interface IRemoveMobEffect { effect?: string; }
-interface IRunCommand extends MinecraftTarget { command?: string | string[]; }
+interface IRunCommand extends MinecraftTarget { command?: string[]; }
 interface ISetBlock { block_type?: string; }
 interface ISetBlockAtPos extends ISetBlock { block_offset?: [number, number, number]; }
 
