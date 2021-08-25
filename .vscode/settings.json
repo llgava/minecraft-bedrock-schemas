@@ -7,17 +7,6 @@
   },
 
   "json.schemas": [
-    // Blocks
-    {
-      "fileMatch": [
-        "__tests__/bp/blocks/*.json",
-        "behavior_packs/*/blocks/*.json",
-        "development_behavior_packs/*/blocks/*.json"
-      ],
-
-      "url": "./schemas/blocks.schema.json"
-    },
-
     // Behavior Packs Manifest
     {
       "fileMatch": [
@@ -38,6 +27,28 @@
       ],
 
       "url": "./schemas/resource_manifest.schema.json"
-    }
+    },
+
+    // Blocks
+    {
+      "fileMatch": [
+        "__tests__/bp/blocks/*.json",
+        "behavior_packs/*/blocks/*.json",
+        "development_behavior_packs/*/blocks/*.json"
+      ],
+
+      "url": "./schemas/blocks.schema.json"
+    },
+
+    // Items
+    {
+      "fileMatch": [
+        "__tests__/bp/items/*.json",
+        "behavior_packs/*/items/*.json",
+        "development_behavior_packs/*/items/*.json"
+      ],
+
+      "url": "./schemas/items.schema.json"
+    },
   ]
 }

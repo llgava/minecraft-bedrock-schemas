@@ -5,12 +5,18 @@ import Blocks from '../models/Blocks';
 import BehaviorsManifest from '../models/BehaviorsManifest';
 import { ManifestBase } from '../models/ManifestBase';
 import ResourcesManifest from '../models/ResourcesManifest';
+import Items from '../models/Items';
 
 class MinecraftBedrock {
   private schemasList: any[];
 
   constructor() {
-    this.schemasList = [Blocks, BehaviorsManifest, ResourcesManifest];
+    this.schemasList = [
+      BehaviorsManifest,
+      ResourcesManifest,
+      Blocks,
+      Items
+    ];
   }
 
   /** Generate every Minecraft Bedrock Files Schemas. */
@@ -26,14 +32,15 @@ class MinecraftBedrock {
        * Checks if is a Minecraft Manifest.
        * If is, schemaName should be renamed in snake case.
        */
-      if(this.schemasList[i] instanceof ManifestBase) {
+      if (this.schemasList[i] instanceof ManifestBase) {
         schemaName = schemaName.match('BehaviorsManifest') ? schemaName = 'behavior_manifest' :
-                     schemaName.match('ResourcesManifest') ? schemaName = 'resource_manifest' : schemaName;
+          schemaName.match('ResourcesManifest') ? schemaName = 'resource_manifest' : schemaName;
       }
 
       const TJS_schema: TJS.Definition = TJS.generateSchema(TJS_program, this.schemasList[i].constructor.name, TJS_settings);
+      const fileName: string = `${schemaName.toLowerCase()}.schema.json`;
 
-      fs.writeFileSync(`schemas/${schemaName.toLowerCase()}.schema.json`, JSON.stringify(TJS_schema, null, 2), { encoding: 'utf-8' });
+      fs.writeFileSync(`schemas/${fileName}`, JSON.stringify(TJS_schema, null, 2), { encoding: 'utf-8' });
     }
   }
 }

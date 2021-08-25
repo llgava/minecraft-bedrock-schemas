@@ -2,7 +2,7 @@ import { IBlocksDescription, IBlocksPermutations, IBlocksComponents, IBlocksEven
 
 export class BlocksBase {
   public description: IBlocksDescription;
-  public permutations?: IBlocksPermutations[];
-  public components?: IBlocksComponents;
-  public events?: IBlocksEvents;
+  public permutations: IBlocksPermutations[];
+  public components: IBlocksComponents;
+  public events: IBlocksEvents;
 }

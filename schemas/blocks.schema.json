@@ -34,7 +34,10 @@
         }
       },
       "required": [
-        "description"
+        "components",
+        "description",
+        "events",
+        "permutations"
       ]
     },
     "IBlocksDescription": {
@@ -53,7 +56,10 @@
         "properties": {
           "$ref": "#/definitions/IProperties"
         }
-      }
+      },
+      "required": [
+        "identifier"
+      ]
     },
     "IProperties": {
       "type": "object",
@@ -84,10 +90,7 @@
           "description": "Conditions use Minecraft Queries. Read more about at: https://llgava.net/minecraft/queries",
           "type": "string"
         }
-      },
-      "required": [
-        "components"
-      ]
+      }
     },
     "IBlocksComponents": {
       "type": "object",
@@ -311,6 +314,7 @@
             {
               "type": "array",
               "items": {
+                "description": "In development...",
                 "enum": [
                   "minecraft:air",
                   "minecraft:grass",

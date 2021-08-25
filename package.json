@@ -1,16 +1,15 @@
 {
   "name": "minecraft-schemas",
   "version": "1.0.0",
-  "main": "./build/src/index.js",
+  "main": "./build/index.js",
   "description": "Minecraft Bedrock schemas for addons development.",
   "keywords": ["JavaScript", "TypeScript"],
   "author": "llgava <llgavamt@gmail.com>",
   "license": "MIT",
 
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
-    "build": "babel ./src --extensions \".js,.ts\" --out-dir ./schemas/ --copy-files --no-copy-ignored",
-    "start": "node ./build/src/index.js"
+    "generate":
+      "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
   },
 
   "devDependencies": {

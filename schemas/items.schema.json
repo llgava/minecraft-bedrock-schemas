@@ -1,0 +1,754 @@
+{
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "minecraft:item": {
+      "$ref": "#/definitions/ItemsBase"
+    }
+  },
+  "required": [
+    "format_version",
+    "minecraft:item"
+  ],
+  "definitions": {
+    "ItemsBase": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/IItemsDescription"
+        },
+        "components": {
+          "$ref": "#/definitions/IItemsComponents"
+        }
+      },
+      "required": [
+        "components",
+        "description"
+      ]
+    },
+    "IItemsDescription": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "pattern": "^(?:(?:(?!minecraft|minecon)\\w(?!minecon\\w))+[a-z]*:[a-z_]*)+$",
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/MinecraftCategories"
+        },
+        "is_experimental": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "category",
+        "identifier"
+      ]
+    },
+    "MinecraftCategories": {
+      "enum": [
+        "construction",
+        "equipment",
+        "items",
+        "nature"
+      ],
+      "type": "string"
+    },
+    "IItemsComponents": {
+      "type": "object",
+      "properties": {
+        "minecraft:armor": {
+          "$ref": "#/definitions/IArmor"
+        },
+        "minecraft:block_placer": {
+          "$ref": "#/definitions/IBlockPlacer"
+        },
+        "minecraft:can_destroy_in_creative": {
+          "type": "boolean"
+        },
+        "minecraft:cooldown": {
+          "$ref": "#/definitions/ICooldown"
+        },
+        "minecraft:creative_category": {
+          "$ref": "#/definitions/ICreativeCategory"
+        },
+        "minecraft:digger": {
+          "$ref": "#/definitions/IDigger"
+        },
+        "minecraft:display_name": {
+          "$ref": "#/definitions/IDisplayName"
+        },
+        "minecraft:durability": {
+          "$ref": "#/definitions/IDurability"
+        },
+        "minecraft:dye_powder": {
+          "$ref": "#/definitions/IDyePowder"
+        },
+        "minecraft:entity_placer": {
+          "$ref": "#/definitions/IEntityPlacer"
+        },
+        "minecraft:food": {
+          "description": "Use my iFood code and get a discount 😀: XJVC4VHSE5",
+          "$ref": "#/definitions/IFood"
+        },
+        "minecraft:fuel": {
+          "$ref": "#/definitions/IFuel"
+        },
+        "minecraft:icon": {
+          "$ref": "#/definitions/IIcon"
+        },
+        "minecraft:knockback_resistance": {
+          "$ref": "#/definitions/IKnockbackResistance"
+        },
+        "minecraft:on_use": {
+          "$ref": "#/definitions/IOnUse"
+        },
+        "minecraft:on_use_on": {
+          "$ref": "#/definitions/IOnUseOn"
+        },
+        "minecraft:projectile": {
+          "$ref": "#/definitions/IProjectile"
+        },
+        "minecraft:render_offsets": {
+          "$ref": "#/definitions/IRenderOffsets"
+        },
+        "minecraft:repairable": {
+          "$ref": "#/definitions/IRepairable"
+        },
+        "minecraft:shooter": {
+          "$ref": "#/definitions/IShooter"
+        },
+        "minecraft:throwable": {
+          "$ref": "#/definitions/IThrowable"
+        },
+        "minecraft:weapon": {
+          "$ref": "#/definitions/IWeapon"
+        },
+        "minecraft:wearable": {
+          "$ref": "#/definitions/IWearable"
+        }
+      }
+    },
+    "IArmor": {
+      "type": "object",
+      "properties": {
+        "protection": {
+          "type": "number"
+        },
+        "texture_type": {
+          "enum": [
+            "chain",
+            "diamond",
+            "gold",
+            "iron",
+            "leather"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "IBlockPlacer": {
+      "type": "object",
+      "properties": {
+        "block": {
+          "type": "string"
+        },
+        "use_on": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "In development...",
+                "enum": [
+                  "minecraft:air",
+                  "minecraft:grass",
+                  "minecraft:stone"
+                ],
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "use_block_description": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ICooldown": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "number"
+        }
+      }
+    },
+    "ICreativeCategory": {
+      "type": "object",
+      "properties": {
+        "parent": {
+          "$ref": "#/definitions/MinecraftCreativeCategories"
+        }
+      },
+      "required": [
+        "parent"
+      ]
+    },
+    "MinecraftCreativeCategories": {
+      "enum": [
+        "itemGroup.name.anvil",
+        "itemGroup.name.arrow",
+        "itemGroup.name.axe",
+        "itemGroup.name.banner",
+        "itemGroup.name.banner_pattern",
+        "itemGroup.name.bed",
+        "itemGroup.name.boat",
+        "itemGroup.name.boots",
+        "itemGroup.name.buttons",
+        "itemGroup.name.chalkboard",
+        "itemGroup.name.chest",
+        "itemGroup.name.chestplate",
+        "itemGroup.name.concrete",
+        "itemGroup.name.concretePowder",
+        "itemGroup.name.cookedFood",
+        "itemGroup.name.coral",
+        "itemGroup.name.coral_decorations",
+        "itemGroup.name.crop",
+        "itemGroup.name.door",
+        "itemGroup.name.dye",
+        "itemGroup.name.enchantedBook",
+        "itemGroup.name.fence",
+        "itemGroup.name.fenceGate",
+        "itemGroup.name.firework",
+        "itemGroup.name.fireworkStars",
+        "itemGroup.name.flower",
+        "itemGroup.name.glass",
+        "itemGroup.name.glassPane",
+        "itemGroup.name.glazedTerracotta",
+        "itemGroup.name.grass",
+        "itemGroup.name.helmet",
+        "itemGroup.name.hoe",
+        "itemGroup.name.horseArmor",
+        "itemGroup.name.leaves",
+        "itemGroup.name.leggings",
+        "itemGroup.name.lingeringPotion",
+        "itemGroup.name.log",
+        "itemGroup.name.minecart",
+        "itemGroup.name.miscFood",
+        "itemGroup.name.mobEgg",
+        "itemGroup.name.monsterStoneEgg",
+        "itemGroup.name.mushroom",
+        "itemGroup.name.netherWartBlock",
+        "itemGroup.name.ore",
+        "itemGroup.name.permission",
+        "itemGroup.name.pickaxe",
+        "itemGroup.name.planks",
+        "itemGroup.name.potion",
+        "itemGroup.name.pressurePlate",
+        "itemGroup.name.rail",
+        "itemGroup.name.rawFood",
+        "itemGroup.name.record",
+        "itemGroup.name.sandstone",
+        "itemGroup.name.sapling",
+        "itemGroup.name.seed",
+        "itemGroup.name.shovel",
+        "itemGroup.name.shulkerBox",
+        "itemGroup.name.sign",
+        "itemGroup.name.skull",
+        "itemGroup.name.slab",
+        "itemGroup.name.splashPotion",
+        "itemGroup.name.stainedClay",
+        "itemGroup.name.stairs",
+        "itemGroup.name.stone",
+        "itemGroup.name.stoneBrick",
+        "itemGroup.name.sword",
+        "itemGroup.name.trapdoor",
+        "itemGroup.name.walls",
+        "itemGroup.name.wood",
+        "itemGroup.name.wool",
+        "itemGroup.name.woolCarpet"
+      ],
+      "type": "string"
+    },
+    "IDigger": {
+      "type": "object",
+      "properties": {
+        "destroy_speeds": {
+          "type": "boolean"
+        },
+        "use_efficiency": {
+          "type": "boolean"
+        },
+        "on_dig": {
+          "$ref": "#/definitions/TriggerProperty"
+        }
+      }
+    },
+    "TriggerProperty": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "IDisplayName": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "IDurability": {
+      "type": "object",
+      "properties": {
+        "max_durability": {
+          "type": "number"
+        },
+        "damage_chance": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "IDyePowder": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "enum": [
+            "black",
+            "blue",
+            "brown",
+            "cyan",
+            "gray",
+            "green",
+            "light_blue",
+            "light_gray",
+            "lime",
+            "magenta",
+            "orange",
+            "pink",
+            "purple",
+            "red",
+            "white",
+            "yellow"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "IEntityPlacer": {
+      "type": "object",
+      "properties": {
+        "dispense_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "entity": {
+          "type": "string"
+        },
+        "use_on": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "description": "In development...",
+                "enum": [
+                  "minecraft:air",
+                  "minecraft:grass",
+                  "minecraft:stone"
+                ],
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "IFood": {
+      "description": "Use my iFood code and get a discount 😀: XJVC4VHSE5",
+      "type": "object",
+      "properties": {
+        "can_always_eat": {
+          "type": "boolean"
+        },
+        "nutrition": {
+          "type": "number"
+        },
+        "saturation_modifier": {
+          "type": "number"
+        },
+        "using_converts_to": {
+          "type": "string"
+        },
+        "on_consume": {
+          "$ref": "#/definitions/TriggerProperty"
+        }
+      }
+    },
+    "IFuel": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "number"
+        }
+      }
+    },
+    "IIcon": {
+      "type": "object",
+      "properties": {
+        "legacy_id": {
+          "type": "string"
+        },
+        "frame": {
+          "type": "number"
+        },
+        "texture": {
+          "type": "string"
+        }
+      }
+    },
+    "IKnockbackResistance": {
+      "type": "object",
+      "properties": {
+        "protection": {
+          "type": "number"
+        }
+      }
+    },
+    "IOnUse": {
+      "type": "object",
+      "properties": {
+        "on_use": {
+          "$ref": "#/definitions/TriggerPropertyConditioning"
+        }
+      }
+    },
+    "TriggerPropertyConditioning": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "IOnUseOn": {
+      "type": "object",
+      "properties": {
+        "on_use_on": {
+          "$ref": "#/definitions/TriggerProperty"
+        }
+      }
+    },
+    "IProjectile": {
+      "type": "object",
+      "properties": {
+        "projectile_entity": {
+          "type": "string"
+        },
+        "minimum_critical_power": {
+          "type": "number"
+        }
+      }
+    },
+    "IRenderOffsets": {
+      "type": "object",
+      "properties": {
+        "main_hand": {
+          "$ref": "#/definitions/IHandRenderOffsets"
+        },
+        "off_hand": {
+          "$ref": "#/definitions/IHandRenderOffsets"
+        }
+      }
+    },
+    "IHandRenderOffsets": {
+      "type": "object",
+      "properties": {
+        "first_person": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "rotation": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "scale": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            }
+          }
+        },
+        "third_person": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "rotation": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "scale": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            }
+          }
+        }
+      }
+    },
+    "IRepairable": {
+      "type": "object",
+      "properties": {
+        "repair_items": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "minecraft:bucket",
+                  "minecraft:diamond_sword",
+                  "minecraft:redstone"
+                ],
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "on_repaired": {
+          "$ref": "#/definitions/TriggerPropertyConditioning"
+        }
+      }
+    },
+    "IShooter": {
+      "type": "object",
+      "properties": {
+        "max_draw_duration": {
+          "type": "number"
+        },
+        "charge_on_draw": {
+          "type": "boolean"
+        },
+        "scale_power_by_draw_duration": {
+          "type": "boolean"
+        },
+        "ammunition": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "minecraft:bucket",
+                  "minecraft:diamond_sword",
+                  "minecraft:redstone"
+                ],
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "IThrowable": {
+      "type": "object",
+      "properties": {
+        "do_swing_animation": {
+          "type": "boolean"
+        },
+        "max_draw_duration": {
+          "type": "number"
+        },
+        "scale_power_by_draw_duration": {
+          "type": "boolean"
+        },
+        "launch_power_scale": {
+          "type": "number"
+        }
+      }
+    },
+    "IWeapon": {
+      "type": "object",
+      "properties": {
+        "on_hurt_entity": {
+          "$ref": "#/definitions/TriggerPropertyConditioning"
+        },
+        "on_not_hurt_entity": {
+          "$ref": "#/definitions/TriggerPropertyConditioning"
+        },
+        "on_hit_block": {
+          "$ref": "#/definitions/TriggerPropertyConditioning"
+        }
+      }
+    },
+    "IWearable": {
+      "type": "object",
+      "properties": {
+        "slot": {
+          "enum": [
+            "slot.",
+            "slot.armor",
+            "slot.armor.chest",
+            "slot.armor.feet",
+            "slot.armor.head",
+            "slot.armor.legs",
+            "slot.chest",
+            "slot.enderchest",
+            "slot.hotbar",
+            "slot.inventory",
+            "slot.saddle",
+            "slot.weapon.mainhand",
+            "slot.weapond.offhand"
+          ],
+          "type": "string"
+        },
+        "dispensable": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
