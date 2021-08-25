@@ -1,7 +1,7 @@
 import { MinecraftBlocks, MinecraftSubjects, MinecraftTarget } from './Minecraft';
 
 export interface IBlocksDescription {
-  identifier?: `${string}:${string}`;
+  identifier?: string;
   is_experimental?: boolean;
   register_to_creative_menu?: boolean;
   properties?: IProperties;
@@ -20,7 +20,7 @@ export interface IBlocksComponents {
   ['minecraft:friction']?: number;
   ['minecraft:geometry']?: string;
   ['minecraft:immovable']?: boolean;
-  ['minecraft:map_color']?: '#FF00FF' | `#${string}`;
+  ['minecraft:map_color']?: '#FF00FF' | string;
   ['minecraft:material_instances']?: IMaterialInstances;
   ['minecraft:onlypistonpush']?: boolean;
   ['minecraft:pick_collision']?: false | ICollision;
@@ -127,7 +127,7 @@ interface ISetBlockAtPos extends ISetBlock { block_offset?: [number, number, num
 
 interface ISetBlockProperty { [property_name: string]: string; }
 
-interface ISpawnLoot { table?: `$loot_tables/${string}.json`; }
+interface ISpawnLoot { table?: string; }
 
 interface ITeleport extends MinecraftTarget {
   avoid_water?: boolean;
