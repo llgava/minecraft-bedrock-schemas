@@ -4,7 +4,6 @@
   "main": "./build/src/index.js",
   "description": "Minecraft Bedrock schemas for addons development.",
   "keywords": ["JavaScript", "TypeScript"],
-
   "author": "llgava <llgavamt@gmail.com>",
   "license": "MIT",
 

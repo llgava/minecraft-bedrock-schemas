@@ -25,7 +25,10 @@ export interface IBlocksComponents {
   ['minecraft:friction']?: number;
   ['minecraft:geometry']?: string;
   ['minecraft:immovable']?: boolean;
+
+  /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
   ['minecraft:map_color']?: '#FF00FF' | string;
+
   ['minecraft:material_instances']?: IMaterialInstances;
   ['minecraft:onlypistonpush']?: boolean;
   ['minecraft:pick_collision']?: false | ICollision;
