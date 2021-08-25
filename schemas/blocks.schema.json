@@ -39,10 +39,7 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         },
         "is_experimental": {
           "type": "boolean"
@@ -128,10 +125,7 @@
           "type": "boolean"
         },
         "minecraft:map_color": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         },
         "minecraft:material_instances": {
           "$ref": "#/definitions/IMaterialInstances"
@@ -615,10 +609,7 @@
       "type": "object",
       "properties": {
         "table": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "type": "string"
         }
       }
     },
