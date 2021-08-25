@@ -2,13 +2,13 @@ import { MinecraftCondition, MinecraftTarget, MinecraftBlocks, MinecraftSubjects
 
 export interface IBlocksDescription {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
-  identifier?: string;
+  identifier: string;
   is_experimental?: boolean;
   register_to_creative_menu?: boolean;
   properties?: IProperties;
 }
 
-export interface IBlocksPermutations extends MinecraftCondition { components: IBlocksComponents; }
+export interface IBlocksPermutations extends MinecraftCondition { components?: IBlocksComponents; }
 
 export interface IBlocksComponents {
   ['minecraft:block_light_absorption']?: number;
@@ -50,10 +50,10 @@ export interface IBlocksComponents {
 
 export interface IBlocksEvents { [property_name: string]: IEventsResponse; }
 
-/* BLOCK DESCRIPTION */
+/* Block Description */
 interface IProperties { [property_name: string]: number[] | boolean[]; }
 
-/* BLOCK COMPONENTS */
+/* Block Components */
 interface ICollision {
   origin?: [number, number, number];
   size?: [number, number, number];
@@ -100,11 +100,11 @@ interface ITicking extends IOnTick {
   range?: [number, number];
 }
 
-/* BLOCKS TRIGGER COMPONENTS */
+/* Block Trigger Components */
 interface ITriggerComponent extends MinecraftCondition, MinecraftTarget { event: string; }
 interface IOnFallOn extends ITriggerComponent { min_fall_distance: number; }
 
-/* BLOCK EVENTS RESPONSE */
+/* Block Events Response */
 interface IAddMobEffect extends MinecraftTarget {
   amplifier?: number;
   duration?: number;

@@ -1,5 +1,3 @@
-
-
 export interface IManifestHeader extends IUUID {
   description: string;
   name: string;
