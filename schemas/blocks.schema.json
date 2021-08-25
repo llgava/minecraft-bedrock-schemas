@@ -2,10 +2,7 @@
   "type": "object",
   "properties": {
     "format_version": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "type": "string"
     },
     "minecraft:block": {
       "$ref": "#/definitions/BlocksBase"
@@ -26,13 +23,11 @@
           "$ref": "#/definitions/IBlocksComponents"
         },
         "events": {
-          "$ref": "#/definitions/IEventsResponse"
+          "$ref": "#/definitions/IBlocksEvents"
         }
       },
       "required": [
-        "components",
-        "description",
-        "events"
+        "description"
       ]
     },
     "IBlocksDescription": {
@@ -385,6 +380,33 @@
           }
         }
       }
+    },
+    "IBlocksEvents": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/IBlocksEventsSequence"
+          },
+          {
+            "$ref": "#/definitions/IEventsResponse"
+          }
+        ]
+      }
+    },
+    "IBlocksEventsSequence": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IEventsResponse"
+          }
+        }
+      },
+      "required": [
+        "sequence"
+      ]
     },
     "IEventsResponse": {
       "type": "object",

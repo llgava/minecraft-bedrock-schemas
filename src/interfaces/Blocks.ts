@@ -33,7 +33,11 @@ export interface IBlocksComponents {
   ['minecraft:unwalkable']?: boolean;
 }
 
-export interface IEventsResponse {
+export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlocksEventsSequence; }
+
+interface IBlocksEventsSequence { sequence: IEventsResponse[]; }
+
+interface IEventsResponse {
   add_mob_effect?: IAddMobEffect;
   damage?: IDamage;
   decrement_stack?: object;
@@ -53,6 +57,7 @@ export interface IEventsResponse {
 
 /* BLOCK DESCRIPTION */
 interface IProperties { [property_name: string]: number[] | boolean[]; }
+
 
 /* BLOCK COMPONENTS */
 interface ICollision {
