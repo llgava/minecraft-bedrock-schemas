@@ -46,7 +46,6 @@ export interface IBlocksEvents { [property_name: string]: IEventsResponse | IBlo
 /* BLOCK DESCRIPTION */
 interface IProperties { [property_name: string]: number[] | boolean[]; }
 
-
 /* BLOCK COMPONENTS */
 interface ICollision {
   origin?: [number, number, number];
