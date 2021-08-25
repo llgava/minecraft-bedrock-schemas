@@ -26,7 +26,7 @@ export interface IBlocksComponents {
   ['minecraft:geometry']?: string;
   ['minecraft:immovable']?: boolean;
 
-  /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
+  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
   ['minecraft:map_color']?: '#FF00FF' | string;
 
   ['minecraft:material_instances']?: IMaterialInstances;
