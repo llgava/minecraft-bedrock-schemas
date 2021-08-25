@@ -141,7 +141,7 @@
           "type": "boolean"
         },
         "minecraft:map_color": {
-          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
+          "pattern": "^(?:(?:(?!minecraft|minecon)\\w(?!minecon\\w))+[a-z]*:[a-z_]*)+$",
           "type": "string"
         },
         "minecraft:material_instances": {
