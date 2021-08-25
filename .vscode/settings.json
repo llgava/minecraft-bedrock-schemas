@@ -7,6 +7,7 @@
   },
 
   "json.schemas": [
+    // Blocks
     {
       "fileMatch": [
         "__tests__/bp/blocks/*.json",
@@ -15,6 +16,28 @@
       ],
 
       "url": "./schemas/blocks.schema.json"
+    },
+
+    // Behavior Packs Manifest
+    {
+      "fileMatch": [
+        "__tests__/bp/manifest.json",
+        "behavior_packs/*/manifest.json",
+        "development_behavior_packs/*/manifest.json"
+      ],
+
+      "url": "./schemas/behavior_manifest.schema.json"
+    },
+
+    // Behavior Packs Manifest
+    {
+      "fileMatch": [
+        "__tests__/rp/manifest.json",
+        "resource_packs/*/manifest.json",
+        "development_resource_packs/*/manifest.json"
+      ],
+
+      "url": "./schemas/resource_manifest.schema.json"
     }
   ]
 }

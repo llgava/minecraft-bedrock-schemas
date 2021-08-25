@@ -48,8 +48,12 @@
 
       "llgava:test_event_in_sequence": {
         "sequence": [
-          { "die": { "target": "self" }},
-          { "play_sound": { "sound": "mob.zombie.hurt", "target": "self" }}
+          {
+            "set_block_property": {
+              "llgava:test_property": "query.block_property('llgava:test_property') + 1"
+            }
+          },
+          { "play_sound": { "sound": "mob.creeper.death", "target": "self" }}
         ]
       }
     }

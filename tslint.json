@@ -3,6 +3,7 @@
   "extends": [ "tslint:latest" ],
 
   "jsRules": {
+    "class-name": false,
     "forin": false,
     "arrow-parens": true,
     "arrow-return-shorthand": true,
@@ -23,6 +24,7 @@
   },
 
   "rules": {
+    "class-name": false,
     "forin": false,
     "variable-name": false,
     "arrow-parens": true,

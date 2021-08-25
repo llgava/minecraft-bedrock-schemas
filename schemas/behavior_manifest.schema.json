@@ -1,0 +1,154 @@
+{
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "number",
+      "enum": [
+        2
+      ]
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/IBehaviorManifestDependency"
+      }
+    },
+    "header": {
+      "$ref": "#/definitions/IManifestHeader"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/IManifestModules"
+      }
+    }
+  },
+  "required": [
+    "format_version",
+    "header",
+    "modules"
+  ],
+  "definitions": {
+    "IBehaviorManifestDependency": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "uuid": {
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89AB][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "uuid",
+        "version"
+      ]
+    },
+    "IManifestHeader": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "min_engine_version": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "uuid": {
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89AB][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "min_engine_version",
+        "name",
+        "uuid",
+        "version"
+      ]
+    },
+    "IManifestModules": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "data",
+            "resources"
+          ],
+          "type": "string"
+        },
+        "version": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "uuid": {
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89AB][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "uuid",
+        "version"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
