@@ -1,12 +1,8 @@
 import { BlocksBase } from './BlocksBase';
 
-export class Blocks {
-  public format_version: string;
+class Blocks {
+  public format_version: `${number}.${number}.${number}`;
   public 'minecraft:block': BlocksBase;
-
-  constructor() {
-    this.format_version = '1.17.0';
-    this['minecraft:block'] = new BlocksBase();
-  }
 }
 
+export default new Blocks();

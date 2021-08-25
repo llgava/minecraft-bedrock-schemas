@@ -16,10 +16,7 @@
     "strictNullChecks": false,
     "target": "es2017",
 
-    "paths": {
-      "@interfaces/*": ["src/typings/*"],
-      "@models/*": ["src/models/*"],
-    }
+    "paths": {}
   },
 
   "include": [ ],

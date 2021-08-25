@@ -3,6 +3,7 @@
   "extends": [ "tslint:latest" ],
 
   "jsRules": {
+    "forin": false,
     "arrow-parens": true,
     "arrow-return-shorthand": true,
     "binary-expression-operand-order": true,
@@ -22,6 +23,7 @@
   },
 
   "rules": {
+    "forin": false,
     "variable-name": false,
     "arrow-parens": true,
     "arrow-return-shorthand": true,

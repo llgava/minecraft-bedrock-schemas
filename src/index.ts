@@ -1,24 +1,13 @@
-import { Blocks } from './models/Blocks';
-import Convert from './utils/Convert';
-import chalk from 'chalk';
 import fs from 'fs';
+import chalk from 'chalk';
+import MinecraftBedrock from './utils/MinecraftBedrock';
 
-const TSschema = require('generate-schema');
+console.clear();
+console.log(`${chalk.green('✔')} Generating schemas...`);
 
-class ComplexHelloWorld {
+if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
 
-  /** Initialize app. */
-  public init() {
-    console.clear();
-    console.log(`${chalk.green('✔')} Generating schemas...`);
+/* Generates Schemas */
+MinecraftBedrock.generateSchemaFiles();
 
-    if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
-
-    const blocksSchema = TSschema.json('Blocks Schema', Convert.toJSON(new Blocks()));
-
-    fs.writeFileSync('schemas/blocks.schema.json', JSON.stringify(blocksSchema, null, 2), { encoding: 'utf-8' });
-  }
-}
-
-const app = new ComplexHelloWorld();
-app.init();
+process.kill(0);
