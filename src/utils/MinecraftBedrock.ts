@@ -2,55 +2,45 @@ import fs from 'fs';
 import { resolve } from 'path';
 import chalk from 'chalk';
 import * as TJS from 'typescript-json-schema';
-import Blocks from '../models/Blocks/Blocks';
+
+/* Models */
 import BehaviorsManifest from '../models/Manifests/BehaviorsManifest';
-import { ManifestBase } from '../models/Manifests/ManifestBase';
 import ResourcesManifest from '../models/Manifests/ResourcesManifest';
+import Blocks from '../models/Blocks/Blocks';
 import Items from '../models/Items/Items';
 
-interface Schemas {
-  folder: string;
-  file: any;
-}
-
 class MinecraftBedrock {
-  private schemasList: Schemas[];
+  private schemasList: any[];
 
   constructor() {
     this.schemasList = [
-      { folder: 'Blocks', file: Blocks, },
-      { folder: 'Items', file: Items, },
-      { folder: 'Manifests', file: BehaviorsManifest, },
-      { folder: 'Manifests', file: ResourcesManifest, }
+      BehaviorsManifest,
+      ResourcesManifest,
+      Blocks,
+      Items
     ];
   }
 
   /** Generate every Minecraft Bedrock Files Schemas. */
   public generateSchemaFiles(): void {
-    console.log(`${chalk.green('✔')} Generating schemas...`);
+    console.log(`${chalk.green('✔')} Generating schemas...\n`);
 
     const TJS_settings: TJS.PartialArgs = { required: true };
     const TJS_compilerOptions: TJS.CompilerOptions = { strictNullChecks: true };
 
+
     for (const i in this.schemasList) {
-      let schemaName: string = this.schemasList[i].file.constructor.name;
-      const TJS_program: TJS.Program =TJS.getProgramFromFiles([
-        resolve(__dirname, `../models/${this.schemasList[i].folder}/${schemaName}.ts`)
+      const constructorName = this.schemasList[i].constructor.name;
+
+      const TJS_program: TJS.Program = TJS.getProgramFromFiles([
+        resolve(__dirname, `../models/${this.schemasList[i].category}/${constructorName}.ts`)
       ], TJS_compilerOptions);
 
-      /**
-       * Checks if is a Minecraft Manifest.
-       * If is, schemaName should be renamed in snake case.
-       */
-      if (this.schemasList[i].file instanceof ManifestBase) {
-        schemaName = schemaName.match('BehaviorsManifest') ? schemaName = 'bp_manifest' :
-          schemaName.match('ResourcesManifest') ? schemaName = 'rp_manifest' : schemaName;
-      }
+      const TJS_schema: TJS.Definition = TJS.generateSchema(TJS_program, constructorName, TJS_settings);
 
-      const TJS_schema: TJS.Definition = TJS.generateSchema(TJS_program, this.schemasList[i].file.constructor.name, TJS_settings);
-      const fileName: string = `${schemaName.toLowerCase()}.schema.json`;
+      fs.writeFileSync(`schemas/${this.schemasList[i].schemaName}.schema.json`, JSON.stringify(TJS_schema, null, 2), { encoding: 'utf-8' });
 
-      fs.writeFileSync(`schemas/${fileName}`, JSON.stringify(TJS_schema, null, 2), { encoding: 'utf-8' });
+      // console.log(`${chalk.yellow(`[${Number(i) + 1}/${this.schemasList.length}]`)} ${chalk.bold(`${this.schemasList[i].schemaName}.schema.json`)} generated.`);
     }
   }
 }
