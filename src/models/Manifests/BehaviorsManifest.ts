@@ -1,4 +1,4 @@
-import { IBehaviorManifestDependency } from '../interfaces/Manifest';
+import { IBehaviorManifestDependency } from '../../interfaces/Manifest';
 import { ManifestBase } from './ManifestBase';
 
 class BehaviorsManifest extends ManifestBase {

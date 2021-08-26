@@ -1,10 +1,8 @@
 import fs from 'fs';
-import chalk from 'chalk';
 import MinecraftBedrock from './utils/MinecraftBedrock';
+import Blocks from './models/Blocks/Blocks';
 
 console.clear();
-console.log(`${chalk.green('✔')} Generating schemas...`);
-
 if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
 
 /* Generates Schemas */

@@ -1,4 +1,4 @@
-import { IBlocksDescription, IBlocksPermutations, IBlocksComponents, IBlocksEvents } from '../interfaces/Blocks';
+import { IBlocksDescription, IBlocksPermutations, IBlocksComponents, IBlocksEvents } from '../../interfaces/Blocks';
 
 export class BlocksBase {
   public description: IBlocksDescription;
