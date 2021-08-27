@@ -1,7 +1,6 @@
 import fs from 'fs';
 import MinecraftBedrock from '@utils/MinecraftBedrock';
 
-console.clear();
 if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
 
 /* Generates Schemas */

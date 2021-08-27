@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    "**/.editorconfig": true,
+    "**/.editorconfig": false,
     "**/yarn.lock": true,
     "**/package-lock.json": true,
     "**/.vscode/": false

@@ -34,7 +34,6 @@ class MinecraftBedrock {
   /** Generate every Minecraft Bedrock Files Schemas. */
   public generateSchemaFiles(): void {
     console.log(`${chalk.green('✔')} Generating schemas...\n`);
-
     for (const i in this.schemasList) {
       const TJS_program: TJS.Program = TJS.getProgramFromFiles([resolve(this.schemasList[i].path)], this.compilerOptions);
       const TJS_schema: TJS.Definition = TJS.generateSchema(TJS_program, this.schemasList[i].name, this.settings);

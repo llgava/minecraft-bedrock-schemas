@@ -143,7 +143,7 @@ interface ITransformItem { transform?: string; }
 interface IEventsResponse extends IBlocksEventsInSequence {
   add_mob_effect?: IAddMobEffect;
   damage?: IDamage;
-  decrement_stack?: object;
+  decrement_stack?: Record<string, unknown>;
   die?: MinecraftTarget;
   play_effect?: IPlayEffect;
   play_sound?: IPlaySound;
@@ -153,7 +153,7 @@ interface IEventsResponse extends IBlocksEventsInSequence {
   set_block_at_pos?: ISetBlockAtPos;
   set_block_property?: ISetBlockProperty;
   spawn_loot?: ISpawnLoot;
-  swing?: object;
+  swing?: Record<string, unknown>;
   teleport?: ITeleport;
   transform_item?: ITransformItem;
 }

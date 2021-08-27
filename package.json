@@ -8,8 +8,8 @@
   "license": "MIT",
 
   "scripts": {
-    "generate":
-      "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
+    "lint": "clear && yarn eslint . --ext .ts",
+    "generate": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
   },
 
   "devDependencies": {
@@ -20,10 +20,12 @@
     "@babel/preset-typescript": "^7.14.5",
     "@types/chalk": "^2.2.0",
     "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
     "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.32.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.9.0",
-    "tslint": "^6.1.3",
     "typescript": "^4.3.5"
   },
 
