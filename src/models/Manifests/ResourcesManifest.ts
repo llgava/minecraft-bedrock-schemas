@@ -1,6 +1,5 @@
 // tslint:disable: align
 import { IManifestHeader, IManifestModules } from '../../interfaces/Manifest';
-import { SchemaCategories } from '../../interfaces/Schema';
 
 class ResourcesManifest {
   public format_version: 2;

@@ -1,6 +1,5 @@
 // tslint:disable: align
 import { IBehaviorManifestDependency, IManifestHeader, IManifestModules } from '../../interfaces/Manifest';
-import { SchemaCategories } from '../../interfaces/Schema';
 
 class BehaviorsManifest {
   public format_version: 2;

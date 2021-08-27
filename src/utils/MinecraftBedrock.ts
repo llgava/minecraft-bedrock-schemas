@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { resolve } from 'path';
 import chalk from 'chalk';
+import { resolve } from 'path';
 import * as TJS from 'typescript-json-schema';
 
 /* Models */

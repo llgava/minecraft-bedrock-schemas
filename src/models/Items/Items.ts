@@ -1,5 +1,4 @@
 // tslint:disable: align
-import { SchemaCategories } from '../../interfaces/Schema';
 import { ItemsBase } from './ItemsBase';
 
 class Items {

@@ -1,12 +1,10 @@
 // tslint:disable: align
-import { SchemaCategories } from '../../interfaces/Schema';
 import { BlocksBase } from './BlocksBase';
 
 /** You need to turn on the Holiday Creator Features Experiment on your World Settings. */
 class Blocks {
   public format_version: string;
   public 'minecraft:block': BlocksBase;
-
 
   /** @TJS-ignore */ get schemaName(): string { return 'bp_blocks'; }
   /** @TJS-ignore */ get path(): string { return __filename; }
