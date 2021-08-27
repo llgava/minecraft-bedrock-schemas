@@ -1,7 +1,7 @@
 import { MinecraftArmorTextureTypes, MinecraftBlocks, MinecraftCategories, MinecraftCreativeCategories, MinecraftDyeColors, MinecraftEntities, MinecraftItems, MinecraftSlots, MinecraftTarget } from './Minecraft';
 
 export interface IItemsDescription {
-  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
+  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   category: MinecraftCategories;
   is_experimental?: boolean;

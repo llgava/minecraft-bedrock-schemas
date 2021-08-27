@@ -10,7 +10,7 @@
     // Behavior Packs Manifest
     {
       "fileMatch": [
-        "__tests__/bp/manifest.json",
+        "__addon__/bp/manifest.json",
         "behavior_packs/*/manifest.json",
         "development_behavior_packs/*/manifest.json"
       ],
@@ -21,7 +21,7 @@
     // Behavior Packs Manifest
     {
       "fileMatch": [
-        "__tests__/rp/manifest.json",
+        "__addon__/rp/manifest.json",
         "resource_packs/*/manifest.json",
         "development_resource_packs/*/manifest.json"
       ],
@@ -32,7 +32,7 @@
     // Blocks
     {
       "fileMatch": [
-        "__tests__/bp/blocks/*.json",
+        "__addon__/bp/blocks/*.json",
         "behavior_packs/*/blocks/*.json",
         "development_behavior_packs/*/blocks/*.json"
       ],
@@ -43,7 +43,7 @@
     // Items
     {
       "fileMatch": [
-        "__tests__/bp/items/*.json",
+        "__addon__/bp/items/*.json",
         "behavior_packs/*/items/*.json",
         "development_behavior_packs/*/items/*.json"
       ],

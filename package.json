@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "main": "./build/index.js",
   "description": "Minecraft Bedrock schemas for addons development.",
-  "keywords": ["JavaScript", "TypeScript"],
+  "keywords": [
+    "JavaScript",
+    "TypeScript"
+  ],
   "author": "llgava <llgavamt@gmail.com>",
   "license": "MIT",
-
   "scripts": {
+    "generate": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "lint": "clear && yarn eslint . --ext .ts",
-    "generate": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
+    "test": "clear && jest"
   },
-
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",
@@ -19,23 +21,26 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-typescript": "^7.14.5",
     "@types/chalk": "^2.2.0",
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.0.0",
+    "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
+    "ts-jest": "^27.0.5",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "uuid": "^8.3.2"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/llgava/minecraft-schemas.git"
   },
-
   "dependencies": {
     "chalk": "^4.1.1",
+    "jest": "^27.1.0",
     "typescript-json-schema": "^0.50.1"
   }
 }

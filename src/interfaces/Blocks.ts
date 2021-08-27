@@ -1,7 +1,7 @@
 import { MinecraftCondition, MinecraftTarget, MinecraftBlocks, MinecraftSubjects } from './Minecraft';
 
 export interface IBlocksDescription {
-  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon)\w(?!minecon\w))+[a-z]*:[a-z_]*)+$ */
+  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   is_experimental?: boolean;
   register_to_creative_menu?: boolean;
