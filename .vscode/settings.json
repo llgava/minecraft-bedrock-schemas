@@ -15,7 +15,7 @@
         "development_behavior_packs/*/manifest.json"
       ],
 
-      "url": "./schemas/behavior_manifest.schema.json"
+      "url": "./schemas/bp_manifest.schema.json"
     },
 
     // Behavior Packs Manifest
@@ -26,7 +26,7 @@
         "development_resource_packs/*/manifest.json"
       ],
 
-      "url": "./schemas/resource_manifest.schema.json"
+      "url": "./schemas/rp_manifest.schema.json"
     },
 
     // Blocks
@@ -37,7 +37,7 @@
         "development_behavior_packs/*/blocks/*.json"
       ],
 
-      "url": "./schemas/blocks.schema.json"
+      "url": "./schemas/bp_blocks.schema.json"
     },
 
     // Items
@@ -48,7 +48,7 @@
         "development_behavior_packs/*/items/*.json"
       ],
 
-      "url": "./schemas/items.schema.json"
+      "url": "./schemas/bp_items.schema.json"
     },
   ]
 }

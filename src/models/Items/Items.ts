@@ -6,10 +6,9 @@ class Items {
   public format_version: string;
   public 'minecraft:item': ItemsBase;
 
-  /** @TJS-ignore */ private _schemaName: string = 'bp_items';
-  /** @TJS-ignore */ private _category: SchemaCategories = 'Items';
-  /** @TJS-ignore */ get schemaName(): string { return this._schemaName; }
-  /** @TJS-ignore */ get category(): SchemaCategories { return this._category; }
+  /** @TJS-ignore */ get schemaName(): string { return 'bp_items'; }
+  /** @TJS-ignore */ get path(): string { return __filename; }
+  /** @TJS-ignore */ get name(): string { return this.constructor.name; }
 }
 
 export default new Items();

@@ -1,6 +1,6 @@
 import fs from 'fs';
+import path from 'path';
 import MinecraftBedrock from './utils/MinecraftBedrock';
-import Blocks from './models/Blocks/Blocks';
 
 console.clear();
 if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
@@ -8,5 +8,4 @@ if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
 /* Generates Schemas */
 MinecraftBedrock.generateSchemaFiles();
 
-console.log();
 process.kill(0);

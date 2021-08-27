@@ -8,10 +8,9 @@ class BehaviorsManifest {
   public modules: IManifestModules[];
   public dependencies?: IBehaviorManifestDependency[];
 
-  /** @TJS-ignore */ private _schemaName: string = 'bp_manifest';
-  /** @TJS-ignore */ private _category: SchemaCategories = 'Manifests';
-  /** @TJS-ignore */ get schemaName(): string { return this._schemaName; }
-  /** @TJS-ignore */ get category(): SchemaCategories { return this._category; }
+  /** @TJS-ignore */ get schemaName(): string { return 'bp_manifest'; }
+  /** @TJS-ignore */ get path(): string { return __filename; }
+  /** @TJS-ignore */ get name(): string { return this.constructor.name; }
 }
 
 export default new BehaviorsManifest();

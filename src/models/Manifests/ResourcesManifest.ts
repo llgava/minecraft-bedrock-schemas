@@ -7,10 +7,9 @@ class ResourcesManifest {
   public header: IManifestHeader;
   public modules: IManifestModules[];
 
-  /** @TJS-ignore */ private _schemaName: string = 'rp_manifest';
-  /** @TJS-ignore */ private _category: SchemaCategories = 'Manifests';
-  /** @TJS-ignore */ get schemaName(): string { return this._schemaName; }
-  /** @TJS-ignore */ get category(): SchemaCategories { return this._category; }
+  /** @TJS-ignore */ get schemaName(): string { return 'rp_manifest'; }
+  /** @TJS-ignore */ get path(): string { return __filename; }
+  /** @TJS-ignore */ get name(): string { return this.constructor.name; }
 }
 
 export default new ResourcesManifest();

@@ -8,10 +8,9 @@ class Blocks {
   public 'minecraft:block': BlocksBase;
 
 
-  /** @TJS-ignore */ private _schemaName: string = 'bp_blocks';
-  /** @TJS-ignore */ private _category: SchemaCategories = 'Blocks';
-  /** @TJS-ignore */ get schemaName(): string { return this._schemaName; }
-  /** @TJS-ignore */ get category(): SchemaCategories { return this._category; }
+  /** @TJS-ignore */ get schemaName(): string { return 'bp_blocks'; }
+  /** @TJS-ignore */ get path(): string { return __filename; }
+  /** @TJS-ignore */ get name(): string { return this.constructor.name;}
 }
 
 export default new Blocks();
