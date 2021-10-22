@@ -5,13 +5,13 @@ export interface MinecraftCondition {
   condition?: string;
 }
 
-/** In development... */
+/** This type are in development. (last update: 22/10) */
 export type MinecraftBlocks =
   | 'minecraft:air'
   | 'minecraft:stone'
   | 'minecraft:grass';
 
-/** In development... */
+/** This type are in development. (last update: 22/10) */
 export type MinecraftEntities =
   | 'minecraft:zombie'
   | 'minecraft:creeper'

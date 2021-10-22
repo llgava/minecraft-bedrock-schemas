@@ -1,4 +1,4 @@
-import { MinecraftCondition, MinecraftTarget, MinecraftBlocks, MinecraftSubjects } from './Minecraft';
+import { MinecraftCondition, MinecraftTarget, MinecraftBlocks, MinecraftSubjects } from '../../interfaces/Minecraft';
 
 export interface IBlocksDescription {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */

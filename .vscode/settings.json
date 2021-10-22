@@ -1,9 +1,12 @@
 {
   "files.exclude": {
-    "**/.editorconfig": false,
-    "**/yarn.lock": true,
-    "**/package-lock.json": true,
-    "**/.vscode/": false
+    "**/.babelrc.js": true,
+    "**/.editorconfig": true,
+    "**/.eslintrc.json": true,
+    "**/tsconfig.json": true,
+    "**/LICENSE": true,
+    "**/.gitignore": true,
+    "**/jest.config.js": true
   },
 
   "json.schemas": [
@@ -15,7 +18,7 @@
         "development_behavior_packs/*/manifest.json"
       ],
 
-      "url": "./schemas/bp_manifest.schema.json"
+      "url": "./schemas/manifest_behavior.schema.json"
     },
 
     // Behavior Packs Manifest
@@ -26,7 +29,7 @@
         "development_resource_packs/*/manifest.json"
       ],
 
-      "url": "./schemas/rp_manifest.schema.json"
+      "url": "./schemas/manifest_resource.schema.json"
     },
 
     // Blocks
@@ -37,7 +40,7 @@
         "development_behavior_packs/*/blocks/*.json"
       ],
 
-      "url": "./schemas/bp_blocks.schema.json"
+      "url": "./schemas/blocks_behavior.schema.json"
     },
 
     // Items
@@ -48,7 +51,7 @@
         "development_behavior_packs/*/items/*.json"
       ],
 
-      "url": "./schemas/bp_items.schema.json"
+      "url": "./schemas/items_behavior.schema.json"
     },
   ]
 }

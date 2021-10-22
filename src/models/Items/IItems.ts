@@ -1,4 +1,4 @@
-import { MinecraftArmorTextureTypes, MinecraftBlocks, MinecraftCategories, MinecraftCreativeCategories, MinecraftDyeColors, MinecraftEntities, MinecraftItems, MinecraftSlots, MinecraftTarget } from './Minecraft';
+import { MinecraftArmorTextureTypes, MinecraftBlocks, MinecraftCategories, MinecraftCreativeCategories, MinecraftDyeColors, MinecraftEntities, MinecraftItems, MinecraftSlots, MinecraftTarget } from '../../interfaces/Minecraft';
 
 export interface IItemsDescription {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */

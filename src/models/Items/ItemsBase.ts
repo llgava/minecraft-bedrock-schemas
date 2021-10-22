@@ -1,4 +1,4 @@
-import { IItemsComponents, IItemsDescription } from '../../interfaces/Items';
+import { IItemsComponents, IItemsDescription } from './IItems';
 
 export class ItemsBase {
   public description: IItemsDescription;
