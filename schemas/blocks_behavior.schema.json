@@ -1,0 +1,809 @@
+{
+  "description": "You need to turn on the Holiday Creator Features Experiment on your World Settings.",
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "minecraft:block": {
+      "$ref": "#/definitions/BlocksBehavior"
+    }
+  },
+  "required": [
+    "format_version",
+    "minecraft:block"
+  ],
+  "definitions": {
+    "BlocksBehavior": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/Description"
+        },
+        "permutations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Permutations"
+          }
+        },
+        "components": {
+          "$ref": "#/definitions/Components"
+        },
+        "events": {
+          "$ref": "#/definitions/Events"
+        }
+      },
+      "required": [
+        "description"
+      ]
+    },
+    "Description": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$",
+          "type": "string"
+        },
+        "is_experimental": {
+          "type": "boolean"
+        },
+        "register_to_creative_menu": {
+          "type": "boolean"
+        },
+        "properties": {
+          "$ref": "#/definitions/Properties"
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "Properties": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "boolean"
+            }
+          }
+        ]
+      }
+    },
+    "Permutations": {
+      "type": "object",
+      "properties": {
+        "components": {
+          "$ref": "#/definitions/Components"
+        },
+        "condition": {
+          "type": "string"
+        }
+      }
+    },
+    "Components": {
+      "type": "object",
+      "properties": {
+        "minecraft:block_light_absorption": {
+          "type": "number"
+        },
+        "minecraft:block_light_emission": {
+          "type": "number"
+        },
+        "minecraft:breakonpush": {
+          "type": "boolean"
+        },
+        "minecraft:breathability": {
+          "enum": [
+            "air",
+            "solid"
+          ],
+          "type": "string"
+        },
+        "minecraft:destroy_time": {
+          "type": "number"
+        },
+        "minecraft:display_name": {
+          "type": "string"
+        },
+        "minecraft:entity_collision": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Collision"
+            },
+            {
+              "enum": [
+                false
+              ],
+              "type": "boolean"
+            }
+          ]
+        },
+        "minecraft:explosion_resistance": {
+          "type": "number"
+        },
+        "minecraft:flammable": {
+          "$ref": "#/definitions/Flammable"
+        },
+        "minecraft:friction": {
+          "type": "number"
+        },
+        "minecraft:geometry": {
+          "type": "string"
+        },
+        "minecraft:immovable": {
+          "type": "boolean"
+        },
+        "minecraft:map_color": {
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
+          "type": "string"
+        },
+        "minecraft:material_instances": {
+          "$ref": "#/definitions/MaterialInstances"
+        },
+        "minecraft:onlypistonpush": {
+          "type": "boolean"
+        },
+        "minecraft:pick_collision": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Collision"
+            },
+            {
+              "enum": [
+                false
+              ],
+              "type": "boolean"
+            }
+          ]
+        },
+        "minecraft:placement_filter": {
+          "$ref": "#/definitions/PlacementFilter"
+        },
+        "minecraft:preventsjumping": {
+          "type": "boolean"
+        },
+        "minecraft:random_ticking": {
+          "$ref": "#/definitions/OnTick"
+        },
+        "minecraft:rotation": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "minecraft:ticking": {
+          "$ref": "#/definitions/Ticking"
+        },
+        "minecraft:unit_cube": {
+          "type": "string"
+        },
+        "minecraft:unwalkable": {
+          "type": "boolean"
+        },
+        "minecraft:on_fall_on": {
+          "$ref": "#/definitions/OnFallOn"
+        },
+        "minecraft:on_interact": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        },
+        "minecraft:on_placed": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        },
+        "minecraft:on_player_destroyed": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        },
+        "minecraft:on_player_placing": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        },
+        "minecraft:on_step_off": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        },
+        "minecraft:on_step_on": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        }
+      }
+    },
+    "Collision": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "size": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "Flammable": {
+      "type": "object",
+      "properties": {
+        "burn_odds": {
+          "type": "number"
+        },
+        "flame_odds": {
+          "type": "number"
+        }
+      }
+    },
+    "MaterialInstances": {
+      "type": "object",
+      "properties": {
+        "*": {
+          "type": "object",
+          "properties": {
+            "render_method": {
+              "enum": [
+                "alpha_test",
+                "opaque"
+              ],
+              "type": "string"
+            },
+            "texture": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "PlacementFilter": {
+      "type": "object",
+      "properties": {
+        "allowed_faces": {
+          "enum": [
+            "all",
+            "down",
+            "east",
+            "north",
+            "side",
+            "south",
+            "up",
+            "west"
+          ],
+          "type": "string"
+        },
+        "block_filter": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "description": "This type is not finished. (last update: 18/03/2022)",
+                "enum": [
+                  "minecraft:air",
+                  "minecraft:grass",
+                  "minecraft:stone"
+                ],
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "OnTick": {
+      "type": "object",
+      "properties": {
+        "on_tick": {
+          "type": "object",
+          "properties": {
+            "condition": {
+              "type": "string"
+            },
+            "event": {
+              "type": "string"
+            },
+            "target": {
+              "enum": [
+                "block",
+                "damager",
+                "item",
+                "other",
+                "parent",
+                "player",
+                "self",
+                "target"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        }
+      }
+    },
+    "Ticking": {
+      "type": "object",
+      "properties": {
+        "looping": {
+          "type": "boolean"
+        },
+        "range": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "on_tick": {
+          "type": "object",
+          "properties": {
+            "condition": {
+              "type": "string"
+            },
+            "event": {
+              "type": "string"
+            },
+            "target": {
+              "enum": [
+                "block",
+                "damager",
+                "item",
+                "other",
+                "parent",
+                "player",
+                "self",
+                "target"
+              ],
+              "type": "string"
+            },
+            "range": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        }
+      }
+    },
+    "OnFallOn": {
+      "type": "object",
+      "properties": {
+        "min_fall_distance": {
+          "type": "number"
+        },
+        "conditions": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "min_fall_distance"
+      ]
+    },
+    "MinecraftTriggerConditioning": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "Events": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/EventsReponse"
+      }
+    },
+    "EventsReponse": {
+      "type": "object",
+      "properties": {
+        "add_mob_effect": {
+          "$ref": "#/definitions/AddMobEffect"
+        },
+        "damage": {
+          "$ref": "#/definitions/Damage"
+        },
+        "decrement_stack": {
+          "$ref": "#/definitions/Record<string,unknown>"
+        },
+        "die": {
+          "$ref": "#/definitions/MinecraftTarget"
+        },
+        "play_effect": {
+          "$ref": "#/definitions/PlayEffect"
+        },
+        "play_sound": {
+          "$ref": "#/definitions/PlaySound"
+        },
+        "remove_mob_effect": {
+          "$ref": "#/definitions/RemoveMobEffect"
+        },
+        "run_command": {
+          "$ref": "#/definitions/RunCommand"
+        },
+        "set_block": {
+          "$ref": "#/definitions/SetBlock"
+        },
+        "set_block_at_pos": {
+          "$ref": "#/definitions/SetBlockAtPos"
+        },
+        "set_block_property": {
+          "$ref": "#/definitions/SetBlockProperty"
+        },
+        "spawn_loot": {
+          "$ref": "#/definitions/SpawnLoot"
+        },
+        "swing": {
+          "$ref": "#/definitions/Record<string,unknown>"
+        },
+        "teleport": {
+          "$ref": "#/definitions/Teleport"
+        },
+        "transform_item": {
+          "$ref": "#/definitions/TransformItem"
+        },
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EventsReponse"
+          }
+        }
+      }
+    },
+    "AddMobEffect": {
+      "type": "object",
+      "properties": {
+        "amplifier": {
+          "type": "number"
+        },
+        "duration": {
+          "type": "number"
+        },
+        "effect": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "Damage": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number"
+        },
+        "type": {
+          "enum": [
+            "all"
+          ],
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "Record<string,unknown>": {
+      "type": "object"
+    },
+    "MinecraftTarget": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "PlayEffect": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "number"
+        },
+        "effect": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "PlaySound": {
+      "type": "object",
+      "properties": {
+        "sound": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "RemoveMobEffect": {
+      "type": "object",
+      "properties": {
+        "effect": {
+          "type": "string"
+        }
+      }
+    },
+    "RunCommand": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "SetBlock": {
+      "type": "object",
+      "properties": {
+        "block_type": {
+          "type": "string"
+        }
+      }
+    },
+    "SetBlockAtPos": {
+      "type": "object",
+      "properties": {
+        "block_offset": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "block_type": {
+          "type": "string"
+        }
+      }
+    },
+    "SetBlockProperty": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "SpawnLoot": {
+      "type": "object",
+      "properties": {
+        "table": {
+          "type": "string"
+        }
+      }
+    },
+    "Teleport": {
+      "type": "object",
+      "properties": {
+        "avoid_water": {
+          "type": "boolean"
+        },
+        "destination": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "land_on_block": {
+          "type": "boolean"
+        },
+        "max_range": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "target": {
+          "enum": [
+            "block",
+            "damager",
+            "item",
+            "other",
+            "parent",
+            "player",
+            "self",
+            "target"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "TransformItem": {
+      "type": "object",
+      "properties": {
+        "transform": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

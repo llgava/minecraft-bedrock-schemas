@@ -1,0 +1,315 @@
+{
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "number",
+      "enum": [
+        2
+      ]
+    },
+    "header": {
+      "$ref": "#/definitions/Header"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Modules"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Dependencies"
+      }
+    },
+    "metadata": {
+      "$ref": "#/definitions/Metadata"
+    },
+    "capabilities": {
+      "$ref": "#/definitions/Capabilities"
+    }
+  },
+  "required": [
+    "format_version",
+    "header",
+    "modules"
+  ],
+  "definitions": {
+    "Header": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number",
+                  "enum": [
+                    1
+                  ]
+                },
+                {
+                  "type": "number",
+                  "enum": [
+                    0
+                  ]
+                },
+                {
+                  "type": "number",
+                  "enum": [
+                    0
+                  ]
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            }
+          ]
+        },
+        "base_game_version": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number",
+                  "enum": [
+                    1
+                  ]
+                },
+                {
+                  "type": "number",
+                  "enum": [
+                    18
+                  ]
+                },
+                {
+                  "type": "number",
+                  "enum": [
+                    0
+                  ]
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            }
+          ]
+        },
+        "min_engine_version": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number",
+                  "enum": [
+                    1
+                  ]
+                },
+                {
+                  "type": "number",
+                  "enum": [
+                    16
+                  ]
+                },
+                {
+                  "type": "number",
+                  "enum": [
+                    0
+                  ]
+                }
+              ],
+              "minItems": 3,
+              "maxItems": 3
+            }
+          ]
+        },
+        "lock_template_options": {
+          "type": "boolean"
+        },
+        "uuid": {
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "name",
+        "uuid",
+        "version"
+      ]
+    },
+    "Modules": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "version": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "uuid": {
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "uuid",
+        "version"
+      ]
+    },
+    "Type": {
+      "enum": [
+        "client_data",
+        "data",
+        "interface",
+        "resources",
+        "world_template"
+      ],
+      "type": "string"
+    },
+    "Dependencies": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+          "type": "string"
+        },
+        "version": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "uuid",
+        "version"
+      ]
+    },
+    "Metadata": {
+      "type": "object",
+      "properties": {
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "license": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "authors",
+        "license",
+        "url"
+      ]
+    },
+    "Capabilities": {
+      "type": "object",
+      "properties": {
+        "chemistry": {
+          "type": "boolean"
+        },
+        "experimental_custom_ui": {
+          "type": "boolean"
+        },
+        "raytraced": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "chemistry",
+        "experimental_custom_ui",
+        "raytraced"
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

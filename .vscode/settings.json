@@ -1,16 +1,16 @@
 {
   "files.exclude": {
-    "**/.babelrc.js": true,
-    "**/.editorconfig": true,
-    "**/.eslintrc.json": true,
-    "**/tsconfig.json": true,
-    "**/LICENSE": true,
-    "**/.gitignore": true,
-    "**/jest.config.js": true
+    "**/.babelrc.js": false,
+    "**/.editorconfig": false,
+    "**/.eslintrc.json": false,
+    "**/tsconfig.json": false,
+    "**/LICENSE": false,
+    "**/.gitignore": false,
+    "**/jest.config.js": false
   },
 
   "json.schemas": [
-    // Behavior Packs Manifest
+    // Manifests
     {
       "fileMatch": [
         "__addon__/bp/manifest.json",
@@ -18,21 +18,10 @@
         "development_behavior_packs/*/manifest.json"
       ],
 
-      "url": "./schemas/manifest_behavior.schema.json"
+      "url": "./schemas/manifest.schema.json"
     },
 
-    // Behavior Packs Manifest
-    {
-      "fileMatch": [
-        "__addon__/rp/manifest.json",
-        "resource_packs/*/manifest.json",
-        "development_resource_packs/*/manifest.json"
-      ],
-
-      "url": "./schemas/manifest_resource.schema.json"
-    },
-
-    // Blocks
+    // Blocks Behavior
     {
       "fileMatch": [
         "__addon__/bp/blocks/*.json",
@@ -43,7 +32,7 @@
       "url": "./schemas/blocks_behavior.schema.json"
     },
 
-    // Items
+    // Items Behavior
     {
       "fileMatch": [
         "__addon__/bp/items/*.json",

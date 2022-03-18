@@ -10,11 +10,11 @@
   "author": "llgava <llgavamt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "generate": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "gen": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "lint": "clear && yarn eslint . --ext .ts",
     "test": "clear && jest"
   },
-  
+
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",
