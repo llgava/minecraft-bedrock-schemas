@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "./src/index.ts",
   "description": "Minecraft Bedrock JSON Schemas for addons development.",
-  "keywords": ["JavaScript", "TypeScript"],
+  "keywords": [
+    "JavaScript",
+    "TypeScript"
+  ],
   "author": "llgava <llgavamt@gmail.com>",
   "license": "MIT",
-
   "scripts": {
-    "generate": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "gen": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "lint": "clear && yarn eslint . --ext .ts",
     "test": "clear && jest"
   },
@@ -19,7 +21,6 @@
     "@babel/node": "^7.14.7",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-typescript": "^7.14.5",
-    "@types/chalk": "^2.2.0",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.0.0",
     "@types/uuid": "^8.3.1",

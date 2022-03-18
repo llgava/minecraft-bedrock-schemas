@@ -1,5 +1,5 @@
 import fs from 'fs';
-import MinecraftBedrock from '@utils/MinecraftBedrock';
+import MinecraftBedrock from 'MinecraftBedrock';
 
 if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
 

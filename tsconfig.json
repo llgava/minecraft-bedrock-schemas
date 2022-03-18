@@ -1,24 +1,23 @@
-// All the options description can be found here: https://www.typescriptlang.org/docs/handbook/compiler-options.html
-// You can read more about the paths object here: https://www.typescriptlang.org/tsconfig/#paths
-
 {
   "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+
     "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
     "noImplicitAny": false,
-    "outDir": "./build/src",
     "resolveJsonModule": true,
-    "rootDir": "./src",
     "skipLibCheck": true,
     "strictNullChecks": false,
-    "target": "es2020",
 
+    "rootDir": ".",
     "baseUrl": "./src",
     "paths": {
       "@models/*": ["./models/*"],
       "@utils/*": ["./utils/*"]
     }
-  }
+  },
+
+  "include": ["./src"]
 }
