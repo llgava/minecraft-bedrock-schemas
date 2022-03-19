@@ -32,9 +32,7 @@ export interface Description {
 export interface Components {
   ['minecraft:armor']?: Armor;
   ['minecraft:block_placer']?: BlockPlacer;
-  ['minecraft:can_destroy_in_creative']?: boolean;
   ['minecraft:cooldown']?: Cooldown;
-  ['minecraft:creative_category']?: MinecraftCreativeCategories;
   ['minecraft:digger']?: Digger;
   ['minecraft:display_name']?: DisplayName;
   ['minecraft:durability']?: Durability;
