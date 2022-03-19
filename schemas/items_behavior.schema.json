@@ -191,7 +191,10 @@
       "type": "object",
       "properties": {
         "destroy_speeds": {
-          "$ref": "#/definitions/DestroySpeed"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DestroySpeed"
+          }
         },
         "use_efficiency": {
           "type": "boolean"
