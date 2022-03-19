@@ -1,9 +1,13 @@
 import fs from 'fs';
 import MinecraftBedrock from './MinecraftBedrock';
 
-if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
+const version = '1.18.10';
+
+if (!fs.existsSync(`schemas/${version}/`)) {
+  fs.mkdirSync(`schemas/${version}/`, { recursive: true });
+}
 
 /* Generates Schemas */
-MinecraftBedrock.generateSchemaFiles('1.18.10');
+MinecraftBedrock.generateSchemaFiles(version);
 
 process.kill(0);
