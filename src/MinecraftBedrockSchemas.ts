@@ -23,7 +23,7 @@ class MinecraftBedrockSchemas {
   }
 
   public generateSchemaFiles(saveTo: string): void {
-    console.log(`${chalk.bold.magenta(`[${this.version}]`)} Generating schemas...`);
+    console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating schemas...`);
 
     if (!fs.existsSync(saveTo)) {
       fs.mkdirSync(`${saveTo}/${this.version}`, { recursive: true });
@@ -47,10 +47,12 @@ class MinecraftBedrockSchemas {
         { encoding: 'utf-8' }
       );
     }
+
+    console.log(`${chalk.bold.green('✔')} Generated schemas!\n`);
   }
 
   public generateSettingsFile(saveTo: string): void {
-    console.log(`${chalk.bold.magenta(`[${this.version}]`)} Generating VSCode settings...`);
+    console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating VSCode settings...`);
 
     if (!fs.existsSync('saveTo')) {
       fs.mkdirSync(saveTo, { recursive: true });
@@ -63,6 +65,8 @@ class MinecraftBedrockSchemas {
       JSON.stringify({ ['json.schemas']: vscode['json.schemas'] }, null, 2),
       { encoding: 'utf8' }
     );
+
+    console.log(`${chalk.bold.green('✔')} Generated VSCode settings!\n`);
   }
 }
 
