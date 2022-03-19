@@ -26,7 +26,7 @@ class MinecraftBedrock {
   }
 
   /** Generate every Minecraft Bedrock JSON Schemas Files. */
-  public generateSchemaFiles(): void {
+  public generateSchemaFiles(version: string): void {
     console.log(`${chalk.green('✔')} Generating schemas...\n`);
 
     for (const i in this.schemas) {
@@ -42,7 +42,7 @@ class MinecraftBedrock {
       );
 
       fs.writeFileSync(
-        `schemas/${this.schemas[i].schemaName}.schema.json`,
+        `schemas/${version}/${this.schemas[i].schemaName}.schema.json`,
         JSON.stringify(TJS_schema, null, 2),
         { encoding: 'utf-8' }
       );

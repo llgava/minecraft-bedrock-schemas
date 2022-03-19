@@ -4,6 +4,6 @@ import MinecraftBedrock from 'MinecraftBedrock';
 if (!fs.existsSync('schemas')) { fs.mkdirSync('schemas'); }
 
 /* Generates Schemas */
-MinecraftBedrock.generateSchemaFiles();
+MinecraftBedrock.generateSchemaFiles('1.18.10');
 
 process.kill(0);
