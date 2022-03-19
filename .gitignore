@@ -1,7 +1,7 @@
 # Folders
 **/node_modules
 **/__addon__
-
+**/settings.json
 
 # Files
 **/yarn-error.log

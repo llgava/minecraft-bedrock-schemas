@@ -1,0 +1,33 @@
+{
+  "json.schemas": [
+    // Manifests
+    {
+      "fileMatch": [
+        "behavior_packs/*/manifest.json",
+        "development_behavior_packs/*/manifest.json"
+      ],
+
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/manifest.schema.json"
+    },
+
+    // Blocks Behavior
+    {
+      "fileMatch": [
+        "behavior_packs/*/blocks/*.json",
+        "development_behavior_packs/*/blocks/*.json"
+      ],
+
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/blocks_behavior.schema.json"
+    },
+
+    // Items Behavior
+    {
+      "fileMatch": [
+        "behavior_packs/*/items/*.json",
+        "development_behavior_packs/*/items/*.json"
+      ],
+
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/items_behavior.schema.json"
+    }
+  ]
+}
