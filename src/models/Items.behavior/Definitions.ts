@@ -1,5 +1,4 @@
 import { MinecraftCategories } from '../../minecraft/types/MinecraftCategories';
-import { MinecraftCreativeCategories } from '../../minecraft/types/MinecraftCreativeCategories';
 import { Armor } from './Components/Armor';
 import { BlockPlacer } from './Components/BlockPlacer';
 import { Cooldown } from './Components/Cooldown';

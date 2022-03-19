@@ -1,5 +1,5 @@
 {
-  "description": "You need to turn on the Holiday Creator Features Experiment on your World Settings.",
+  "description": "Experimental toggles required: Holiday Creator Features Experiment",
   "type": "object",
   "properties": {
     "format_version": {
@@ -91,10 +91,30 @@
     "Components": {
       "type": "object",
       "properties": {
-        "minecraft:block_light_absorption": {
-          "type": "number"
+        "minecraft:aim_collision": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MinecraftCollision"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "minecraft:block_collision": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MinecraftCollision"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
         },
         "minecraft:block_light_emission": {
+          "type": "number"
+        },
+        "minecraft:block_light_filter": {
           "type": "number"
         },
         "minecraft:breakonpush": {
@@ -107,24 +127,90 @@
           ],
           "type": "string"
         },
+        "minecraft:crafting_table": {
+          "$ref": "#/definitions/CraftingTable"
+        },
+        "minecraft:creative_category": {
+          "enum": [
+            "itemGroup.name.anvil",
+            "itemGroup.name.arrow",
+            "itemGroup.name.axe",
+            "itemGroup.name.banner",
+            "itemGroup.name.banner_pattern",
+            "itemGroup.name.bed",
+            "itemGroup.name.boat",
+            "itemGroup.name.boots",
+            "itemGroup.name.buttons",
+            "itemGroup.name.chalkboard",
+            "itemGroup.name.chest",
+            "itemGroup.name.chestplate",
+            "itemGroup.name.concrete",
+            "itemGroup.name.concretePowder",
+            "itemGroup.name.cookedFood",
+            "itemGroup.name.coral",
+            "itemGroup.name.coral_decorations",
+            "itemGroup.name.crop",
+            "itemGroup.name.door",
+            "itemGroup.name.dye",
+            "itemGroup.name.enchantedBook",
+            "itemGroup.name.fence",
+            "itemGroup.name.fenceGate",
+            "itemGroup.name.firework",
+            "itemGroup.name.fireworkStars",
+            "itemGroup.name.flower",
+            "itemGroup.name.glass",
+            "itemGroup.name.glassPane",
+            "itemGroup.name.glazedTerracotta",
+            "itemGroup.name.grass",
+            "itemGroup.name.helmet",
+            "itemGroup.name.hoe",
+            "itemGroup.name.horseArmor",
+            "itemGroup.name.leaves",
+            "itemGroup.name.leggings",
+            "itemGroup.name.lingeringPotion",
+            "itemGroup.name.log",
+            "itemGroup.name.minecart",
+            "itemGroup.name.miscFood",
+            "itemGroup.name.mobEgg",
+            "itemGroup.name.monsterStoneEgg",
+            "itemGroup.name.mushroom",
+            "itemGroup.name.netherWartBlock",
+            "itemGroup.name.ore",
+            "itemGroup.name.permission",
+            "itemGroup.name.pickaxe",
+            "itemGroup.name.planks",
+            "itemGroup.name.potion",
+            "itemGroup.name.pressurePlate",
+            "itemGroup.name.rail",
+            "itemGroup.name.rawFood",
+            "itemGroup.name.record",
+            "itemGroup.name.sandstone",
+            "itemGroup.name.sapling",
+            "itemGroup.name.seed",
+            "itemGroup.name.shovel",
+            "itemGroup.name.shulkerBox",
+            "itemGroup.name.sign",
+            "itemGroup.name.skull",
+            "itemGroup.name.slab",
+            "itemGroup.name.splashPotion",
+            "itemGroup.name.stainedClay",
+            "itemGroup.name.stairs",
+            "itemGroup.name.stone",
+            "itemGroup.name.stoneBrick",
+            "itemGroup.name.sword",
+            "itemGroup.name.trapdoor",
+            "itemGroup.name.walls",
+            "itemGroup.name.wood",
+            "itemGroup.name.wool",
+            "itemGroup.name.woolCarpet"
+          ],
+          "type": "string"
+        },
         "minecraft:destroy_time": {
           "type": "number"
         },
         "minecraft:display_name": {
           "type": "string"
-        },
-        "minecraft:entity_collision": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Collision"
-            },
-            {
-              "enum": [
-                false
-              ],
-              "type": "boolean"
-            }
-          ]
         },
         "minecraft:explosion_resistance": {
           "type": "number"
@@ -141,6 +227,9 @@
         "minecraft:immovable": {
           "type": "boolean"
         },
+        "minecraft:loot": {
+          "type": "string"
+        },
         "minecraft:map_color": {
           "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
           "type": "string"
@@ -151,19 +240,7 @@
         "minecraft:onlypistonpush": {
           "type": "boolean"
         },
-        "minecraft:pick_collision": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Collision"
-            },
-            {
-              "enum": [
-                false
-              ],
-              "type": "boolean"
-            }
-          ]
-        },
+        "minecraft:part_visibility": {},
         "minecraft:placement_filter": {
           "$ref": "#/definitions/PlacementFilter"
         },
@@ -192,9 +269,7 @@
         "minecraft:ticking": {
           "$ref": "#/definitions/Ticking"
         },
-        "minecraft:unit_cube": {
-          "type": "string"
-        },
+        "minecraft:unit_cube": {},
         "minecraft:unwalkable": {
           "type": "boolean"
         },
@@ -221,7 +296,7 @@
         }
       }
     },
-    "Collision": {
+    "MinecraftCollision": {
       "type": "object",
       "properties": {
         "origin": {
@@ -258,6 +333,20 @@
         }
       }
     },
+    "CraftingTable": {
+      "type": "object",
+      "properties": {
+        "crafting_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "custom_description": {
+          "type": "string"
+        }
+      }
+    },
     "Flammable": {
       "type": "object",
       "properties": {
@@ -271,20 +360,26 @@
     },
     "MaterialInstances": {
       "type": "object",
-      "properties": {
-        "*": {
-          "type": "object",
-          "properties": {
-            "render_method": {
-              "enum": [
-                "alpha_test",
-                "opaque"
-              ],
-              "type": "string"
-            },
-            "texture": {
-              "type": "string"
-            }
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "ambient_occlusion": {
+            "type": "boolean"
+          },
+          "face_dimming": {
+            "type": "boolean"
+          },
+          "render_method": {
+            "enum": [
+              "alpha_test",
+              "blend",
+              "double_sided",
+              "opaque"
+            ],
+            "type": "string"
+          },
+          "texture": {
+            "type": "string"
           }
         }
       }
