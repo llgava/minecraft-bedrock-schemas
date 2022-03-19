@@ -1,5 +1,5 @@
-/** This type is not finished. (last update: 18/03/2022) */
 export type MinecraftSlots =
+  | 'none'
   | 'slot.armor'
   | 'slot.armor.chest'
   | 'slot.armor.feet'
@@ -10,5 +10,6 @@ export type MinecraftSlots =
   | 'slot.hotbar'
   | 'slot.inventory'
   | 'slot.saddle'
+  | 'slot.equippable'
   | 'slot.weapon.mainhand'
   | 'slot.weapond.offhand';
