@@ -1,4 +1,4 @@
-import { MinecraftArmorTextureTypes } from '../../../minecraft/types/MinecraftArmorTextureTypes';
+import { MinecraftArmorTextureTypes } from '@minecraft/types/MinecraftArmorTextureTypes';
 
 export interface Armor {
   protection?: number;

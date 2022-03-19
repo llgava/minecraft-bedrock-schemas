@@ -1,4 +1,4 @@
-import { MinecraftTarget } from '../../../minecraft/MinecraftTarget';
+import { MinecraftTarget } from '@minecraft/MinecraftTarget';
 
 export interface Teleport extends MinecraftTarget {
   avoid_water?: boolean;

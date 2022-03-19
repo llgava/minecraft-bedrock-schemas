@@ -1,4 +1,4 @@
-import { MinecraftSubjects } from '../../../minecraft/types/MinecraftSubjects';
+import { MinecraftSubjects } from '@minecraft/types/MinecraftSubjects';
 
 export interface OnTick {
   on_tick?: {

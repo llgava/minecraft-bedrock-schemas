@@ -1,4 +1,4 @@
-import { MinecraftSlots } from '../../../minecraft/types/MinecraftSlots';
+import { MinecraftSlots } from '@minecraft/types/MinecraftSlots';
 
 export interface Wearable {
   slot?: MinecraftSlots;

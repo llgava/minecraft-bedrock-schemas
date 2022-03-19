@@ -1,5 +1,5 @@
-import { MinecraftTrigger } from '../../../minecraft/MinecraftTrigger';
-import { MinecraftBlocks } from '../../../minecraft/types/MinecraftBlocks';
+import { MinecraftTrigger } from '@minecraft/MinecraftTrigger';
+import { MinecraftBlocks } from '@minecraft/types/MinecraftBlocks';
 
 export interface Digger {
   destroy_speeds?: DestroySpeed[];

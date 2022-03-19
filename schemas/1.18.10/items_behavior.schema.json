@@ -83,7 +83,6 @@
           "$ref": "#/definitions/EntityPlacer"
         },
         "minecraft:food": {
-          "description": "Use my iFood code and get a discount 😀: XJVC4VHSE5",
           "$ref": "#/definitions/Food"
         },
         "minecraft:fuel": {
@@ -131,20 +130,23 @@
           "type": "number"
         },
         "texture_type": {
-          "enum": [
-            "chain",
-            "diamond",
-            "elytra",
-            "gold",
-            "iron",
-            "leather",
-            "netherite",
-            "none",
-            "turtle"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftArmorTextureTypes"
         }
       }
+    },
+    "MinecraftArmorTextureTypes": {
+      "enum": [
+        "chain",
+        "diamond",
+        "elytra",
+        "gold",
+        "iron",
+        "leather",
+        "netherite",
+        "none",
+        "turtle"
+      ],
+      "type": "string"
     },
     "BlockPlacer": {
       "type": "object",
@@ -930,19 +932,22 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
+    },
+    "MinecraftSubjects": {
+      "enum": [
+        "block",
+        "damager",
+        "item",
+        "other",
+        "parent",
+        "player",
+        "self",
+        "target"
+      ],
+      "type": "string"
     },
     "DisplayName": {
       "type": "object",
@@ -975,27 +980,30 @@
       "type": "object",
       "properties": {
         "color": {
-          "enum": [
-            "black",
-            "blue",
-            "brown",
-            "cyan",
-            "gray",
-            "green",
-            "light_blue",
-            "light_gray",
-            "lime",
-            "magenta",
-            "orange",
-            "pink",
-            "purple",
-            "red",
-            "white",
-            "yellow"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftDyeColors"
         }
       }
+    },
+    "MinecraftDyeColors": {
+      "enum": [
+        "black",
+        "blue",
+        "brown",
+        "cyan",
+        "gray",
+        "green",
+        "light_blue",
+        "light_gray",
+        "lime",
+        "magenta",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "white",
+        "yellow"
+      ],
+      "type": "string"
     },
     "EntityPlacer": {
       "type": "object",
@@ -2523,17 +2531,7 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -4963,25 +4961,28 @@
       "type": "object",
       "properties": {
         "slot": {
-          "enum": [
-            "none",
-            "slot.armor",
-            "slot.armor.chest",
-            "slot.armor.feet",
-            "slot.armor.head",
-            "slot.armor.legs",
-            "slot.chest",
-            "slot.enderchest",
-            "slot.equippable",
-            "slot.hotbar",
-            "slot.inventory",
-            "slot.saddle",
-            "slot.weapon.mainhand",
-            "slot.weapond.offhand"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSlots"
         }
       }
+    },
+    "MinecraftSlots": {
+      "enum": [
+        "none",
+        "slot.armor",
+        "slot.armor.chest",
+        "slot.armor.feet",
+        "slot.armor.head",
+        "slot.armor.legs",
+        "slot.chest",
+        "slot.enderchest",
+        "slot.equippable",
+        "slot.hotbar",
+        "slot.inventory",
+        "slot.saddle",
+        "slot.weapon.mainhand",
+        "slot.weapond.offhand"
+      ],
+      "type": "string"
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"

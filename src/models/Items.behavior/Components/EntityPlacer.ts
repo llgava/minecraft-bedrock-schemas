@@ -1,5 +1,5 @@
-import { MinecraftBlocks } from '../../../minecraft/types/MinecraftBlocks';
-import { MinecraftEntities } from '../../../minecraft/types/MinecraftEntities';
+import { MinecraftBlocks } from '@minecraft/types/MinecraftBlocks';
+import { MinecraftEntities } from '@minecraft/types/MinecraftEntities';
 
 export interface EntityPlacer {
   dispense_on?: string[] | MinecraftBlocks[];

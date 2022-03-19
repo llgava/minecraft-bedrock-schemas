@@ -29,21 +29,14 @@ class MinecraftBedrockSchemas {
       fs.mkdirSync(`${saveTo}/${this.version}`, { recursive: true });
     }
 
-    for (const i in this.schemas) {
-      const TJS_program: TJS.Program = TJS.getProgramFromFiles(
-        [path.resolve(this.schemas[i].path)],
-        { strictNullChecks: true }
-      );
 
-      const TJS_schema: TJS.Definition = TJS.generateSchema(
-        TJS_program,
-        this.schemas[i].name,
-        { required: true }
-      );
+    for (const i in this.schemas) {
+      const program = TJS.programFromConfig('./tsconfig.json', [path.resolve(this.schemas[i].path)]);
+      const schema = TJS.generateSchema(program, this.schemas[i].name, { required: true });
 
       fs.writeFileSync(
         `${saveTo}/${this.version}/${this.schemas[i].fileName}.schema.json`,
-        JSON.stringify(TJS_schema, null, 2),
+        JSON.stringify(schema, null, 2),
         { encoding: 'utf-8' }
       );
     }

@@ -1,4 +1,4 @@
-import { MinecraftEntities } from '../../../minecraft/types/MinecraftEntities';
+import { MinecraftEntities } from '@minecraft/types/MinecraftEntities';
 
 export interface Projectile {
   projectile_entity?: MinecraftEntities | string;

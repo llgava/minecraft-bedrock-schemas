@@ -1,5 +1,4 @@
 {
-  "description": "Experimental toggles required: Holiday Creator Features Experiment",
   "type": "object",
   "properties": {
     "format_version": {
@@ -91,26 +90,6 @@
     "Components": {
       "type": "object",
       "properties": {
-        "minecraft:aim_collision": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/MinecraftCollision"
-            },
-            {
-              "type": "boolean"
-            }
-          ]
-        },
-        "minecraft:block_collision": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/MinecraftCollision"
-            },
-            {
-              "type": "boolean"
-            }
-          ]
-        },
         "minecraft:block_light_emission": {
           "type": "number"
         },
@@ -120,97 +99,14 @@
         "minecraft:breakonpush": {
           "type": "boolean"
         },
-        "minecraft:breathability": {
-          "enum": [
-            "air",
-            "solid"
-          ],
-          "type": "string"
-        },
         "minecraft:crafting_table": {
           "$ref": "#/definitions/CraftingTable"
         },
         "minecraft:creative_category": {
-          "enum": [
-            "itemGroup.name.anvil",
-            "itemGroup.name.arrow",
-            "itemGroup.name.axe",
-            "itemGroup.name.banner",
-            "itemGroup.name.banner_pattern",
-            "itemGroup.name.bed",
-            "itemGroup.name.boat",
-            "itemGroup.name.boots",
-            "itemGroup.name.buttons",
-            "itemGroup.name.chalkboard",
-            "itemGroup.name.chest",
-            "itemGroup.name.chestplate",
-            "itemGroup.name.concrete",
-            "itemGroup.name.concretePowder",
-            "itemGroup.name.cookedFood",
-            "itemGroup.name.coral",
-            "itemGroup.name.coral_decorations",
-            "itemGroup.name.crop",
-            "itemGroup.name.door",
-            "itemGroup.name.dye",
-            "itemGroup.name.enchantedBook",
-            "itemGroup.name.fence",
-            "itemGroup.name.fenceGate",
-            "itemGroup.name.firework",
-            "itemGroup.name.fireworkStars",
-            "itemGroup.name.flower",
-            "itemGroup.name.glass",
-            "itemGroup.name.glassPane",
-            "itemGroup.name.glazedTerracotta",
-            "itemGroup.name.grass",
-            "itemGroup.name.helmet",
-            "itemGroup.name.hoe",
-            "itemGroup.name.horseArmor",
-            "itemGroup.name.leaves",
-            "itemGroup.name.leggings",
-            "itemGroup.name.lingeringPotion",
-            "itemGroup.name.log",
-            "itemGroup.name.minecart",
-            "itemGroup.name.miscFood",
-            "itemGroup.name.mobEgg",
-            "itemGroup.name.monsterStoneEgg",
-            "itemGroup.name.mushroom",
-            "itemGroup.name.netherWartBlock",
-            "itemGroup.name.ore",
-            "itemGroup.name.permission",
-            "itemGroup.name.pickaxe",
-            "itemGroup.name.planks",
-            "itemGroup.name.potion",
-            "itemGroup.name.pressurePlate",
-            "itemGroup.name.rail",
-            "itemGroup.name.rawFood",
-            "itemGroup.name.record",
-            "itemGroup.name.sandstone",
-            "itemGroup.name.sapling",
-            "itemGroup.name.seed",
-            "itemGroup.name.shovel",
-            "itemGroup.name.shulkerBox",
-            "itemGroup.name.sign",
-            "itemGroup.name.skull",
-            "itemGroup.name.slab",
-            "itemGroup.name.splashPotion",
-            "itemGroup.name.stainedClay",
-            "itemGroup.name.stairs",
-            "itemGroup.name.stone",
-            "itemGroup.name.stoneBrick",
-            "itemGroup.name.sword",
-            "itemGroup.name.trapdoor",
-            "itemGroup.name.walls",
-            "itemGroup.name.wood",
-            "itemGroup.name.wool",
-            "itemGroup.name.woolCarpet"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftCreativeCategories"
         },
         "minecraft:destroy_time": {
           "type": "number"
-        },
-        "minecraft:display_name": {
-          "type": "string"
         },
         "minecraft:explosion_resistance": {
           "type": "number"
@@ -220,9 +116,6 @@
         },
         "minecraft:friction": {
           "type": "number"
-        },
-        "minecraft:geometry": {
-          "type": "string"
         },
         "minecraft:immovable": {
           "type": "boolean"
@@ -234,13 +127,9 @@
           "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
           "type": "string"
         },
-        "minecraft:material_instances": {
-          "$ref": "#/definitions/MaterialInstances"
-        },
         "minecraft:onlypistonpush": {
           "type": "boolean"
         },
-        "minecraft:part_visibility": {},
         "minecraft:placement_filter": {
           "$ref": "#/definitions/PlacementFilter"
         },
@@ -269,7 +158,6 @@
         "minecraft:ticking": {
           "$ref": "#/definitions/Ticking"
         },
-        "minecraft:unit_cube": {},
         "minecraft:unwalkable": {
           "type": "boolean"
         },
@@ -293,43 +181,54 @@
         },
         "minecraft:on_step_on": {
           "$ref": "#/definitions/MinecraftTriggerConditioning"
-        }
-      }
-    },
-    "MinecraftCollision": {
-      "type": "object",
-      "properties": {
-        "origin": {
-          "type": "array",
-          "items": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "number"
-            }
-          ],
-          "minItems": 3,
-          "maxItems": 3
         },
-        "size": {
-          "type": "array",
-          "items": [
+        "minecraft:aim_collision": {
+          "description": "Experimental toggles required: Holiday Creator Features Experiment",
+          "anyOf": [
             {
-              "type": "number"
+              "$ref": "#/definitions/MinecraftCollision"
             },
             {
-              "type": "number"
-            },
-            {
-              "type": "number"
+              "type": "boolean"
             }
+          ]
+        },
+        "minecraft:block_collision": {
+          "description": "Experimental toggles required: Holiday Creator Features Experiment",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/MinecraftCollision"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "minecraft:breathability": {
+          "description": "Experimental toggles required: Holiday Creator Features Experiment",
+          "enum": [
+            "air",
+            "solid"
           ],
-          "minItems": 3,
-          "maxItems": 3
+          "type": "string"
+        },
+        "minecraft:display_name": {
+          "description": "Experimental toggles required: Holiday Creator Features Experiment",
+          "type": "string"
+        },
+        "minecraft:geometry": {
+          "description": "Experimental toggles required: Holiday Creator Features Experiment",
+          "type": "string"
+        },
+        "minecraft:material_instances": {
+          "$ref": "#/definitions/MaterialInstances",
+          "description": "Experimental toggles required: Holiday Creator Features Experiment"
+        },
+        "minecraft:part_visibility": {
+          "description": "Experimental toggles required: Upcoming Creator Featurest"
+        },
+        "minecraft:unit_cube": {
+          "description": "Experimental toggles required: Holiday Creator Features Experiment"
         }
       }
     },
@@ -347,6 +246,82 @@
         }
       }
     },
+    "MinecraftCreativeCategories": {
+      "enum": [
+        "itemGroup.name.anvil",
+        "itemGroup.name.arrow",
+        "itemGroup.name.axe",
+        "itemGroup.name.banner",
+        "itemGroup.name.banner_pattern",
+        "itemGroup.name.bed",
+        "itemGroup.name.boat",
+        "itemGroup.name.boots",
+        "itemGroup.name.buttons",
+        "itemGroup.name.chalkboard",
+        "itemGroup.name.chest",
+        "itemGroup.name.chestplate",
+        "itemGroup.name.concrete",
+        "itemGroup.name.concretePowder",
+        "itemGroup.name.cookedFood",
+        "itemGroup.name.coral",
+        "itemGroup.name.coral_decorations",
+        "itemGroup.name.crop",
+        "itemGroup.name.door",
+        "itemGroup.name.dye",
+        "itemGroup.name.enchantedBook",
+        "itemGroup.name.fence",
+        "itemGroup.name.fenceGate",
+        "itemGroup.name.firework",
+        "itemGroup.name.fireworkStars",
+        "itemGroup.name.flower",
+        "itemGroup.name.glass",
+        "itemGroup.name.glassPane",
+        "itemGroup.name.glazedTerracotta",
+        "itemGroup.name.grass",
+        "itemGroup.name.helmet",
+        "itemGroup.name.hoe",
+        "itemGroup.name.horseArmor",
+        "itemGroup.name.leaves",
+        "itemGroup.name.leggings",
+        "itemGroup.name.lingeringPotion",
+        "itemGroup.name.log",
+        "itemGroup.name.minecart",
+        "itemGroup.name.miscFood",
+        "itemGroup.name.mobEgg",
+        "itemGroup.name.monsterStoneEgg",
+        "itemGroup.name.mushroom",
+        "itemGroup.name.netherWartBlock",
+        "itemGroup.name.ore",
+        "itemGroup.name.permission",
+        "itemGroup.name.pickaxe",
+        "itemGroup.name.planks",
+        "itemGroup.name.potion",
+        "itemGroup.name.pressurePlate",
+        "itemGroup.name.rail",
+        "itemGroup.name.rawFood",
+        "itemGroup.name.record",
+        "itemGroup.name.sandstone",
+        "itemGroup.name.sapling",
+        "itemGroup.name.seed",
+        "itemGroup.name.shovel",
+        "itemGroup.name.shulkerBox",
+        "itemGroup.name.sign",
+        "itemGroup.name.skull",
+        "itemGroup.name.slab",
+        "itemGroup.name.splashPotion",
+        "itemGroup.name.stainedClay",
+        "itemGroup.name.stairs",
+        "itemGroup.name.stone",
+        "itemGroup.name.stoneBrick",
+        "itemGroup.name.sword",
+        "itemGroup.name.trapdoor",
+        "itemGroup.name.walls",
+        "itemGroup.name.wood",
+        "itemGroup.name.wool",
+        "itemGroup.name.woolCarpet"
+      ],
+      "type": "string"
+    },
     "Flammable": {
       "type": "object",
       "properties": {
@@ -358,47 +333,31 @@
         }
       }
     },
-    "MaterialInstances": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "ambient_occlusion": {
-            "type": "boolean"
-          },
-          "face_dimming": {
-            "type": "boolean"
-          },
-          "render_method": {
-            "enum": [
-              "alpha_test",
-              "blend",
-              "double_sided",
-              "opaque"
-            ],
-            "type": "string"
-          },
-          "texture": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "PlacementFilter": {
       "type": "object",
       "properties": {
         "allowed_faces": {
-          "enum": [
-            "all",
-            "down",
-            "east",
-            "north",
-            "side",
-            "south",
-            "up",
-            "west"
-          ],
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "all",
+                  "down",
+                  "east",
+                  "north",
+                  "side",
+                  "south",
+                  "up",
+                  "west"
+                ],
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "block_filter": {
           "anyOf": [
@@ -1138,17 +1097,7 @@
               "type": "string"
             },
             "target": {
-              "enum": [
-                "block",
-                "damager",
-                "item",
-                "other",
-                "parent",
-                "player",
-                "self",
-                "target"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/MinecraftSubjects"
             },
             "range": {
               "type": "array",
@@ -1166,6 +1115,19 @@
           }
         }
       }
+    },
+    "MinecraftSubjects": {
+      "enum": [
+        "block",
+        "damager",
+        "item",
+        "other",
+        "parent",
+        "player",
+        "self",
+        "target"
+      ],
+      "type": "string"
     },
     "Ticking": {
       "type": "object",
@@ -1196,17 +1158,7 @@
               "type": "string"
             },
             "target": {
-              "enum": [
-                "block",
-                "damager",
-                "item",
-                "other",
-                "parent",
-                "player",
-                "self",
-                "target"
-              ],
-              "type": "string"
+              "$ref": "#/definitions/MinecraftSubjects"
             },
             "range": {
               "type": "array",
@@ -1238,17 +1190,7 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       },
       "required": [
@@ -1265,17 +1207,70 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
+          "$ref": "#/definitions/MinecraftSubjects"
+        }
+      }
+    },
+    "MinecraftCollision": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
           ],
-          "type": "string"
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "size": {
+          "type": "array",
+          "items": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "MaterialInstances": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "ambient_occlusion": {
+            "type": "boolean"
+          },
+          "face_dimming": {
+            "type": "boolean"
+          },
+          "render_method": {
+            "enum": [
+              "alpha_test",
+              "blend",
+              "double_sided",
+              "opaque"
+            ],
+            "type": "string"
+          },
+          "texture": {
+            "type": "string"
+          }
         }
       }
     },
@@ -1354,17 +1349,7 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -1375,23 +1360,13 @@
           "type": "number"
         },
         "type": {
+          "type": "string",
           "enum": [
             "all"
-          ],
-          "type": "string"
+          ]
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -1402,17 +1377,7 @@
       "type": "object",
       "properties": {
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -1426,17 +1391,7 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -1447,17 +1402,7 @@
           "type": "string"
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -1479,17 +1424,7 @@
           }
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },
@@ -1581,17 +1516,7 @@
           "maxItems": 3
         },
         "target": {
-          "enum": [
-            "block",
-            "damager",
-            "item",
-            "other",
-            "parent",
-            "player",
-            "self",
-            "target"
-          ],
-          "type": "string"
+          "$ref": "#/definitions/MinecraftSubjects"
         }
       }
     },

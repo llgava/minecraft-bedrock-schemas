@@ -1,4 +1,4 @@
-import { MinecraftTriggerConditioning } from '../../../minecraft/MinecraftTriggerConditioning';
+import { MinecraftTriggerConditioning } from '@minecraft/MinecraftTriggerConditioning';
 
 export interface Weapon {
   on_hit_block?: MinecraftTriggerConditioning;

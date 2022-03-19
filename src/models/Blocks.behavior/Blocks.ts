@@ -1,6 +1,5 @@
 import { BlocksBehavior } from './BlocksBehavior';
 
-/** Experimental toggles required: Holiday Creator Features Experiment */
 export class Blocks {
   public format_version: string | '1.18.0';
   public 'minecraft:block': BlocksBehavior;

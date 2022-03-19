@@ -1,7 +1,8 @@
-import { MinecraftCondition } from '../../minecraft/MinecraftCondition';
-import { MinecraftTarget } from '../../minecraft/MinecraftTarget';
-import { MinecraftTriggerConditioning } from '../../minecraft/MinecraftTriggerConditioning';
-import { MinecraftCollision } from '../../minecraft/MinecraftCollision';
+import { MinecraftCondition } from '@minecraft/MinecraftCondition';
+import { MinecraftTarget } from '@minecraft/MinecraftTarget';
+import { MinecraftTriggerConditioning } from '@minecraft/MinecraftTriggerConditioning';
+import { MinecraftCollision } from '@minecraft/MinecraftCollision';
+import { MinecraftCreativeCategories } from '@minecraft/types/MinecraftCreativeCategories';
 import { Flammable } from './Components/Flammable';
 import { MaterialInstances } from './Components/MaterialInstances';
 import { OnFallOn } from './Components/OnFallOn';
@@ -21,7 +22,6 @@ import { SpawnLoot } from './EventsReponse/SpawnLoot';
 import { Teleport } from './EventsReponse/Teleport';
 import { TransformItem } from './EventsReponse/TransformItem';
 import { CraftingTable } from './Components/CraftingTable';
-import { MinecraftCreativeCategories } from '../../minecraft/types/MinecraftCreativeCategories';
 
 export interface Description {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
@@ -35,38 +35,27 @@ export interface Permutations extends MinecraftCondition {
   components?: Components;
 }
 
-export interface Components {
-  ['minecraft:aim_collision']?: boolean | MinecraftCollision;
-  ['minecraft:block_collision']?: boolean | MinecraftCollision;
+export interface Components extends ExperiementalComponents {
   ['minecraft:block_light_emission']?: number;
   ['minecraft:block_light_filter']?: number;
   ['minecraft:breakonpush']?: boolean;
-  ['minecraft:breathability']?: 'solid' | 'air';
   ['minecraft:crafting_table']?: CraftingTable;
   ['minecraft:creative_category']?: MinecraftCreativeCategories;
   ['minecraft:destroy_time']?: number;
-  ['minecraft:display_name']?: string;
   ['minecraft:explosion_resistance']?: number;
-
   ['minecraft:flammable']?: Flammable;
   ['minecraft:friction']?: number;
-  ['minecraft:geometry']?: string;
   ['minecraft:immovable']?: boolean;
   ['minecraft:loot']?: string;
 
   /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
   ['minecraft:map_color']?: string;
-
-  ['minecraft:material_instances']?: MaterialInstances;
   ['minecraft:onlypistonpush']?: boolean;
-
-  ['minecraft:part_visibility']?: any;
   ['minecraft:placement_filter']?: PlacementFilter;
   ['minecraft:preventsjumping']?: boolean;
   ['minecraft:random_ticking']?: OnTick;
   ['minecraft:rotation']?: [number, number, number];
   ['minecraft:ticking']?: Ticking;
-  ['minecraft:unit_cube']?: any;
   ['minecraft:unwalkable']?: boolean;
 
   /* Trigger Components */
@@ -79,6 +68,25 @@ export interface Components {
   ['minecraft:on_step_on']?: MinecraftTriggerConditioning;
 }
 
+export interface ExperiementalComponents {
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:aim_collision']?: boolean | MinecraftCollision;
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:block_collision']?: boolean | MinecraftCollision;
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:breathability']?: 'solid' | 'air';
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:display_name']?: string;
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:geometry']?: string;
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:material_instances']?: MaterialInstances;
+  /** Experimental toggles required: Upcoming Creator Featurest */
+  ['minecraft:part_visibility']?: any;
+  /** Experimental toggles required: Holiday Creator Features Experiment */
+  ['minecraft:unit_cube']?: any;
+}
+
 export interface Events {
   [property_name: string]: EventsReponse;
 }
@@ -87,17 +95,6 @@ export interface Events {
 interface Properties {
   [property_name: string]: number[] | boolean[];
 }
-
-/* Block Components */
-export type BlockFaces =
-  | 'up'
-  | 'down'
-  | 'north'
-  | 'south'
-  | 'east'
-  | 'west'
-  | 'side'
-  | 'all';
 
 interface EventsSequence {
   sequence?: EventsReponse[];

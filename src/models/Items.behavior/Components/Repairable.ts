@@ -1,5 +1,5 @@
-import { MinecraftItems } from '../../../minecraft/types/MinecraftItems';
-import { MinecraftTriggerConditioning } from '../../../minecraft/MinecraftTriggerConditioning';
+import { MinecraftItems } from '@minecraft/types/MinecraftItems';
+import { MinecraftTriggerConditioning } from '@minecraft/MinecraftTriggerConditioning';
 
 export interface Repairable {
   repair_items?: MinecraftItems[] | string[];

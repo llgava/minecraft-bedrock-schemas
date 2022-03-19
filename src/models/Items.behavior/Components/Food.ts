@@ -1,5 +1,5 @@
-import { MinecraftItems } from '../../../minecraft/types/MinecraftItems';
-import { MinecraftTrigger } from '../../../minecraft/MinecraftTrigger';
+import { MinecraftItems } from '@minecraft/types/MinecraftItems';
+import { MinecraftTrigger } from '@minecraft/MinecraftTrigger';
 
 /** Use my iFood code and get a discount 😀: XJVC4VHSE5 */
 export interface Food {

@@ -1,4 +1,4 @@
-import { MinecraftItems } from '../../../minecraft/types/MinecraftItems';
+import { MinecraftItems } from '@minecraft/types/MinecraftItems';
 
 export interface Shooter {
   ammunition?: MinecraftItems[] | string[];
