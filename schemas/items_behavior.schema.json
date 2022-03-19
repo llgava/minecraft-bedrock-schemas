@@ -703,24 +703,23 @@
     "Weapon": {
       "type": "object",
       "properties": {
+        "on_hit_block": {
+          "$ref": "#/definitions/MinecraftTriggerConditioning"
+        },
         "on_hurt_entity": {
           "$ref": "#/definitions/MinecraftTriggerConditioning"
         },
         "on_not_hurt_entity": {
           "$ref": "#/definitions/MinecraftTriggerConditioning"
-        },
-        "MinecraftTriggerConditioning": {}
-      },
-      "required": [
-        "MinecraftTriggerConditioning"
-      ]
+        }
+      }
     },
     "Wearable": {
       "type": "object",
       "properties": {
         "slot": {
-          "description": "This type is not finished. (last update: 18/03/2022)",
           "enum": [
+            "none",
             "slot.armor",
             "slot.armor.chest",
             "slot.armor.feet",
@@ -728,6 +727,7 @@
             "slot.armor.legs",
             "slot.chest",
             "slot.enderchest",
+            "slot.equippable",
             "slot.hotbar",
             "slot.inventory",
             "slot.saddle",

@@ -1,7 +1,7 @@
 import { MinecraftCondition } from '../../minecraft/MinecraftCondition';
 import { MinecraftTarget } from '../../minecraft/MinecraftTarget';
 import { MinecraftTriggerConditioning } from '../../minecraft/MinecraftTriggerConditioning';
-import { Collision } from './Components/Collision';
+import { MinecraftCollision } from '../../minecraft/MinecraftCollision';
 import { Flammable } from './Components/Flammable';
 import { MaterialInstances } from './Components/MaterialInstances';
 import { OnFallOn } from './Components/OnFallOn';
@@ -20,6 +20,8 @@ import { SetBlockProperty } from './EventsReponse/SetBlockProperty';
 import { SpawnLoot } from './EventsReponse/SpawnLoot';
 import { Teleport } from './EventsReponse/Teleport';
 import { TransformItem } from './EventsReponse/TransformItem';
+import { CraftingTable } from './Components/CraftingTable';
+import { MinecraftCreativeCategories } from '../../minecraft/types/MinecraftCreativeCategories';
 
 export interface Description {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
@@ -34,31 +36,37 @@ export interface Permutations extends MinecraftCondition {
 }
 
 export interface Components {
-  ['minecraft:block_light_absorption']?: number;
+  ['minecraft:aim_collision']?: boolean | MinecraftCollision;
+  ['minecraft:block_collision']?: boolean | MinecraftCollision;
   ['minecraft:block_light_emission']?: number;
+  ['minecraft:block_light_filter']?: number;
   ['minecraft:breakonpush']?: boolean;
   ['minecraft:breathability']?: 'solid' | 'air';
+  ['minecraft:crafting_table']?: CraftingTable;
+  ['minecraft:creative_category']?: MinecraftCreativeCategories;
   ['minecraft:destroy_time']?: number;
   ['minecraft:display_name']?: string;
-  ['minecraft:entity_collision']?: false | Collision;
   ['minecraft:explosion_resistance']?: number;
+
   ['minecraft:flammable']?: Flammable;
   ['minecraft:friction']?: number;
   ['minecraft:geometry']?: string;
   ['minecraft:immovable']?: boolean;
+  ['minecraft:loot']?: string;
 
   /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
   ['minecraft:map_color']?: string;
 
   ['minecraft:material_instances']?: MaterialInstances;
   ['minecraft:onlypistonpush']?: boolean;
-  ['minecraft:pick_collision']?: false | Collision;
+
+  ['minecraft:part_visibility']?: any;
   ['minecraft:placement_filter']?: PlacementFilter;
   ['minecraft:preventsjumping']?: boolean;
   ['minecraft:random_ticking']?: OnTick;
   ['minecraft:rotation']?: [number, number, number];
   ['minecraft:ticking']?: Ticking;
-  ['minecraft:unit_cube']?: string;
+  ['minecraft:unit_cube']?: any;
   ['minecraft:unwalkable']?: boolean;
 
   /* Trigger Components */

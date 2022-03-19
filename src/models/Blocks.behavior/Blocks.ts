@@ -1,6 +1,6 @@
 import { BlocksBehavior } from './BlocksBehavior';
 
-/** You need to turn on the Holiday Creator Features Experiment on your World Settings. */
+/** Experimental toggles required: Holiday Creator Features Experiment */
 export class Blocks {
   public format_version: string | '1.18.0';
   public 'minecraft:block': BlocksBehavior;

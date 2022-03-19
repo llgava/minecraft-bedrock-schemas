@@ -1,12 +1,16 @@
 {
   "files.exclude": {
-    "**/.babelrc.js": false,
-    "**/.editorconfig": false,
-    "**/.eslintrc.json": false,
-    "**/tsconfig.json": false,
-    "**/LICENSE": false,
-    "**/.gitignore": false,
-    "**/jest.config.js": false
+    "**/.babelrc.js": true,
+    "**/.github": true,
+    "**/.editorconfig": true,
+    "**/.eslintrc.json": true,
+    "**/tsconfig.json": true,
+    "**/LICENSE": true,
+    "**/.gitignore": true,
+    "**/CHANGELOG.md": true,
+    "**/package.json": true,
+    "**/README.md": true,
+    "**/jest.config.js": true
   },
 
   "json.schemas": [
