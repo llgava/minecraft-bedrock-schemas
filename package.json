@@ -4,29 +4,24 @@
   "main": "./src/index.ts",
   "description": "Minecraft Bedrock JSON Schemas for addons development.",
   "keywords": [
+    "Minecraft Bedrock",
+    "JSON Schemas",
     "JavaScript",
     "TypeScript"
   ],
   "author": "llgava <llgavamt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "gen": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "dev": "clear && ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify scripts/generate-schemas.ts",
     "lint": "clear && yarn eslint . --ext .ts",
     "test": "clear && jest"
   },
-
   "devDependencies": {
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.6",
-    "@babel/node": "^7.14.7",
-    "@babel/preset-env": "^7.14.7",
-    "@babel/preset-typescript": "^7.14.5",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.0.0",
     "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
-    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "ts-jest": "^27.0.5",
     "ts-node-dev": "^1.1.8",
@@ -34,12 +29,10 @@
     "typescript": "^4.3.5",
     "uuid": "^8.3.2"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/llgava/minecraft-schemas.git"
   },
-
   "dependencies": {
     "chalk": "^4.1.1",
     "jest": "^27.1.0",
