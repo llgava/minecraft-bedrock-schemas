@@ -1,7 +1,6 @@
 export type MinecraftFilterTest =
   | 'clock_time'
   | 'distance_to_nearest_player'
-  | 'has_ability'
   | 'has_biome_tag'
   | 'has_component'
   | 'has_container_open'

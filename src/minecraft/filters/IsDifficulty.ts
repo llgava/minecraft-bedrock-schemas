@@ -1,6 +1,7 @@
 import { MinecraftFilterBase } from '../MinecraftFilterBase';
 import { MinecraftDifficulty } from '../types/MinecraftDifficulty';
 
-export interface IsColor extends MinecraftFilterBase {
+export interface IsDifficulty extends MinecraftFilterBase {
+  test?: 'is_difficulty';
   value?: MinecraftDifficulty;
 }
