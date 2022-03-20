@@ -23,6 +23,7 @@ import { Teleport } from './EventsReponse/Teleport';
 import { TransformItem } from './EventsReponse/TransformItem';
 import { CraftingTable } from './Components/CraftingTable';
 
+// Description
 export interface Description {
   /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
@@ -31,11 +32,13 @@ export interface Description {
   properties?: Properties;
 }
 
-export interface Permutations extends MinecraftCondition {
-  components?: Components;
+// Properties
+interface Properties {
+  [property_name: string]: number[] | boolean[];
 }
 
-export interface Components extends ExperiementalComponents {
+// Components
+export interface Components extends ExperimentalComponents {
   ['minecraft:block_light_emission']?: number;
   ['minecraft:block_light_filter']?: number;
   ['minecraft:breakonpush']?: boolean;
@@ -68,7 +71,8 @@ export interface Components extends ExperiementalComponents {
   ['minecraft:on_step_on']?: MinecraftTriggerConditioning;
 }
 
-export interface ExperiementalComponents {
+// Experimental Components
+export interface ExperimentalComponents {
   /** Experimental toggles required: Holiday Creator Features Experiment */
   ['minecraft:aim_collision']?: boolean | MinecraftCollision;
   /** Experimental toggles required: Holiday Creator Features Experiment */
@@ -87,13 +91,14 @@ export interface ExperiementalComponents {
   ['minecraft:unit_cube']?: any;
 }
 
-export interface Events {
-  [property_name: string]: EventsReponse;
+// Permutations
+export interface Permutations extends MinecraftCondition {
+  components?: Components;
 }
 
-/* Block Description */
-interface Properties {
-  [property_name: string]: number[] | boolean[];
+// Events
+export interface Events {
+  [property_name: string]: EventsReponse;
 }
 
 interface EventsSequence {

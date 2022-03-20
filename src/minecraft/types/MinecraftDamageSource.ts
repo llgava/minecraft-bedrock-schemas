@@ -9,6 +9,7 @@ export type MinecraftDamageSource =
   | 'entity_explosion'
   | 'fall'
   | 'falling_block'
+  | 'fatal'
   | 'fire'
   | 'fire_tick'
   | 'fireworks'
