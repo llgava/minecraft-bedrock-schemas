@@ -1,9 +1,9 @@
-import { MinecraftTarget } from '../../../minecraft/MinecraftTarget';
-import { MinecraftDamageSource } from '../../../minecraft/types/MinecraftDamageSource';
-import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
+import { MinecraftTarget } from '@minecraft/MinecraftTarget';
+import { MinecraftDamageSource } from '@minecraft/types/MinecraftDamageSource';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
 
 export interface DamageSensor {
-  triggers?: Triggers[]
+  triggers?: Triggers[];
 }
 
 interface Triggers {

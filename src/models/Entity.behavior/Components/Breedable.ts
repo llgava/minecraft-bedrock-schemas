@@ -1,4 +1,4 @@
-import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
 
 export interface Breedable {
   allow_sitting?: boolean;
@@ -7,7 +7,7 @@ export interface Breedable {
   breed_items?: string[];
   breeds_with?: BreedsWith[];
   causes_pregnancy?: boolean;
-  deny_parents_variant?: DenyParentsVariant
+  deny_parents_variant?: DenyParentsVariant;
   environment_requirements?: EnvironmentRequirements;
   extra_baby_chance?: number;
   inherit_tamed?: boolean;

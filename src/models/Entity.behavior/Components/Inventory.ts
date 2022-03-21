@@ -1,4 +1,4 @@
-import { MinecraftContainer } from '../../../minecraft/types/MinecraftContainers';
+import { MinecraftContainer } from '@minecraft/types/MinecraftContainers';
 
 export interface Inventory {
   additional_slots_per_strength?: number;

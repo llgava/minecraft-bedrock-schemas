@@ -1,4 +1,4 @@
-import { MinecraftDifficulty } from '../../../minecraft/types/MinecraftDifficulty';
+import { MinecraftDifficulty } from '@minecraft/types/MinecraftDifficulty';
 
 export interface AnnotationBreakDoor {
   break_time?: number;

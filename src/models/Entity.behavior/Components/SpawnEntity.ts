@@ -1,7 +1,7 @@
-import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
 
 export interface SpawnEntity {
-  filters?: MinecraftFilters
+  filters?: MinecraftFilters;
   max_wait_time?: number;
   min_wait_time?: number;
   num_to_spawn?: number;

@@ -1,4 +1,4 @@
-import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
 
 export interface HurtOnCondition {
   damage_conditions?: DamageCondition[];

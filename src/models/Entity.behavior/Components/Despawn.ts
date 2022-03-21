@@ -1,4 +1,4 @@
-import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
 export interface Despawn {
   despawn_from_chance?: boolean;
   despawn_from_distance?: DespawnFromDistance;

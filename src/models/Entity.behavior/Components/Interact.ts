@@ -1,5 +1,5 @@
-import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
-import { MinecraftSubjects } from '../../../minecraft/types/MinecraftSubjects';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
+import { MinecraftSubjects } from '@minecraft/types/MinecraftSubjects';
 
 export interface Interact {
   add_items?: AddItems;
@@ -23,7 +23,7 @@ interface AddItems {
 }
 
 interface OnInteract {
-  filters?: MinecraftFilters
+  filters?: MinecraftFilters;
   event?: string;
   target?: MinecraftSubjects;
 }
