@@ -131,7 +131,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:movement.skip']?: Movement;
   ['minecraft:movement.sway']?: MovementSway;
   ['minecraft:nameable']?: Nameable;
-  ['minecraft:navigation.climb']?: Navigation;
+  /* ['minecraft:navigation.climb']?: Navigation;
   ['minecraft:navigation.float']?: Navigation;
   ['minecraft:navigation.fly']?: Navigation;
   ['minecraft:navigation.generic']?: Navigation;
@@ -167,7 +167,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:trail']?: Trail;
   ['minecraft:transformation']?: Transformation;
   ['minecraft:trusting']?: Trusting;
-  ['minecraft:water_movement']?: WaterMovement;
+  ['minecraft:water_movement']?: WaterMovement; */
 }
 
 // Experimental Components
