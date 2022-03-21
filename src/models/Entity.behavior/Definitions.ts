@@ -114,7 +114,7 @@ export interface ComponentGroups {
 }
 
 // Components
-export interface Components extends PropertyComponents {
+export interface Components {
   ['minecraft:addrider']?: Addrider;
   ['minecraft:admire_item']?: AdmireItem;
   ['minecraft:ageable']?: Ageable;
@@ -215,10 +215,8 @@ export interface Components extends PropertyComponents {
   ['minecraft:transformation']?: Transformation;
   ['minecraft:trusting']?: Trusting;
   ['minecraft:water_movement']?: WaterMovement;
-}
 
-// Properties Components
-export interface PropertyComponents extends TriggersComponents {
+  // Property Components
   ['minecraft:ambient_sound_interval']?: AmbientSoundInterval;
   ['minecraft:can_climb']?: any;
   ['minecraft:can_fly']?: any;
@@ -257,11 +255,8 @@ export interface PropertyComponents extends TriggersComponents {
   ['minecraft:type_family']?: TypeFamily;
   ['minecraft:variant']?: Variant;
   ['minecraft:walk_animation_speed']?: WalkAnimationSpeed;
-}
 
-// TriggersComponents
-export interface TriggersComponents {
-
+  // Trigger Components
 }
 
 // Events

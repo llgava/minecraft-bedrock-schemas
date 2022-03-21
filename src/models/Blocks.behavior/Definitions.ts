@@ -61,7 +61,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:ticking']?: Ticking;
   ['minecraft:unwalkable']?: boolean;
 
-  /* Trigger Components */
+  // Trigger Components
   ['minecraft:on_fall_on']?: OnFallOn;
   ['minecraft:on_interact']?: MinecraftTriggerConditioning;
   ['minecraft:on_placed']?: MinecraftTriggerConditioning;
