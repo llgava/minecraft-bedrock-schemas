@@ -49,6 +49,35 @@ import { Movement } from './Components/Movement';
 import { MovementJump } from './Components/MovementJump';
 import { MovementSway } from './Components/MovementSway';
 import { Nameable } from './Components/Nameable';
+import { Navigation } from './Components/Navigation';
+import { Peek } from './Components/Peek';
+import { Physics } from './Components/Physics';
+import { PreferredPath } from './Components/PreferredPath';
+import { Projectile } from './Components/Projectile';
+import { Pushable } from './Components/Pushable';
+import { RaidTrigger } from './Components/RaidTrigger';
+import { RailMovement } from './Components/RailMovement';
+import { RailSensor } from './Components/RailSensor';
+import { RavagerBlocked } from './Components/RavagerBlocked';
+import { Rideable } from './Components/Rideable';
+import { ScaleByAge } from './Components/ScaleByAge';
+import { Scheduler } from './Components/Scheduler';
+import { Shareables } from './Components/Shareables';
+import { Shooter } from './Components/Shooter';
+import { Sittable } from './Components/Sittable';
+import { SpawnEntity } from './Components/SpawnEntity';
+import { Strength } from './Components/Strength';
+import { Tameable } from './Components/Tameable';
+import { TameMount } from './Components/TameMount';
+import { TargetNearbySensor } from './Components/TargetNearbySensor';
+import { Teleport } from './Components/Teleport';
+import { TickWorld } from './Components/TickWorld';
+import { Timer } from './Components/Timer';
+import { TradeTable } from './Components/TradeTable';
+import { Trail } from './Components/Trail';
+import { Transformation } from './Components/Transformation';
+import { Trusting } from './Components/Trusting';
+import { WaterMovement } from './Components/WaterMovement';
 
 // Description
 export interface Description {
@@ -131,7 +160,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:movement.skip']?: Movement;
   ['minecraft:movement.sway']?: MovementSway;
   ['minecraft:nameable']?: Nameable;
-  /* ['minecraft:navigation.climb']?: Navigation;
+  ['minecraft:navigation.climb']?: Navigation;
   ['minecraft:navigation.float']?: Navigation;
   ['minecraft:navigation.fly']?: Navigation;
   ['minecraft:navigation.generic']?: Navigation;
@@ -167,7 +196,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:trail']?: Trail;
   ['minecraft:transformation']?: Transformation;
   ['minecraft:trusting']?: Trusting;
-  ['minecraft:water_movement']?: WaterMovement; */
+  ['minecraft:water_movement']?: WaterMovement;
 }
 
 // Experimental Components
