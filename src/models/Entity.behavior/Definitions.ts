@@ -29,6 +29,26 @@ import { Equippable } from './Components/Equippable';
 import { ExperienceReward } from './Components/ExperienceReward';
 import { Explode } from './Components/Explode';
 import { Flocking } from './Components/Flocking';
+import { Genetics } from './Components/Genetics';
+import { Giveable } from './Components/Giveable';
+import { GroupSize } from './Components/GroupSize';
+import { GrowsCrop } from './Components/GrowsCrop';
+import { Healable } from './Components/Healable';
+import { Home } from './Components/Home';
+import { HurtOnCondition } from './Components/HurtOnCondition';
+import { InsideBlockNotifier } from './Components/InsideBlockNotifier';
+import { Insomnia } from './Components/Insomnia';
+import { InstantDespawn } from './Components/InstantDespawn';
+import { Interact } from './Components/Interact';
+import { Inventory } from './Components/Inventory';
+import { JumpStatic } from './Components/JumpStatic';
+import { Leashable } from './Components/Leashable';
+import { LookAt } from './Components/LookAt';
+import { MobEffect } from './Components/MobEffect';
+import { Movement } from './Components/Movement';
+import { MovementJump } from './Components/MovementJump';
+import { MovementSway } from './Components/MovementSway';
+import { Nameable } from './Components/Nameable';
 
 // Description
 export interface Description {
@@ -83,7 +103,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:experience_reward']?: ExperienceReward;
   ['minecraft:explode']?: Explode;
   ['minecraft:flocking']?: Flocking;
-  /* ['minecraft:genetics']?: Genetics;
+  ['minecraft:genetics']?: Genetics;
   ['minecraft:giveable']?: Giveable;
   ['minecraft:group_size']?: GroupSize;
   ['minecraft:grows_crop']?: GrowsCrop;
@@ -96,10 +116,10 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:interact']?: Interact;
   ['minecraft:inventory']?: Inventory;
   ['minecraft:item_hopper']?: any;
-  ['minecraft:jump.dynamic']?: JumpDynamic;
+  ['minecraft:jump.dynamic']?: any;
   ['minecraft:jump.static']?: JumpStatic;
   ['minecraft:leashable']?: Leashable;
-  ['minecraft:lookat']?: Lookat;
+  ['minecraft:lookat']?: LookAt;
   ['minecraft:managed_wandering_trader']?: any;
   ['minecraft:mob_effect']?: MobEffect;
   ['minecraft:movement.amphibious']?: Movement;
@@ -147,7 +167,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:trail']?: Trail;
   ['minecraft:transformation']?: Transformation;
   ['minecraft:trusting']?: Trusting;
-  ['minecraft:water_movement']?: WaterMovement; */
+  ['minecraft:water_movement']?: WaterMovement;
 }
 
 // Experimental Components

@@ -1,4 +1,3 @@
-import { MinecraftFiltersOf } from '../../../minecraft/MinecraftFilterOf';
 import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
 
 export interface Breedable {
@@ -12,7 +11,7 @@ export interface Breedable {
   environment_requirements?: EnvironmentRequirements;
   extra_baby_chance?: number;
   inherit_tamed?: boolean;
-  love_filters?: MinecraftFiltersOf | MinecraftFilters;
+  love_filters?: MinecraftFilters;
   mutation_factor?: MutationFactor;
   require_full_health?: boolean;
   require_tame?: boolean;

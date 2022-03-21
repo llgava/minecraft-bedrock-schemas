@@ -2,9 +2,9 @@ name: Tests 🧪
 
 on:
   push:
-    branches: [master, indev]
+    branches: [master]
   pull_request:
-    branches: [master, indev]
+    branches: [master]
 
 jobs:
   build:

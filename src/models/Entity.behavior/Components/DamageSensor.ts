@@ -1,4 +1,3 @@
-import { MinecraftFiltersOf } from '../../../minecraft/MinecraftFilterOf';
 import { MinecraftTarget } from '../../../minecraft/MinecraftTarget';
 import { MinecraftDamageSource } from '../../../minecraft/types/MinecraftDamageSource';
 import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
@@ -17,7 +16,7 @@ interface Triggers {
 }
 
 interface OnDamage {
-  filters?: MinecraftFiltersOf | MinecraftFilters;
+  filters?: MinecraftFilters;
   target?: MinecraftTarget;
   event?: string;
 }

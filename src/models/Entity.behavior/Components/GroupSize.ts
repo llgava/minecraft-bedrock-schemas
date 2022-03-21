@@ -1,10 +1,6 @@
 import { MinecraftFilters } from '../../../minecraft/types/MinecraftFilters';
 
-export interface EnvironmentSensor {
-  triggers?: Trigger[];
-}
-
-interface Trigger {
+export interface GroupSize {
   filters?: MinecraftFilters;
-  event?: string;
+  radius?: number;
 }
