@@ -1,6 +1,6 @@
 import { MinecraftFilters } from './types/MinecraftFilters';
 
-export interface MinecraftFilterAllOf {
+export interface MinecraftFiltersOf {
   any_of?: MinecraftFilters[];
   all_of?: MinecraftFilters[];
   none_of?: MinecraftFilters[];

@@ -6,6 +6,7 @@ import * as TJS from 'typescript-json-schema';
 import { Manifest } from '@models/Manifests/Manifest';
 import { Blocks } from '@models/Blocks.behavior/Blocks';
 import { Items } from '@models/Items.behavior/Items';
+import { Entities } from '@models/Entity.behavior/Entities';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
@@ -18,7 +19,8 @@ class MinecraftBedrockSchemas {
     this.schemas = [
       new Manifest,
       new Blocks,
-      new Items
+      new Items,
+      new Entities
     ];
   }
 

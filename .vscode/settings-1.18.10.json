@@ -22,6 +22,13 @@
         "development_behavior_packs/*/items/*.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/items_behavior.schema.json"
+    },
+    {
+      "fileMatch": [
+        "behavior_packs/*/entities/*.json",
+        "development_behavior_packs/*/entities/*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/entities_behavior.schema.json"
     }
   ]
 }

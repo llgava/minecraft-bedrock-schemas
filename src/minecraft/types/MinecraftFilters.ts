@@ -137,4 +137,4 @@ export type MinecraftFilters =
   | SurfaceMob
   | Trusts
   | Weather
-  | WeatherAtPosition
+  | WeatherAtPosition;

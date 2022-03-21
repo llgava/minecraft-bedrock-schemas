@@ -6,7 +6,7 @@ export class Blocks {
 
   /** @TJS-ignore */ get fileName(): string { return 'blocks_behavior'; }
   /** @TJS-ignore */ get path(): string { return __filename; }
-  /** @TJS-ignore */ get name(): string { return this.constructor.name;}
+  /** @TJS-ignore */ get name(): string { return this.constructor.name; }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
     return [
