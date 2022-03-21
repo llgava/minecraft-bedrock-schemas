@@ -1,6 +1,7 @@
 import { Addrider } from './Components/Addrider';
 import { AdmireItem } from './Components/AdmireItem';
 import { Ageable } from './Components/Ageable';
+import { AmbientSoundInterval } from './Components/AmbientSoundInterval';
 import { Angry } from './Components/Angry';
 import { AnnotationBreakDoor } from './Components/AnnotationBreakDoor';
 import { AreaAttack } from './Components/AreaAttack';
@@ -15,11 +16,14 @@ import { Breedable } from './Components/Breedable';
 import { Bribeable } from './Components/Bribeable';
 import { Buoyant } from './Components/Buoyant';
 import { CelebrateHunt } from './Components/CelebrateHunt';
+import { CollisionBox } from './Components/CollisionBox';
+import { Color } from './Components/Color';
 import { CombatRegeneration } from './Components/CombatRegeneration';
 import { ConditionalBandwidthOptimization } from './Components/ConditionalBandwidthOptimization';
 import { CustomHitTest } from './Components/CustomHitTest';
 import { DamageOverTime } from './Components/DamageOverTime';
 import { DamageSensor } from './Components/DamageSensor';
+import { DefaultLookAngle } from './Components/DefaultLookAngle';
 import { Despawn } from './Components/Despawn';
 import { DryingOutTimer } from './Components/DryingOutTimer';
 import { EconomyTradeTable } from './Components/EconomyTradeTable';
@@ -29,8 +33,11 @@ import { Equippable } from './Components/Equippable';
 import { ExperienceReward } from './Components/ExperienceReward';
 import { Explode } from './Components/Explode';
 import { Flocking } from './Components/Flocking';
+import { FlyingSpeed } from './Components/FlyingSpeed';
+import { FrictionModifier } from './Components/FrictionModifier';
 import { Genetics } from './Components/Genetics';
 import { Giveable } from './Components/Giveable';
+import { GroundOffset } from './Components/GroundOffset';
 import { GroupSize } from './Components/GroupSize';
 import { GrowsCrop } from './Components/GrowsCrop';
 import { Healable } from './Components/Healable';
@@ -41,9 +48,13 @@ import { Insomnia } from './Components/Insomnia';
 import { InstantDespawn } from './Components/InstantDespawn';
 import { Interact } from './Components/Interact';
 import { Inventory } from './Components/Inventory';
+import { IsDyeable } from './Components/IsDyeable';
+import { ItemControllable } from './Components/ItemControllable';
 import { JumpStatic } from './Components/JumpStatic';
 import { Leashable } from './Components/Leashable';
 import { LookAt } from './Components/LookAt';
+import { Loot } from './Components/Loot';
+import { MarkVariant } from './Components/MarkVariant';
 import { MobEffect } from './Components/MobEffect';
 import { Movement } from './Components/Movement';
 import { MovementJump } from './Components/MovementJump';
@@ -55,16 +66,20 @@ import { Physics } from './Components/Physics';
 import { PreferredPath } from './Components/PreferredPath';
 import { Projectile } from './Components/Projectile';
 import { Pushable } from './Components/Pushable';
+import { PushThrough } from './Components/PushThrough';
 import { RaidTrigger } from './Components/RaidTrigger';
 import { RailMovement } from './Components/RailMovement';
 import { RailSensor } from './Components/RailSensor';
 import { RavagerBlocked } from './Components/RavagerBlocked';
 import { Rideable } from './Components/Rideable';
+import { Scale } from './Components/Scale';
 import { ScaleByAge } from './Components/ScaleByAge';
 import { Scheduler } from './Components/Scheduler';
 import { Shareables } from './Components/Shareables';
 import { Shooter } from './Components/Shooter';
 import { Sittable } from './Components/Sittable';
+import { SkinId } from './Components/SkinId';
+import { SoundVolume } from './Components/SoundVolume';
 import { SpawnEntity } from './Components/SpawnEntity';
 import { Strength } from './Components/Strength';
 import { Tameable } from './Components/Tameable';
@@ -77,6 +92,9 @@ import { TradeTable } from './Components/TradeTable';
 import { Trail } from './Components/Trail';
 import { Transformation } from './Components/Transformation';
 import { Trusting } from './Components/Trusting';
+import { TypeFamily } from './Components/TypeFamily';
+import { Variant } from './Components/Variant';
+import { WalkAnimationSpeed } from './Components/WalkAnimationSpeed';
 import { WaterMovement } from './Components/WaterMovement';
 
 // Description
@@ -96,7 +114,7 @@ export interface ComponentGroups {
 }
 
 // Components
-export interface Components extends ExperimentalComponents {
+export interface Components extends PropertyComponents {
   ['minecraft:addrider']?: Addrider;
   ['minecraft:admire_item']?: AdmireItem;
   ['minecraft:ageable']?: Ageable;
@@ -199,11 +217,59 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:water_movement']?: WaterMovement;
 }
 
-// Experimental Components
-export interface ExperimentalComponents {}
+// Properties Components
+export interface PropertyComponents extends TriggersComponents {
+  ['minecraft:ambient_sound_interval']?: AmbientSoundInterval;
+  ['minecraft:can_climb']?: any;
+  ['minecraft:can_fly']?: any;
+  ['minecraft:can_power_jump']?: any;
+  ['minecraft:collision_box']?: CollisionBox;
+  ['minecraft:color']?: Color;
+  ['minecraft:color2']?: Color;
+  ['minecraft:default_look_angle']?: DefaultLookAngle;
+  ['minecraft:equipment']?: any;
+  ['minecraft:fire_immune']?: any;
+  ['minecraft:floats_in_liquid']?: any;
+  ['minecraft:flying_speed']?: FlyingSpeed;
+  ['minecraft:friction_modifier']?: FrictionModifier;
+  ['minecraft:ground_offset']?: GroundOffset;
+  ['minecraft:input_ground_controlled']?: any;
+  ['minecraft:is_baby']?: any;
+  ['minecraft:is_charged']?: any;
+  ['minecraft:is_chested']?: any;
+  ['minecraft:is_dyeable']?: IsDyeable;
+  ['minecraft:is_hidden_when_invisible']?: any;
+  ['minecraft:is_ignited']?: any;
+  ['minecraft:is_illager_captain']?: any;
+  ['minecraft:is_saddled']?: any;
+  ['minecraft:is_shaking']?: any;
+  ['minecraft:is_sheared']?: any;
+  ['minecraft:is_stackable']?: any;
+  ['minecraft:is_stunned']?: any;
+  ['minecraft:is_tamed']?: any;
+  ['minecraft:item_controllable']?: ItemControllable;
+  ['minecraft:loot']?: Loot;
+  ['minecraft:mark_variant']?: MarkVariant;
+  ['minecraft:push_through']?: PushThrough;
+  ['minecraft:scale']?: Scale;
+  ['minecraft:skin_id']?: SkinId;
+  ['minecraft:sound_volume']?: SoundVolume;
+  ['minecraft:type_family']?: TypeFamily;
+  ['minecraft:variant']?: Variant;
+  ['minecraft:walk_animation_speed']?: WalkAnimationSpeed;
+}
+
+// TriggersComponents
+export interface TriggersComponents {
+
+}
 
 // Events
 export interface Events {
+  ['minecraft:entity_born']?: EventsReponse;
+  ['minecraft:entity_spawned']?: EventsReponse;
+  ['minecraft:entity_transformed']?: EventsReponse;
+  ['minecraft:on_prime']?: EventsReponse;
   [property_name: string]: EventsReponse;
 }
 

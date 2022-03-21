@@ -350,6 +350,82 @@
         },
         "minecraft:water_movement": {
           "$ref": "#/definitions/WaterMovement"
+        },
+        "minecraft:ambient_sound_interval": {
+          "$ref": "#/definitions/AmbientSoundInterval"
+        },
+        "minecraft:can_climb": {},
+        "minecraft:can_fly": {},
+        "minecraft:can_power_jump": {},
+        "minecraft:collision_box": {
+          "$ref": "#/definitions/CollisionBox"
+        },
+        "minecraft:color": {
+          "$ref": "#/definitions/Color"
+        },
+        "minecraft:color2": {
+          "$ref": "#/definitions/Color"
+        },
+        "minecraft:default_look_angle": {
+          "$ref": "#/definitions/DefaultLookAngle"
+        },
+        "minecraft:equipment": {},
+        "minecraft:fire_immune": {},
+        "minecraft:floats_in_liquid": {},
+        "minecraft:flying_speed": {
+          "$ref": "#/definitions/FlyingSpeed"
+        },
+        "minecraft:friction_modifier": {
+          "$ref": "#/definitions/FrictionModifier"
+        },
+        "minecraft:ground_offset": {
+          "$ref": "#/definitions/GroundOffset"
+        },
+        "minecraft:input_ground_controlled": {},
+        "minecraft:is_baby": {},
+        "minecraft:is_charged": {},
+        "minecraft:is_chested": {},
+        "minecraft:is_dyeable": {
+          "$ref": "#/definitions/IsDyeable"
+        },
+        "minecraft:is_hidden_when_invisible": {},
+        "minecraft:is_ignited": {},
+        "minecraft:is_illager_captain": {},
+        "minecraft:is_saddled": {},
+        "minecraft:is_shaking": {},
+        "minecraft:is_sheared": {},
+        "minecraft:is_stackable": {},
+        "minecraft:is_stunned": {},
+        "minecraft:is_tamed": {},
+        "minecraft:item_controllable": {
+          "$ref": "#/definitions/ItemControllable"
+        },
+        "minecraft:loot": {
+          "$ref": "#/definitions/Loot"
+        },
+        "minecraft:mark_variant": {
+          "$ref": "#/definitions/MarkVariant"
+        },
+        "minecraft:push_through": {
+          "$ref": "#/definitions/PushThrough"
+        },
+        "minecraft:scale": {
+          "$ref": "#/definitions/Scale"
+        },
+        "minecraft:skin_id": {
+          "$ref": "#/definitions/SkinId"
+        },
+        "minecraft:sound_volume": {
+          "$ref": "#/definitions/SoundVolume"
+        },
+        "minecraft:type_family": {
+          "$ref": "#/definitions/TypeFamily"
+        },
+        "minecraft:variant": {
+          "$ref": "#/definitions/Variant"
+        },
+        "minecraft:walk_animation_speed": {
+          "$ref": "#/definitions/WalkAnimationSpeed"
         }
       }
     },
@@ -8361,10 +8437,183 @@
         }
       }
     },
+    "AmbientSoundInterval": {
+      "type": "object",
+      "properties": {
+        "event_name": {
+          "type": "string"
+        },
+        "range": {
+          "type": "number"
+        },
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "CollisionBox": {
+      "type": "object",
+      "properties": {
+        "height": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number"
+        }
+      }
+    },
+    "Color": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "DefaultLookAngle": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "FlyingSpeed": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "FrictionModifier": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "GroundOffset": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "IsDyeable": {
+      "type": "object",
+      "properties": {
+        "interact_text": {
+          "type": "string"
+        }
+      }
+    },
+    "ItemControllable": {
+      "type": "object",
+      "properties": {
+        "control_items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Loot": {
+      "type": "object",
+      "properties": {
+        "table": {
+          "type": "string"
+        }
+      }
+    },
+    "MarkVariant": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "PushThrough": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "Scale": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "SkinId": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "SoundVolume": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "TypeFamily": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Variant": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "WalkAnimationSpeed": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number"
+        }
+      }
+    },
     "Events": {
       "type": "object",
       "additionalProperties": {
         "$ref": "#/definitions/EventsReponse"
+      },
+      "properties": {
+        "minecraft:entity_born": {
+          "$ref": "#/definitions/EventsReponse"
+        },
+        "minecraft:entity_spawned": {
+          "$ref": "#/definitions/EventsReponse"
+        },
+        "minecraft:entity_transformed": {
+          "$ref": "#/definitions/EventsReponse"
+        },
+        "minecraft:on_prime": {
+          "$ref": "#/definitions/EventsReponse"
+        }
       }
     },
     "EventsReponse": {
