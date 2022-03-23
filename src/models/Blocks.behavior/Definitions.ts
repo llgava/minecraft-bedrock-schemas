@@ -101,11 +101,8 @@ export interface Events {
   [property_name: string]: EventsReponse;
 }
 
-interface EventsSequence {
+interface EventsReponse {
   sequence?: EventsReponse[];
-}
-
-interface EventsReponse extends EventsSequence {
   add_mob_effect?: AddMobEffect;
   damage?: Damage;
   decrement_stack?: Record<string, unknown>;

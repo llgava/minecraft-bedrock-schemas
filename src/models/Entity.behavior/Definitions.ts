@@ -474,19 +474,19 @@ export interface Events {
   [property_name: string]: EventsReponse;
 }
 
-interface EventsReponse extends EventsSequence {
+interface EventsReponse extends EventsComponentGroupsController {
   filters?: MinecraftFilters;
   randomize?: EventsRandomize[];
-}
-
-interface EventsSequence extends EventsRandomize {
   sequence?: EventsReponse[];
+  trigger?: MinecraftTriggerFiltered;
 }
 
-interface EventsRandomize {
+interface EventsRandomize extends EventsComponentGroupsController {
+  weight?: number;
+}
+interface EventsComponentGroupsController {
   add?: EventComponentGroups;
   remove?: EventComponentGroups;
-  trigger?: MinecraftTriggerFiltered;
 }
 
 export interface EventComponentGroups {

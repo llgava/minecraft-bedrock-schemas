@@ -12071,28 +12071,28 @@
             "$ref": "#/definitions/EventsReponse"
           }
         },
+        "trigger": {
+          "$ref": "#/definitions/MinecraftTriggerFiltered"
+        },
         "add": {
           "$ref": "#/definitions/EventComponentGroups"
         },
         "remove": {
           "$ref": "#/definitions/EventComponentGroups"
-        },
-        "trigger": {
-          "$ref": "#/definitions/MinecraftTriggerFiltered"
         }
       }
     },
     "EventsRandomize": {
       "type": "object",
       "properties": {
+        "weight": {
+          "type": "number"
+        },
         "add": {
           "$ref": "#/definitions/EventComponentGroups"
         },
         "remove": {
           "$ref": "#/definitions/EventComponentGroups"
-        },
-        "trigger": {
-          "$ref": "#/definitions/MinecraftTriggerFiltered"
         }
       }
     },

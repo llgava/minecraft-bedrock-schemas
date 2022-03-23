@@ -1283,6 +1283,12 @@
     "EventsReponse": {
       "type": "object",
       "properties": {
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EventsReponse"
+          }
+        },
         "add_mob_effect": {
           "$ref": "#/definitions/AddMobEffect"
         },
@@ -1327,12 +1333,6 @@
         },
         "transform_item": {
           "$ref": "#/definitions/TransformItem"
-        },
-        "sequence": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/EventsReponse"
-          }
         }
       }
     },
