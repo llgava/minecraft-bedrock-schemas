@@ -174,6 +174,7 @@ import { BehaviorTradeInterest } from './Components/BehaviorTradeInterest';
 import { BehaviorVexCopyOwnerTarget } from './Components/BehaviorVexCopyOwnerTarget';
 import { BehaviorWitherTargetHighestDamage } from './Components/BehaviorWitherTargetHighestDamage';
 import { BehaviorWork } from './Components/BehaviorWork';
+import { MinecraftFilters } from '../../minecraft/types/MinecraftFilters';
 
 // Description
 export interface Description {
@@ -473,8 +474,21 @@ export interface Events {
   [property_name: string]: EventsReponse;
 }
 
-interface EventsSequence {
+interface EventsReponse extends EventsSequence {
+  filters?: MinecraftFilters;
+  randomize?: EventsRandomize[];
+}
+
+interface EventsSequence extends EventsRandomize {
   sequence?: EventsReponse[];
 }
 
-interface EventsReponse extends EventsSequence {}
+interface EventsRandomize {
+  add?: EventComponentGroups;
+  remove?: EventComponentGroups;
+  trigger?: MinecraftTriggerFiltered;
+}
+
+export interface EventComponentGroups {
+  component_groups?: string[];
+}

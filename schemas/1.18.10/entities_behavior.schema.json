@@ -11845,10 +11845,264 @@
     "EventsReponse": {
       "type": "object",
       "properties": {
+        "filters": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ClockTime"
+            },
+            {
+              "$ref": "#/definitions/DistanceToNearestPlayer"
+            },
+            {
+              "$ref": "#/definitions/HasAbility"
+            },
+            {
+              "$ref": "#/definitions/HasBiomeTag"
+            },
+            {
+              "$ref": "#/definitions/HasComponent"
+            },
+            {
+              "$ref": "#/definitions/HasContainerOpen"
+            },
+            {
+              "$ref": "#/definitions/HasDamage"
+            },
+            {
+              "$ref": "#/definitions/HasEquipment"
+            },
+            {
+              "$ref": "#/definitions/HasMobEffect"
+            },
+            {
+              "$ref": "#/definitions/HasNametag"
+            },
+            {
+              "$ref": "#/definitions/HasRangedWeapon"
+            },
+            {
+              "$ref": "#/definitions/HasTag"
+            },
+            {
+              "$ref": "#/definitions/HasTarget"
+            },
+            {
+              "$ref": "#/definitions/HasTradeSupply"
+            },
+            {
+              "$ref": "#/definitions/HourlyClockTime"
+            },
+            {
+              "$ref": "#/definitions/InactivityTimer"
+            },
+            {
+              "$ref": "#/definitions/InBlock"
+            },
+            {
+              "$ref": "#/definitions/InCaravan"
+            },
+            {
+              "$ref": "#/definitions/InClouds"
+            },
+            {
+              "$ref": "#/definitions/InContactWithWater"
+            },
+            {
+              "$ref": "#/definitions/InLava"
+            },
+            {
+              "$ref": "#/definitions/InNether"
+            },
+            {
+              "$ref": "#/definitions/InWater"
+            },
+            {
+              "$ref": "#/definitions/InWaterOrRain"
+            },
+            {
+              "$ref": "#/definitions/IsAltitude"
+            },
+            {
+              "$ref": "#/definitions/IsAvoidingMobs"
+            },
+            {
+              "$ref": "#/definitions/IsBiome"
+            },
+            {
+              "$ref": "#/definitions/IsBlock"
+            },
+            {
+              "$ref": "#/definitions/IsBrightness"
+            },
+            {
+              "$ref": "#/definitions/IsClimbing"
+            },
+            {
+              "$ref": "#/definitions/IsColor"
+            },
+            {
+              "$ref": "#/definitions/IsDaytime"
+            },
+            {
+              "$ref": "#/definitions/IsDifficulty"
+            },
+            {
+              "$ref": "#/definitions/IsFamily"
+            },
+            {
+              "$ref": "#/definitions/IsGameRule"
+            },
+            {
+              "$ref": "#/definitions/IsHumid"
+            },
+            {
+              "$ref": "#/definitions/IsImmobile"
+            },
+            {
+              "$ref": "#/definitions/IsInVillage"
+            },
+            {
+              "$ref": "#/definitions/IsLeashed"
+            },
+            {
+              "$ref": "#/definitions/IsLeashedTo"
+            },
+            {
+              "$ref": "#/definitions/IsMarkVariant"
+            },
+            {
+              "$ref": "#/definitions/IsMissingHealth"
+            },
+            {
+              "$ref": "#/definitions/IsMoving"
+            },
+            {
+              "$ref": "#/definitions/IsOwner"
+            },
+            {
+              "$ref": "#/definitions/IsPersistent"
+            },
+            {
+              "$ref": "#/definitions/IsRiding"
+            },
+            {
+              "$ref": "#/definitions/IsSkingId"
+            },
+            {
+              "$ref": "#/definitions/IsSleeping"
+            },
+            {
+              "$ref": "#/definitions/IsSneaking"
+            },
+            {
+              "$ref": "#/definitions/IsSnowCovered"
+            },
+            {
+              "$ref": "#/definitions/IsTarget"
+            },
+            {
+              "$ref": "#/definitions/IsTemperatureType"
+            },
+            {
+              "$ref": "#/definitions/IsTemperatureValue"
+            },
+            {
+              "$ref": "#/definitions/IsUnderground"
+            },
+            {
+              "$ref": "#/definitions/IsUnderwater"
+            },
+            {
+              "$ref": "#/definitions/IsVariant"
+            },
+            {
+              "$ref": "#/definitions/IsVisible"
+            },
+            {
+              "$ref": "#/definitions/IsWeather"
+            },
+            {
+              "$ref": "#/definitions/LightLevel"
+            },
+            {
+              "$ref": "#/definitions/MoonIntensity"
+            },
+            {
+              "$ref": "#/definitions/MoonPhase"
+            },
+            {
+              "$ref": "#/definitions/OnGround"
+            },
+            {
+              "$ref": "#/definitions/OnLadder"
+            },
+            {
+              "$ref": "#/definitions/RandomChance"
+            },
+            {
+              "$ref": "#/definitions/RiderCount"
+            },
+            {
+              "$ref": "#/definitions/SurfaceMob"
+            },
+            {
+              "$ref": "#/definitions/Trusts"
+            },
+            {
+              "$ref": "#/definitions/Weather"
+            },
+            {
+              "$ref": "#/definitions/WeatherAtPosition"
+            },
+            {
+              "$ref": "#/definitions/MinecraftFiltersOf"
+            }
+          ]
+        },
+        "randomize": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EventsRandomize"
+          }
+        },
         "sequence": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/EventsReponse"
+          }
+        },
+        "add": {
+          "$ref": "#/definitions/EventComponentGroups"
+        },
+        "remove": {
+          "$ref": "#/definitions/EventComponentGroups"
+        },
+        "trigger": {
+          "$ref": "#/definitions/MinecraftTriggerFiltered"
+        }
+      }
+    },
+    "EventsRandomize": {
+      "type": "object",
+      "properties": {
+        "add": {
+          "$ref": "#/definitions/EventComponentGroups"
+        },
+        "remove": {
+          "$ref": "#/definitions/EventComponentGroups"
+        },
+        "trigger": {
+          "$ref": "#/definitions/MinecraftTriggerFiltered"
+        }
+      }
+    },
+    "EventComponentGroups": {
+      "type": "object",
+      "properties": {
+        "component_groups": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
       }
