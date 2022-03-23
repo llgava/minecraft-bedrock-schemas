@@ -174,7 +174,7 @@ import { BehaviorTradeInterest } from './Components/BehaviorTradeInterest';
 import { BehaviorVexCopyOwnerTarget } from './Components/BehaviorVexCopyOwnerTarget';
 import { BehaviorWitherTargetHighestDamage } from './Components/BehaviorWitherTargetHighestDamage';
 import { BehaviorWork } from './Components/BehaviorWork';
-import { MinecraftFilters } from '../../minecraft/types/MinecraftFilters';
+import { MinecraftFilters } from '@minecraft/types/MinecraftFilters';
 
 // Description
 export interface Description {
