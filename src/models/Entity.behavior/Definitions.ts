@@ -483,6 +483,7 @@ interface EventsReponse extends EventsComponentGroupsController {
 
 interface EventsRandomize extends EventsComponentGroupsController {
   weight?: number;
+  trigger?: MinecraftTriggerFiltered;
 }
 
 interface EventsComponentGroupsController {
