@@ -484,6 +484,7 @@ interface EventsReponse extends EventsComponentGroupsController {
 interface EventsRandomize extends EventsComponentGroupsController {
   weight?: number;
 }
+
 interface EventsComponentGroupsController {
   add?: EventComponentGroups;
   remove?: EventComponentGroups;
