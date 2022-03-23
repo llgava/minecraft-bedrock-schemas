@@ -1,4 +1,4 @@
-import { MinecraftEntities } from '../../../minecraft/types/MinecraftEntities';
+import { MinecraftEntities } from '@minecraft/types/MinecraftEntities';
 
 export interface BehaviorFollowCaravan {
   entity_count?: number;

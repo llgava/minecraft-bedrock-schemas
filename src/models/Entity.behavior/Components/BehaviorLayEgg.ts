@@ -1,4 +1,4 @@
-import { MinecraftTriggerFiltered } from '../../../minecraft/MinecraftTriggerFiltered';
+import { MinecraftTriggerFiltered } from '@minecraft/MinecraftTriggerFiltered';
 
 export interface BehaviorLayEgg {
   /** is_experimental: true */

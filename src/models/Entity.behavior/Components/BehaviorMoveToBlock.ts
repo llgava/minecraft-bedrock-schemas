@@ -1,4 +1,4 @@
-import { MinecraftTriggerFiltered } from '../../../minecraft/MinecraftTriggerFiltered';
+import { MinecraftTriggerFiltered } from '@minecraft/MinecraftTriggerFiltered';
 import { BehaviorMove } from './BehaviorMove';
 
 export interface BehaviorMoveToBlock extends BehaviorMove {

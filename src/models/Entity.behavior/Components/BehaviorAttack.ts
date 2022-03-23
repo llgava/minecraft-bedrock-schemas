@@ -1,10 +1,10 @@
-import { EntityTypes } from '../../../minecraft/MinecraftEntityTypes';
+import { MinecraftEntityTypes } from '@minecraft/MinecraftEntityTypes';
 
 export interface BehaviorAttackableTarget {
   attack_interval?: number;
   attack_interval_min?: number;
   attack_owner?: boolean;
-  entity_types?: EntityTypes;
+  entity_types?: MinecraftEntityTypes;
   must_reach?: boolean;
   must_see?: boolean;
   must_see_forget_duration?: number;

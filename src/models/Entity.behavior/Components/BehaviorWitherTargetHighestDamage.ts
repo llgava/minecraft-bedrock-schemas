@@ -1,5 +1,5 @@
 import { MinecraftEntityTypes } from '@minecraft/MinecraftEntityTypes';
 
-export interface BehaviorHurtTarget {
+export interface BehaviorWitherTargetHighestDamage {
   entity_types?: MinecraftEntityTypes;
 }

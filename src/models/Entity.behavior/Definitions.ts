@@ -145,6 +145,35 @@ import { BehaviorPickupItems } from './Components/BehaviorPickupItems';
 import { BehaviorPlay } from './Components/BehaviorPlay';
 import { BehaviorRaidGarden } from './Components/BehaviorRaidGarden';
 import { BehaviorAttackableTarget } from './Components/BehaviorAttack';
+import { BehaviorRandomBreach } from './Components/BehaviorRandomBreach';
+import { BehaviorRandomFly } from './Components/BehaviorRandomFly';
+import { BehaviorRandomHover } from './Components/BehaviorRandomHover';
+import { BehaviorRandomLookAround } from './Components/BehaviorRandomLookAround';
+import { BehaviorRandomLookAroundAndSit } from './Components/BehaviorRandomLookAroundAndSit';
+import { BehaviorRandomSitting } from './Components/BehaviorRandomSitting';
+import { BehaviorRandomStroll } from './Components/BehaviorRandomStroll';
+import { BehaviorRandomSwim } from './Components/BehaviorRandomSwim';
+import { BehaviorRiseToLiquidLevel } from './Components/BehaviorRiseToLiquidLevel';
+import { BehaviorRoll } from './Components/BehaviorRoll';
+import { BehaviorRunAroundLikeCrazy } from './Components/BehaviorRunAroundLikeCrazy';
+import { BehaviorScared } from './Components/BehaviorScared';
+import { BehaviorSendEvent } from './Components/BehaviorSendEvent';
+import { BehaviorShareItems } from './Components/BehaviorShareItems';
+import { BehaviorSkeletonHorseTrap } from './Components/BehaviorSkeletonHorseTrap';
+import { BehaviorSleep } from './Components/BehaviorSleep';
+import { BehaviorSlimeAttack } from './Components/BehaviorSlimeAttack';
+import { BehaviorSnacking } from './Components/BehaviorSnacking';
+import { BehaviorSneeze } from './Components/BehaviorSneeze';
+import { BehaviorStalkAndPounceOnTarget } from './Components/BehaviorStalkAndPounceOnTarget';
+import { BehaviorStompTurtleEgg } from './Components/BehaviorStompTurtleEgg';
+import { BehaviorStrollTowardsVillage } from './Components/BehaviorStrollTowardsVillage';
+import { BehaviorSummonEntity } from './Components/BehaviorSummonEntity';
+import { BehaviorSwell } from './Components/BehaviorSwell';
+import { BehaviorTempt } from './Components/BehaviorTempt';
+import { BehaviorTradeInterest } from './Components/BehaviorTradeInterest';
+import { BehaviorVexCopyOwnerTarget } from './Components/BehaviorVexCopyOwnerTarget';
+import { BehaviorWitherTargetHighestDamage } from './Components/BehaviorWitherTargetHighestDamage';
+import { BehaviorWork } from './Components/BehaviorWork';
 
 // Description
 export interface Description {
@@ -389,7 +418,7 @@ export interface Components {
   ['minecraft:behavior.play']?: BehaviorPlay;
   ['minecraft:behavior.player_ride_tamed']?: any;
   ['minecraft:behavior.raid_garden']?: BehaviorRaidGarden;
-  /* ['minecraft:behavior.random_breach']?: BehaviorRandomBreach;
+  ['minecraft:behavior.random_breach']?: BehaviorRandomBreach;
   ['minecraft:behavior.random_fly']?: BehaviorRandomFly;
   ['minecraft:behavior.random_hover']?: BehaviorRandomHover;
   ['minecraft:behavior.random_look_around']?: BehaviorRandomLookAround;
@@ -431,8 +460,8 @@ export interface Components {
   ['minecraft:behavior.vex_copy_owner_target']?: BehaviorVexCopyOwnerTarget;
   ['minecraft:behavior.vex_random_move']?: any;
   ['minecraft:behavior.wither_random_attack_pos_goal']?: any;
-  ['minecraft:behavior.wither_target_highest_damage']?: BehaviorWithTargetHighestDamage;
-  ['minecraft:behavior.work']?: BehaviorWork; */
+  ['minecraft:behavior.wither_target_highest_damage']?: BehaviorWitherTargetHighestDamage;
+  ['minecraft:behavior.work']?: BehaviorWork;
 }
 
 // Events
