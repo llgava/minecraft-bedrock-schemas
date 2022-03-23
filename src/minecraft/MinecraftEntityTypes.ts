@@ -1,6 +1,6 @@
 import { MinecraftFilters } from './types/MinecraftFilters';
 
-export interface EntityTupes {
+export interface EntityTypes {
   filters?: MinecraftFilters;
   max_dist?: number;
   must_see?: number;
