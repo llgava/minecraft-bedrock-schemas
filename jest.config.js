@@ -4,5 +4,6 @@ module.exports = {
   rootDir: '.',
   coverageProvider: 'v8',
   preset: 'ts-jest',
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  collectCoverageFrom: ['']
 };
