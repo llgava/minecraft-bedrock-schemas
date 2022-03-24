@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.example": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "/say @s This is a test :)"
+          ],
+
+          "transitions": [
+            { "is_valid": "query.skin_id == 1" }
+          ]
+        },
+
+        "is_valid": {
+          "on_entry": [
+            "/say §aYes!§r This Animation Controller is valid :D"
+          ]
+        }
+      }
+    }
+  }
+}

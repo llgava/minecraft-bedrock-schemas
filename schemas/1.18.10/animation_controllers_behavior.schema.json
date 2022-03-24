@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "animation_controllers": {
+      "$ref": "#/definitions/AnimationControllersBehavior"
+    }
+  },
+  "required": [
+    "animation_controllers",
+    "format_version"
+  ],
+  "definitions": {
+    "AnimationControllersBehavior": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/AnimationControllerProperty"
+      }
+    },
+    "AnimationControllerProperty": {
+      "type": "object",
+      "properties": {
+        "initial_state": {
+          "type": "string"
+        },
+        "states": {
+          "$ref": "#/definitions/States"
+        }
+      }
+    },
+    "States": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/StatesProperty"
+      }
+    },
+    "StatesProperty": {
+      "type": "object",
+      "properties": {
+        "animations": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MinecraftQueryAnimation"
+              }
+            }
+          ]
+        },
+        "transitions": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MinecraftQueryAnimation"
+              }
+            }
+          ]
+        },
+        "on_entry": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "on_exit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "MinecraftQueryAnimation": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

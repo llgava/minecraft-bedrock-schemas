@@ -7,9 +7,10 @@ import { Manifest } from '@models/Manifests/Manifest';
 import { Blocks } from '@models/Blocks.behavior/Blocks';
 import { Items } from '@models/Items.behavior/Items';
 import { Entities } from '@models/Entity.behavior/Entities';
+import { Recipes } from '@models/Recipes/Recipe';
+import { AnimationControllers } from '@models/AnimationControllers.behavior/AnimationControllers';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
-import { Recipes } from './models/Recipes/Recipe';
 
 class MinecraftBedrockSchemas {
   private version: string;
@@ -22,7 +23,8 @@ class MinecraftBedrockSchemas {
       new Blocks,
       new Items,
       new Entities,
-      new Recipes
+      new Recipes,
+      new AnimationControllers
     ];
   }
 
