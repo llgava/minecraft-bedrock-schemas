@@ -1,0 +1,48 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "llgava:example_block",
+      "is_experimental": false,
+      "properties": {
+        "block_step": [0, 1, 2, 3, 5],
+        "is_watered": [true, false]
+      },
+
+      "register_to_creative_menu": true
+    },
+
+    "components": {
+      "minecraft:block_collision": {
+        "origin": [0, 8, 0],
+        "size": [16, 16, 16]
+      },
+
+      "minecraft:flammable": {
+        "burn_odds": 5,
+        "flame_odds": 5
+      },
+
+      "minecraft:geometry": "geometry.example_block",
+      "minecraft:destroy_time": 5,
+
+      "minecraft:on_step_off": {
+        "event": "llgava:example_event",
+        "target": "self"
+      }
+    },
+
+    "events": {
+      "llgava:example_event": {
+        "sequence": [
+          {
+            "run_command": {
+              "command": ["say §aThis is a example event§r"],
+              "target": "self"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

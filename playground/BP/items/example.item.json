@@ -1,0 +1,20 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "llgava:example_item",
+      "is_experimental": false,
+      "category": "items"
+    },
+
+    "components": {
+      "minecraft:block_placer": {
+        "block": "llgava:example_block",
+        "use_on": [
+          "minecraft:wool",
+          "minecraft:allow"
+        ]
+      }
+    }
+  }
+}
