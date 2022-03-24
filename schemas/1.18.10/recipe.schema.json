@@ -1,0 +1,172 @@
+{
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "minecraft:recipe_shaped": {
+      "$ref": "#/definitions/RecipeShapeBehavior"
+    },
+    "minecraft:recipe_shapeless": {
+      "$ref": "#/definitions/RecipeShapeBehavior"
+    },
+    "minecraft:recipe_brewing_container": {
+      "$ref": "#/definitions/RecipeBrewingBehavior"
+    },
+    "minecraft:recipe_brewing_mix": {
+      "$ref": "#/definitions/RecipeBrewingBehavior"
+    },
+    "minecraft:recipe_furnace": {
+      "$ref": "#/definitions/RecipeFurnaceBehavior"
+    }
+  },
+  "required": [
+    "format_version"
+  ],
+  "definitions": {
+    "RecipeShapeBehavior": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/Description"
+        },
+        "tags": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": [
+                "crafting_table"
+              ]
+            }
+          ],
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "pattern": {
+          "pattern": "^[a-zA-Z0-9 !@#$%&]{3}$",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "key": {
+          "$ref": "#/definitions/RecipeKey"
+        },
+        "result": {
+          "$ref": "#/definitions/RecipeResult"
+        },
+        "group": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "number"
+        }
+      }
+    },
+    "Description": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identifier"
+      ]
+    },
+    "RecipeKey": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/MinecraftRecipeItemProperties"
+      }
+    },
+    "MinecraftRecipeItemProperties": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "string"
+        },
+        "count": {
+          "type": "number"
+        },
+        "data": {
+          "type": "number"
+        }
+      }
+    },
+    "RecipeResult": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "string"
+        },
+        "data": {
+          "type": "number"
+        },
+        "count": {
+          "type": "number"
+        }
+      }
+    },
+    "RecipeBrewingBehavior": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/Description"
+        },
+        "input": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        },
+        "reagent": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "enum": [
+                "brewing_stand"
+              ]
+            }
+          ],
+          "minItems": 1,
+          "maxItems": 1
+        }
+      }
+    },
+    "RecipeFurnaceBehavior": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/Description"
+        },
+        "input": {
+          "type": "string"
+        },
+        "output": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "blast_furnace",
+              "campfire",
+              "furnace",
+              "smoker",
+              "soul_campfire"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
