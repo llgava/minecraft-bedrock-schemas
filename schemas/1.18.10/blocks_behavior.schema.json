@@ -82,8 +82,11 @@
         "components": {
           "$ref": "#/definitions/Components"
         },
-        "condition": {
-          "type": "string"
+        "conditions": {
+          "type": "array",
+          "items": [],
+          "minItems": 0,
+          "maxItems": 0
         }
       }
     },

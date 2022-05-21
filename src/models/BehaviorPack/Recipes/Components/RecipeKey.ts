@@ -1,4 +1,4 @@
-import { MinecraftRecipeItemProperties } from '../../../minecraft/MinecraftRecipeItemProperties';
+import { MinecraftRecipeItemProperties } from '@minecraft/MinecraftRecipeItemProperties';
 
 export interface RecipeKey {
   /** @maxLength 1 */

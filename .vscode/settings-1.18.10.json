@@ -50,6 +50,13 @@
         "development_behavior_packs/*/animations/*.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animations_behavior.schema.json"
+    },
+    {
+      "fileMatch": [
+        "behavior_packs/*/loot_tables/*.json",
+        "development_behavior_packs/*/loot_tables/*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/loot_tables.schema.json"
     }
   ]
 }

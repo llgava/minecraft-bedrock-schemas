@@ -1,4 +1,3 @@
-import { MinecraftCondition } from '@minecraft/MinecraftCondition';
 import { MinecraftTarget } from '@minecraft/MinecraftTarget';
 import { MinecraftTriggerConditioning } from '@minecraft/MinecraftTriggerConditioning';
 import { MinecraftCollision } from '@minecraft/MinecraftCollision';
@@ -92,8 +91,9 @@ export interface ExperimentalComponents {
 }
 
 // Permutations
-export interface Permutations extends MinecraftCondition {
+export interface Permutations {
   components?: Components;
+  conditions?: [];
 }
 
 // Events

@@ -1,0 +1,856 @@
+{
+  "type": "object",
+  "properties": {
+    "pools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LootTablePool"
+      }
+    }
+  },
+  "definitions": {
+    "LootTablePool": {
+      "type": "object",
+      "properties": {
+        "rools": {
+          "type": "number"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/EntityProperties"
+              },
+              {
+                "$ref": "#/definitions/HasMarkVariant"
+              },
+              {
+                "$ref": "#/definitions/KilledByPlayer"
+              },
+              {
+                "$ref": "#/definitions/KilledByPlayerOrPets"
+              },
+              {
+                "$ref": "#/definitions/RandomChanceWithLooting"
+              },
+              {
+                "$ref": "#/definitions/RandomDifficultyChance"
+              },
+              {
+                "$ref": "#/definitions/RandomRegionalDifficultyChance"
+              },
+              {
+                "$ref": "#/definitions/RandomChance"
+              }
+            ]
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/EmptyType"
+              },
+              {
+                "$ref": "#/definitions/ItemType"
+              },
+              {
+                "$ref": "#/definitions/LootTableType"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "EntityProperties": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "entity_properties"
+          ]
+        },
+        "entity": {
+          "type": "string",
+          "enum": [
+            "this"
+          ]
+        },
+        "properties": {
+          "$ref": "#/definitions/Properties"
+        }
+      }
+    },
+    "Properties": {
+      "type": "object",
+      "properties": {
+        "on_fire": {
+          "type": "boolean"
+        },
+        "on_ground": {
+          "type": "boolean"
+        }
+      }
+    },
+    "HasMarkVariant": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "has_mark_variant"
+          ]
+        },
+        "value": {
+          "type": "number"
+        }
+      }
+    },
+    "KilledByPlayer": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "killed_by_player"
+          ]
+        }
+      }
+    },
+    "KilledByPlayerOrPets": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "killed_by_player_or_pets"
+          ]
+        }
+      }
+    },
+    "RandomChanceWithLooting": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "random_chance_with_looting"
+          ]
+        },
+        "chance": {
+          "type": "number"
+        },
+        "looting_multiplier": {
+          "type": "number"
+        }
+      }
+    },
+    "RandomDifficultyChance": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "random_difficulty_chance"
+          ]
+        },
+        "default_chance": {
+          "type": "number"
+        },
+        "peaceful": {
+          "type": "number"
+        },
+        "easy": {
+          "type": "number"
+        },
+        "normal": {
+          "type": "number"
+        },
+        "hard": {
+          "type": "number"
+        }
+      }
+    },
+    "RandomRegionalDifficultyChance": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "random_regional_difficulty_chance"
+          ]
+        },
+        "default_chance": {
+          "type": "number"
+        },
+        "max_chance": {
+          "type": "number"
+        },
+        "peaceful": {
+          "type": "number"
+        },
+        "easy": {
+          "type": "number"
+        },
+        "normal": {
+          "type": "number"
+        },
+        "hard": {
+          "type": "number"
+        }
+      }
+    },
+    "RandomChance": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "enum": [
+            "random_chance"
+          ]
+        },
+        "chance": {
+          "type": "number"
+        },
+        "max_chance": {
+          "type": "number"
+        }
+      }
+    },
+    "EmptyType": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "empty"
+          ]
+        },
+        "pools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LootTablePool"
+          }
+        }
+      }
+    },
+    "ItemType": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "item"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "count": {
+          "type": "number"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "quality": {
+          "type": "number"
+        },
+        "pools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LootTablePool"
+          }
+        },
+        "functions": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/EnchantBookForTrading"
+              },
+              {
+                "$ref": "#/definitions/EnchantRandomGear"
+              },
+              {
+                "$ref": "#/definitions/EnchantRandomly"
+              },
+              {
+                "$ref": "#/definitions/EnchantWithLevels"
+              },
+              {
+                "$ref": "#/definitions/ExplorationMap"
+              },
+              {
+                "$ref": "#/definitions/FillContainer"
+              },
+              {
+                "$ref": "#/definitions/FurnaceSmelt"
+              },
+              {
+                "$ref": "#/definitions/LootingEnchant"
+              },
+              {
+                "$ref": "#/definitions/RandomAuxValue"
+              },
+              {
+                "$ref": "#/definitions/RandomBlockState"
+              },
+              {
+                "$ref": "#/definitions/RandomDye"
+              },
+              {
+                "$ref": "#/definitions/SetActorId"
+              },
+              {
+                "$ref": "#/definitions/SetBannerDetails"
+              },
+              {
+                "$ref": "#/definitions/SetBookContents"
+              },
+              {
+                "$ref": "#/definitions/SetCount"
+              },
+              {
+                "$ref": "#/definitions/SetDamage"
+              },
+              {
+                "$ref": "#/definitions/SetData"
+              },
+              {
+                "$ref": "#/definitions/SetDataFromColorIndex"
+              },
+              {
+                "$ref": "#/definitions/SetLore"
+              },
+              {
+                "$ref": "#/definitions/SetName"
+              },
+              {
+                "$ref": "#/definitions/SpecificEnchants"
+              },
+              {
+                "$ref": "#/definitions/TraderMaterialType"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "EnchantBookForTrading": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "enchant_book_for_trading"
+          ]
+        },
+        "base_cost": {
+          "type": "number"
+        },
+        "base_random_cost": {
+          "type": "number"
+        },
+        "per_level_cost": {
+          "type": "number"
+        },
+        "per_level_random_cost": {
+          "type": "number"
+        }
+      }
+    },
+    "EnchantRandomGear": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "enchant_random_gear"
+          ]
+        },
+        "chance": {
+          "type": "number"
+        }
+      }
+    },
+    "EnchantRandomly": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "enchant_randomly"
+          ]
+        },
+        "treasure": {
+          "type": "boolean"
+        }
+      }
+    },
+    "EnchantWithLevels": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "enchant_with_levels"
+          ]
+        },
+        "treasure": {
+          "type": "boolean"
+        },
+        "levels": {
+          "$ref": "#/definitions/Levels"
+        }
+      }
+    },
+    "Levels": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "ExplorationMap": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "exploration_map"
+          ]
+        },
+        "destination": {
+          "$ref": "#/definitions/MinecraftStructures"
+        }
+      }
+    },
+    "MinecraftStructures": {
+      "enum": [
+        "buriedtreasure",
+        "endcity",
+        "fortress",
+        "mansion",
+        "mineshaft",
+        "monument",
+        "pillageroutpost",
+        "ruins",
+        "shipwreck",
+        "stronghold",
+        "temple",
+        "village"
+      ],
+      "type": "string"
+    },
+    "FillContainer": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "fill_container"
+          ]
+        },
+        "loot_table": {
+          "pattern": "^(?:loot_tables/)+[a-z]+$",
+          "type": "string"
+        }
+      }
+    },
+    "FurnaceSmelt": {
+      "type": "object",
+      "properties": {
+        "furnace_smelt": {
+          "type": "string",
+          "enum": [
+            "furnace_smelt"
+          ]
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/EntityProperties"
+              },
+              {
+                "$ref": "#/definitions/HasMarkVariant"
+              },
+              {
+                "$ref": "#/definitions/KilledByPlayer"
+              },
+              {
+                "$ref": "#/definitions/KilledByPlayerOrPets"
+              },
+              {
+                "$ref": "#/definitions/RandomChanceWithLooting"
+              },
+              {
+                "$ref": "#/definitions/RandomDifficultyChance"
+              },
+              {
+                "$ref": "#/definitions/RandomRegionalDifficultyChance"
+              },
+              {
+                "$ref": "#/definitions/RandomChance"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "LootingEnchant": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "looting_enchant"
+          ]
+        },
+        "count": {
+          "$ref": "#/definitions/Count"
+        }
+      }
+    },
+    "Count": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "RandomAuxValue": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "random_aux_value"
+          ]
+        },
+        "values": {
+          "$ref": "#/definitions/Values"
+        }
+      }
+    },
+    "Values": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "RandomBlockState": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "random_block_state"
+          ]
+        },
+        "block_state": {
+          "type": "string"
+        },
+        "values": {
+          "$ref": "#/definitions/Values_1"
+        }
+      }
+    },
+    "Values_1": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "RandomDye": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "random_dye"
+          ]
+        }
+      }
+    },
+    "SetActorId": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_actor_id"
+          ]
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "SetBannerDetails": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_banner_details"
+          ]
+        },
+        "type": {
+          "type": "number"
+        }
+      }
+    },
+    "SetBookContents": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_book_contents"
+          ]
+        },
+        "author": {
+          "type": "string"
+        },
+        "pages": {
+          "type": "array",
+          "items": [],
+          "minItems": 0,
+          "maxItems": 0
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "SetCount": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_count"
+          ]
+        },
+        "count": {
+          "$ref": "#/definitions/Count_1"
+        }
+      }
+    },
+    "Count_1": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "SetDamage": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_damage"
+          ]
+        },
+        "damage": {
+          "$ref": "#/definitions/Damage"
+        }
+      }
+    },
+    "Damage": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "SetData": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_data"
+          ]
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        }
+      }
+    },
+    "Data": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number"
+        },
+        "min": {
+          "type": "number"
+        }
+      }
+    },
+    "SetDataFromColorIndex": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_data_from_color_index"
+          ]
+        }
+      }
+    },
+    "SetLore": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_lore"
+          ]
+        },
+        "lore": {
+          "type": "array",
+          "items": [],
+          "minItems": 0,
+          "maxItems": 0
+        }
+      }
+    },
+    "SetName": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "set_name"
+          ]
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "SpecificEnchants": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "specific_enchants"
+          ]
+        },
+        "enchants": {
+          "$ref": "#/definitions/MinecraftEnchantments"
+        }
+      }
+    },
+    "MinecraftEnchantments": {
+      "enum": [
+        "aqua_affinity",
+        "bane_of_arthropods",
+        "binding",
+        "blast_protection",
+        "channeling",
+        "curse_of_vanishing",
+        "depth_strider",
+        "efficiency",
+        "feather_falling",
+        "fire_aspect",
+        "fire_protection",
+        "flame",
+        "fortune",
+        "frost_walker",
+        "impaling",
+        "infinity",
+        "knockback",
+        "looting",
+        "loyalty",
+        "luck_of_the_sea",
+        "lure",
+        "mending",
+        "multishot",
+        "piercing",
+        "power",
+        "projectile_protection",
+        "protection",
+        "punch",
+        "quick_charge",
+        "respiration",
+        "riptide",
+        "sharpness",
+        "silk_touch",
+        "smite",
+        "soul_speed",
+        "thorns",
+        "unbreaking"
+      ],
+      "type": "string"
+    },
+    "TraderMaterialType": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "trader_material_type"
+          ]
+        }
+      }
+    },
+    "LootTableType": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "loot_table"
+          ]
+        },
+        "name": {
+          "pattern": "^(?:loot_tables/)+[a-z]+$",
+          "type": "string"
+        },
+        "pools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LootTablePool"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

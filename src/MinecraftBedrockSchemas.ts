@@ -4,12 +4,13 @@ import path from 'path';
 import * as TJS from 'typescript-json-schema';
 
 import { Manifest } from '@models/Manifests/Manifest';
-import { Blocks } from '@models/Blocks.behavior/Blocks';
-import { Items } from '@models/Items.behavior/Items';
-import { Entities } from '@models/Entity.behavior/Entities';
-import { Recipes } from '@models/Recipes/Recipe';
-import { AnimationControllers } from '@models/AnimationControllers.behavior/AnimationControllers';
-import { Animations } from '@models/Animations.behavior/Animations';
+import { Blocks } from '@models/BehaviorPack/Blocks/Blocks';
+import { Items } from '@models/BehaviorPack/Items/Items';
+import { Entities } from '@models/BehaviorPack/Entity/Entities';
+import { Recipes } from '@models/BehaviorPack/Recipes/Recipes';
+import { AnimationControllers } from '@models/BehaviorPack/AnimationControllers/AnimationControllers';
+import { Animations } from '@models/BehaviorPack/Animations/Animations';
+import { LootTables } from '@models/BehaviorPack/LootTables/LootTables';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
@@ -26,7 +27,8 @@ class MinecraftBedrockSchemas {
       new Entities,
       new Recipes,
       new AnimationControllers,
-      new Animations
+      new Animations,
+      new LootTables
     ];
   }
 

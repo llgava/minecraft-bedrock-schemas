@@ -2,6 +2,7 @@
   "name": "minecraft-bedrock-schemas",
   "version": "1.0.0",
   "main": "./src/index.ts",
+  "typings": "index.d.ts",
   "description": "Minecraft Bedrock JSON Schemas for addons development.",
   "keywords": [ "Minecraft", "JSON Schemas", "TypeScript" ],
   "author": "llgava <llgavamt@gmail.com>",
