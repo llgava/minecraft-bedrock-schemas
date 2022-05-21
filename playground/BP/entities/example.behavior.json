@@ -1,0 +1,55 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "llgava:example_entity",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true,
+
+      "animations": {
+        "animation.example": "animation.example_animation",
+        "controller.example": "controller.animation.example"
+      },
+
+      "scripts": {
+        "animate": ["controller.example"]
+      }
+    },
+
+    "component_groups": {
+      "group:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_damage", "operator": "!=", "value": "projectile" }
+                ],
+
+                "player_with_instabuild": true,
+                "other_with_families": "player"
+              },
+
+              "event": "event:despawn"
+            }
+          }
+        ]
+      }
+    },
+
+    "events": {
+      "event:despawn": {
+        "add": {
+          "component_groups": ["group:despawn"]
+        }
+      }
+    }
+  }
+}

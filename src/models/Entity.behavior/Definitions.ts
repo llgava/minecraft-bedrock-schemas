@@ -184,15 +184,24 @@ export interface Description {
   is_summonable?: boolean;
   is_experimental?: boolean;
   runtime_identifier?: string;
-  register_to_creative_menu?: boolean;
+  animations?: AnimationProperties;
+  scripts?: ScriptProperties;
 }
 
 // Properties
+export interface AnimationProperties {
+  [property_name: string]: string;
+}
+
+export interface ScriptProperties {
+  animate: string[];
+}
+
+// Components
 export interface ComponentGroups {
   [property_name: string]: Components;
 }
 
-// Components
 export interface Components {
   ['minecraft:addrider']?: Addrider;
   ['minecraft:admire_item']?: AdmireItem;

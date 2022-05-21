@@ -1,5 +1,5 @@
 describe('Identifier', () => {
-  it('should be a valid identifier for blocks, items & entity', () => {
+  it('should be a valid identifier for blocks, items and entities', () => {
     const pattern = new RegExp('^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$');
 
     expect('namespace:id').toMatch(pattern);

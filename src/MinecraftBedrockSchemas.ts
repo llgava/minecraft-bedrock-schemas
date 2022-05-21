@@ -9,12 +9,13 @@ import { Items } from '@models/Items.behavior/Items';
 import { Entities } from '@models/Entity.behavior/Entities';
 import { Recipes } from '@models/Recipes/Recipe';
 import { AnimationControllers } from '@models/AnimationControllers.behavior/AnimationControllers';
+import { Animations } from '@models/Animations.behavior/Animations';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
 class MinecraftBedrockSchemas {
-  private version: string;
-  private schemas: Schemas[];
+  public version: string;
+  public schemas: Schemas[];
 
   constructor(version = '1.18.10') {
     this.version = version;
@@ -24,7 +25,8 @@ class MinecraftBedrockSchemas {
       new Items,
       new Entities,
       new Recipes,
-      new AnimationControllers
+      new AnimationControllers,
+      new Animations
     ];
   }
 
@@ -53,7 +55,7 @@ class MinecraftBedrockSchemas {
   public generateSettingsFile(saveTo: string): void {
     console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating VSCode settings...`);
 
-    if (!fs.existsSync('saveTo')) {
+    if (!fs.existsSync(saveTo)) {
       fs.mkdirSync(saveTo, { recursive: true });
     }
 

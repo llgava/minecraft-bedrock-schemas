@@ -43,6 +43,13 @@
         "development_behavior_packs/*/animation_controllers/*.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animation_controllers_behavior.schema.json"
+    },
+    {
+      "fileMatch": [
+        "behavior_packs/*/animations/*.json",
+        "development_behavior_packs/*/animations/*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animations_behavior.schema.json"
     }
   ]
 }

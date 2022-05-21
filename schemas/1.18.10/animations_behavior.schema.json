@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "animations": {
+      "$ref": "#/definitions/AnimationsBehavior"
+    }
+  },
+  "required": [
+    "animations",
+    "format_version"
+  ],
+  "definitions": {
+    "AnimationsBehavior": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/AnimationsProperty"
+      }
+    },
+    "AnimationsProperty": {
+      "type": "object",
+      "properties": {
+        "loop": {
+          "type": "boolean"
+        },
+        "timeline": {
+          "$ref": "#/definitions/Timeline"
+        },
+        "animation_length": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "animation_length",
+        "loop",
+        "timeline"
+      ]
+    },
+    "Timeline": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

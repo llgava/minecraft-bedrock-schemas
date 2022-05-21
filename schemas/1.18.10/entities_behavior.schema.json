@@ -52,12 +52,35 @@
         "runtime_identifier": {
           "type": "string"
         },
-        "register_to_creative_menu": {
-          "type": "boolean"
+        "animations": {
+          "$ref": "#/definitions/AnimationProperties"
+        },
+        "scripts": {
+          "$ref": "#/definitions/ScriptProperties"
         }
       },
       "required": [
         "identifier"
+      ]
+    },
+    "AnimationProperties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ScriptProperties": {
+      "type": "object",
+      "properties": {
+        "animate": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "animate"
       ]
     },
     "ComponentGroups": {
@@ -817,6 +840,15 @@
         "broadcast_filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -1049,6 +1081,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -1272,6 +1313,40 @@
           ],
           "minItems": 2,
           "maxItems": 2
+        }
+      }
+    },
+    "OtherWithFamilies": {
+      "type": "object",
+      "properties": {
+        "other_with_families": {
+          "type": "string"
+        }
+      }
+    },
+    "PlayerWithInstabuild": {
+      "type": "object",
+      "properties": {
+        "player_with_instabuild": {
+          "type": "boolean"
+        }
+      }
+    },
+    "WithoutComponents": {
+      "type": "object",
+      "properties": {
+        "without_components": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       }
     },
@@ -3489,6 +3564,15 @@
         "entity_filter": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -3914,6 +3998,15 @@
         "love_filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -4243,6 +4336,15 @@
         },
         "celeberation_targets": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -4621,6 +4723,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -4865,6 +4976,15 @@
         },
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -5189,6 +5309,15 @@
         "event_filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -5433,6 +5562,15 @@
       "properties": {
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -5881,6 +6019,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -6113,6 +6260,15 @@
       "properties": {
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -6380,6 +6536,15 @@
         },
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -6692,6 +6857,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -6990,6 +7164,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -7236,6 +7419,15 @@
         },
         "entity_filter": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -7988,6 +8180,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -8475,6 +8676,15 @@
         },
         "spawn_filter": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -8967,6 +9177,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -9274,6 +9493,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -9524,6 +9752,15 @@
         },
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -10346,6 +10583,15 @@
         },
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },
@@ -11425,6 +11671,15 @@
         "filters": {
           "anyOf": [
             {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
+            {
               "$ref": "#/definitions/ClockTime"
             },
             {
@@ -11847,6 +12102,15 @@
       "properties": {
         "filters": {
           "anyOf": [
+            {
+              "$ref": "#/definitions/OtherWithFamilies"
+            },
+            {
+              "$ref": "#/definitions/PlayerWithInstabuild"
+            },
+            {
+              "$ref": "#/definitions/WithoutComponents"
+            },
             {
               "$ref": "#/definitions/ClockTime"
             },

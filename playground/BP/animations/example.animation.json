@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.example_animation": {
+      "loop": true,
+      "animation_length": 5,
+      "timeline": {
+        "0": ["/say §aanimation.example_animation§r is working!§r"]
+      }
+    }
+  }
+}

@@ -5,9 +5,7 @@
       "initial_state": "default",
       "states": {
         "default": {
-          "on_entry": [
-            "/say @s This is a test :)"
-          ],
+          "on_entry": ["/say This is a test"],
 
           "transitions": [
             { "is_valid": "query.skin_id == 1" }
@@ -15,8 +13,12 @@
         },
 
         "is_valid": {
-          "on_entry": [
-            "/say §aYes!§r This Animation Controller is valid :D"
+          "on_entry": ["/say §aYes!§r This Animation Controller is valid"],
+          "on_exit": ["/say §cskin_id§r changed"],
+          "animations": ["animation.example"],
+
+          "transitions": [
+            { "default": "query.skin_id != 1" }
           ]
         }
       }
