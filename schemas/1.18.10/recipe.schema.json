@@ -6,26 +6,26 @@
       "type": "string"
     },
     "minecraft:recipe_shaped": {
-      "$ref": "#/definitions/RecipeShapeBehavior"
+      "$ref": "#/definitions/RecipeShape"
     },
     "minecraft:recipe_shapeless": {
-      "$ref": "#/definitions/RecipeShapeBehavior"
+      "$ref": "#/definitions/RecipeShape"
     },
     "minecraft:recipe_brewing_container": {
-      "$ref": "#/definitions/RecipeBrewingBehavior"
+      "$ref": "#/definitions/RecipeBrewing"
     },
     "minecraft:recipe_brewing_mix": {
-      "$ref": "#/definitions/RecipeBrewingBehavior"
+      "$ref": "#/definitions/RecipeBrewing"
     },
     "minecraft:recipe_furnace": {
-      "$ref": "#/definitions/RecipeFurnaceBehavior"
+      "$ref": "#/definitions/RecipeFurnace"
     }
   },
   "required": [
     "format_version"
   ],
   "definitions": {
-    "RecipeShapeBehavior": {
+    "RecipeShape": {
       "type": "object",
       "properties": {
         "description": {
@@ -111,7 +111,7 @@
         }
       }
     },
-    "RecipeBrewingBehavior": {
+    "RecipeBrewing": {
       "type": "object",
       "properties": {
         "description": {
@@ -141,7 +141,7 @@
         }
       }
     },
-    "RecipeFurnaceBehavior": {
+    "RecipeFurnace": {
       "type": "object",
       "properties": {
         "description": {

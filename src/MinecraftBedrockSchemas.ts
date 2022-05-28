@@ -5,14 +5,14 @@ import * as TJS from 'typescript-json-schema';
 
 import { Tick } from '@models/Tick';
 
-import { Manifest } from '@models/Manifests/Manifest';
-import { Blocks } from '@models/BehaviorPack/Blocks/Blocks';
-import { Items } from '@models/BehaviorPack/Items/Items';
-import { Entities } from '@models/BehaviorPack/Entity/Entities';
-import { Recipes } from '@models/BehaviorPack/Recipes/Recipes';
-import { AnimationControllers } from '@models/BehaviorPack/AnimationControllers/AnimationControllers';
-import { Animations } from '@models/BehaviorPack/Animations/Animations';
-import { LootTables } from '@models/BehaviorPack/LootTables/LootTables';
+import { ManifestSchema } from '@models/Manifests/Schema';
+import { BlocksSchema } from '@models/BehaviorPack/Blocks/Schema';
+import { ItemsSchema } from '@models/BehaviorPack/Items/Schema';
+import { EntitiesSchema } from '@models/BehaviorPack/Entity/Schema';
+import { RecipesSchema } from '@models/BehaviorPack/Recipes/Schema';
+import { AnimationControllersSchema } from '@models/BehaviorPack/AnimationControllers/Schema';
+import { AnimationsSchema } from '@models/BehaviorPack/Animations/Schema';
+import { LootTablesSchema } from '@models/BehaviorPack/LootTables/Schema';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
@@ -24,14 +24,14 @@ class MinecraftBedrockSchemas {
     this.version = version;
     this.schemas = [
       new Tick(),
-      new Manifest(),
-      new Blocks(),
-      new Items(),
-      new Entities(),
-      new Recipes(),
-      new AnimationControllers(),
-      new Animations(),
-      new LootTables(),
+      new ManifestSchema(),
+      new BlocksSchema(),
+      new ItemsSchema(),
+      new EntitiesSchema(),
+      new RecipesSchema(),
+      new AnimationControllersSchema(),
+      new AnimationsSchema(),
+      new LootTablesSchema(),
     ];
   }
 

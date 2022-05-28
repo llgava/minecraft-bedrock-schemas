@@ -6,7 +6,7 @@
       "type": "string"
     },
     "animations": {
-      "$ref": "#/definitions/AnimationsBehavior"
+      "$ref": "#/definitions/Animation"
     }
   },
   "required": [
@@ -14,7 +14,7 @@
     "format_version"
   ],
   "definitions": {
-    "AnimationsBehavior": {
+    "Animation": {
       "type": "object",
       "additionalProperties": {
         "$ref": "#/definitions/AnimationsProperty"

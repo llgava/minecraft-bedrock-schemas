@@ -1,4 +1,4 @@
-import { LootTablePool } from '@models/BehaviorPack/LootTables/Definitions';
+import { LootTablePool } from '@models/BehaviorPack/LootTables/LootTableProperties';
 
 export interface LootTableType {
   type?: 'loot_table';

@@ -1,4 +1,4 @@
-import { LootTablePool } from '@models/BehaviorPack/LootTables/Definitions';
+import { LootTablePool } from '@models/BehaviorPack/LootTables/LootTableProperties';
 import { MinecraftFunctionsType } from '@minecraft/types/MinecraftFunctionsType';
 
 export interface ItemType {

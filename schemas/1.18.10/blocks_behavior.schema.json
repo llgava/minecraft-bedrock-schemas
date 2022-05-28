@@ -6,7 +6,7 @@
       "type": "string"
     },
     "minecraft:block": {
-      "$ref": "#/definitions/BlocksBehavior"
+      "$ref": "#/definitions/Block"
     }
   },
   "required": [
@@ -14,7 +14,7 @@
     "minecraft:block"
   ],
   "definitions": {
-    "BlocksBehavior": {
+    "Block": {
       "type": "object",
       "properties": {
         "description": {

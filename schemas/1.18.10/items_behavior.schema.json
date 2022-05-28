@@ -6,7 +6,7 @@
       "type": "string"
     },
     "minecraft:item": {
-      "$ref": "#/definitions/ItemsBehavior"
+      "$ref": "#/definitions/Item"
     }
   },
   "required": [
@@ -14,7 +14,7 @@
     "minecraft:item"
   ],
   "definitions": {
-    "ItemsBehavior": {
+    "Item": {
       "type": "object",
       "properties": {
         "description": {

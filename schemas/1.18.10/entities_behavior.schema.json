@@ -6,7 +6,7 @@
       "type": "string"
     },
     "minecraft:entity": {
-      "$ref": "#/definitions/EntitiesBehavior"
+      "$ref": "#/definitions/Entity"
     }
   },
   "required": [
@@ -14,7 +14,7 @@
     "minecraft:entity"
   ],
   "definitions": {
-    "EntitiesBehavior": {
+    "Entity": {
       "type": "object",
       "properties": {
         "description": {

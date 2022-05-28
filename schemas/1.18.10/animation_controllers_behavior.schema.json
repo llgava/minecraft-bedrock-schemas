@@ -6,7 +6,7 @@
       "type": "string"
     },
     "animation_controllers": {
-      "$ref": "#/definitions/AnimationControllersBehavior"
+      "$ref": "#/definitions/AnimationController"
     }
   },
   "required": [
@@ -14,13 +14,13 @@
     "format_version"
   ],
   "definitions": {
-    "AnimationControllersBehavior": {
+    "AnimationController": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/definitions/AnimationControllerProperty"
+        "$ref": "#/definitions/AnimationControllerProperties"
       }
     },
-    "AnimationControllerProperty": {
+    "AnimationControllerProperties": {
       "type": "object",
       "properties": {
         "initial_state": {
