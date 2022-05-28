@@ -1,4 +1,5 @@
 {
+  "$id": "llgava.behavior_packs.AnimationControllers",
   "type": "object",
   "properties": {
     "format_version": {

@@ -1,5 +1,6 @@
 import { AnimationControllersBehavior } from './AnimationControllersBehavior';
 
+/** @$id llgava.behavior_packs.AnimationControllers */
 export class AnimationControllers {
   public format_version: string | '1.10.0';
   public 'animation_controllers': AnimationControllersBehavior;

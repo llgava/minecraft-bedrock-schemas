@@ -4,6 +4,7 @@ import { Header } from './Components/Header';
 import { Metadata } from './Components/Metadata';
 import { Modules } from './Components/Modules';
 
+/** @$id llgava.global.Manifest */
 export class Manifest {
   public format_version: 2;
   public header: Header;

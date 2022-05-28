@@ -1,5 +1,6 @@
 import { EntitiesBehavior } from './EntitiesBehavior';
 
+/** @$id llgava.behavior_packs.Entities */
 export class Entities {
   public format_version: string | '1.18.0';
   public 'minecraft:entity': EntitiesBehavior;

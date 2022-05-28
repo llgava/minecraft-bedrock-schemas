@@ -1,4 +1,5 @@
 {
+  "$id": "llgava.behavior_packs.Entities",
   "type": "object",
   "properties": {
     "format_version": {

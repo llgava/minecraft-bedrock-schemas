@@ -2,6 +2,13 @@
   "json.schemas": [
     {
       "fileMatch": [
+        "behavior_packs/*/functions/tick.json",
+        "development_behavior_packs/*/functions/tick.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/tick.schema.json"
+    },
+    {
+      "fileMatch": [
         "behavior_packs/*/manifest.json",
         "resource_packs/*/manifest.json",
         "development_behavior_packs/*/manifest.json",

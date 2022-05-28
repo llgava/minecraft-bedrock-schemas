@@ -3,6 +3,8 @@ import chalk from 'chalk';
 import path from 'path';
 import * as TJS from 'typescript-json-schema';
 
+import { Tick } from '@models/Tick';
+
 import { Manifest } from '@models/Manifests/Manifest';
 import { Blocks } from '@models/BehaviorPack/Blocks/Blocks';
 import { Items } from '@models/BehaviorPack/Items/Items';
@@ -21,6 +23,7 @@ class MinecraftBedrockSchemas {
   constructor(version = '1.18.10') {
     this.version = version;
     this.schemas = [
+      new Tick(),
       new Manifest(),
       new Blocks(),
       new Items(),

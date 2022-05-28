@@ -1,4 +1,5 @@
 {
+  "$id": "llgava.behavior_packs.LootTables",
   "type": "object",
   "properties": {
     "pools": {

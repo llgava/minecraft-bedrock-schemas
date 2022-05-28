@@ -1,0 +1,1 @@
+say §aSimple text§r

@@ -1,5 +1,6 @@
 import { BlocksBehavior } from './BlocksBehavior';
 
+/** @$id llgava.behavior_packs.Blocks */
 export class Blocks {
   public format_version: string | '1.18.0';
   public 'minecraft:block': BlocksBehavior;

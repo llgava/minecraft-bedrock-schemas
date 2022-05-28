@@ -1,5 +1,6 @@
 import { LootTablePool } from './Definitions';
 
+/** @$id llgava.behavior_packs.LootTables */
 export class LootTables {
   public pools?: LootTablePool[];
 

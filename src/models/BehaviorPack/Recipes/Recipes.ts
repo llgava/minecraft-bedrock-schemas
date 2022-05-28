@@ -2,6 +2,7 @@ import { RecipeBrewingBehavior } from './RecipeBrewingBehavior';
 import { RecipeFurnaceBehavior } from './RecipeFurnaceBehavior';
 import { RecipeShapeBehavior } from './RecipeShapeBehavior';
 
+/** @$id llgava.behavior_packs.Recipes */
 export class Recipes {
   public format_version: string | '1.18.10';
   public ['minecraft:recipe_shaped']?: RecipeShapeBehavior;

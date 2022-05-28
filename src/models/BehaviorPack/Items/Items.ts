@@ -1,6 +1,7 @@
 // tslint:disable: align
 import { ItemsBehavior } from './ItemsBehavior';
 
+/** @$id llgava.behavior_packs.Items */
 export class Items {
   public format_version: string | '1.18.0';
   public 'minecraft:item': ItemsBehavior;

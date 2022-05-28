@@ -1,0 +1,13 @@
+{
+  "$id": "llgava.behavior_packs.functions.Tick",
+  "type": "object",
+  "properties": {
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

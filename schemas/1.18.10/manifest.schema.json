@@ -1,4 +1,5 @@
 {
+  "$id": "llgava.global.Manifest",
   "type": "object",
   "properties": {
     "format_version": {
