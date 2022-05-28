@@ -119,4 +119,3 @@ interface EventsReponse {
   teleport?: Teleport;
   transform_item?: TransformItem;
 }
-

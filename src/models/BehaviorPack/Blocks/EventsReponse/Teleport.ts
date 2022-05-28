@@ -6,4 +6,3 @@ export interface Teleport extends MinecraftTarget {
   land_on_block?: boolean;
   max_range?: [number, number, number];
 }
-

@@ -33,4 +33,3 @@ interface ParticleOnStart {
   particle_y_offset?: number;
   particle_offset_towards_interactor?: boolean;
 }
-

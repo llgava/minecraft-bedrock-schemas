@@ -7,7 +7,7 @@ export interface Projectile {
   fire_affected_by_griefing?: boolean;
   gravity?: number;
   hit_sound?: string;
-  homing?: boolean
+  homing?: boolean;
   inertia?: number;
   is_dangerous?: boolean;
   knockback?: boolean;

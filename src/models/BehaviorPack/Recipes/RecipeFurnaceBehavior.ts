@@ -5,5 +5,5 @@ export interface RecipeFurnaceBehavior {
   description?: Description;
   input?: string;
   output?: string;
-  tags?: MinecraftFurnaceRecipeTags[]
+  tags?: MinecraftFurnaceRecipeTags[];
 }

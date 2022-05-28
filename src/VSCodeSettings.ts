@@ -1,6 +1,7 @@
 import { JSONSchema, Schemas } from './types/Schemas';
 
-const BASE_URL = 'https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/$VERSION/$FILE_NAME.schema.json';
+const BASE_URL =
+  'https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/$VERSION/$FILE_NAME.schema.json';
 
 export class VSCodeSettings {
   public schemas: Schemas[];
@@ -23,7 +24,7 @@ export class VSCodeSettings {
         fileMatch: this.schemas[i].fileMatch,
         url: this.baseUrl
           .replace('$VERSION', this.version)
-          .replace('$FILE_NAME', this.schemas[i].fileName)
+          .replace('$FILE_NAME', this.schemas[i].fileName),
       });
     }
   }

@@ -1,15 +1,14 @@
 {
-  "name": "minecraft-bedrock-schemas",
   "version": "1.0.0",
-  "main": "./src/index.ts",
-  "typings": "index.d.ts",
+  "name": "minecraft-bedrock-schemas",
   "description": "Minecraft Bedrock JSON Schemas for addons development.",
-  "keywords": [ "Minecraft", "JSON Schemas", "TypeScript" ],
   "author": "llgava <llgavamt@gmail.com>",
+  "keywords": ["Minecraft", "Minecraft Development", "JSON Schemas", "TypeScript"],
   "license": "MIT",
 
+  "main": "./src/index.ts",
   "scripts": {
-    "build": "ts-node-dev -r tsconfig-paths/register scripts/generate-schemas.ts",
+    "generate-schemas": "node -r tsconfig-paths/register scripts/GenerateSchema.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only scripts/generate-schemas.ts",
     "lint": "yarn eslint . --ext .ts",
     "bump": "yarn upgrade --latest",
@@ -29,7 +28,10 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
+    "prettier": "^2.6.2",
     "ts-jest": "^27.1.3",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.14.0",
@@ -38,6 +40,6 @@
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/llgava/minecraft-schemas.git"
+    "url": "https://github.com/llgava/minecraft-bedrock-schemas.git"
   }
 }

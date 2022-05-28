@@ -1,10 +1,7 @@
 import { BehaviorMove } from './BehaviorMove';
 
 export interface BehaviorMoveToLiquid extends BehaviorMove {
-  material_type?: MaterialType[]
+  material_type?: MaterialType[];
 }
 
-type MaterialType =
-  | 'Any'
-  | 'Water'
-  | 'Lava';
+type MaterialType = 'Any' | 'Water' | 'Lava';

@@ -1,5 +1,1 @@
-export type MinecraftDifficulty =
-  | 'easy'
-  | 'hard'
-  | 'normal'
-  | 'peaceful';
+export type MinecraftDifficulty = 'easy' | 'hard' | 'normal' | 'peaceful';

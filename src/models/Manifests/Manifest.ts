@@ -12,9 +12,15 @@ export class Manifest {
   public metadata?: Metadata;
   public capabilities?: Capabilities;
 
-  /** @TJS-ignore */ get fileName(): string { return 'manifest'; }
-  /** @TJS-ignore */ get path(): string { return __filename; }
-  /** @TJS-ignore */ get name(): string { return this.constructor.name; }
+  /** @TJS-ignore */ get fileName(): string {
+    return 'manifest';
+  }
+  /** @TJS-ignore */ get path(): string {
+    return __filename;
+  }
+  /** @TJS-ignore */ get name(): string {
+    return this.constructor.name;
+  }
 
   /** @TJS-ignore */
   get fileMatch(): string[] {
@@ -22,7 +28,7 @@ export class Manifest {
       'behavior_packs/*/manifest.json',
       'resource_packs/*/manifest.json',
       'development_behavior_packs/*/manifest.json',
-      'development_resource_packs/*/manifest.json'
+      'development_resource_packs/*/manifest.json',
     ];
   }
 }

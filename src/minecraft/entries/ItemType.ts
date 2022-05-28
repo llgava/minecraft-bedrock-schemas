@@ -8,5 +8,5 @@ export interface ItemType {
   weight?: number;
   quality?: number;
   pools?: LootTablePool[];
-  functions?: MinecraftFunctionsType[]
+  functions?: MinecraftFunctionsType[];
 }

@@ -1,6 +1,6 @@
 export interface AnimationsProperty {
   loop: boolean;
-  timeline: Timeline
+  timeline: Timeline;
   animation_length: number;
 }
 

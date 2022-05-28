@@ -1,4 +1,9 @@
-import { ComponentGroups, Components, Description, Events } from './Definitions';
+import {
+  ComponentGroups,
+  Components,
+  Description,
+  Events,
+} from './Definitions';
 
 export class EntitiesBehavior {
   public description: Description;

@@ -1,4 +1,4 @@
 export interface CraftingTable {
-  crafting_tags?: string[],
+  crafting_tags?: string[];
   custom_description?: string;
 }

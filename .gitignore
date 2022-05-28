@@ -2,9 +2,9 @@
 **/node_modules
 **/__addon__
 **/settings.json
-**/pt_BR
 
 # Files
 **/yarn-error.log
 
 # Temp
+**/pt_BR

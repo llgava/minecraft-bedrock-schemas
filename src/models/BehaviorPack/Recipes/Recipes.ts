@@ -10,9 +10,15 @@ export class Recipes {
   public ['minecraft:recipe_brewing_mix']?: RecipeBrewingBehavior;
   public ['minecraft:recipe_furnace']?: RecipeFurnaceBehavior;
 
-  /** @TJS-ignore */ get fileName(): string { return 'recipe'; }
-  /** @TJS-ignore */ get path(): string { return __filename; }
-  /** @TJS-ignore */ get name(): string { return this.constructor.name; }
+  /** @TJS-ignore */ get fileName(): string {
+    return 'recipe';
+  }
+  /** @TJS-ignore */ get path(): string {
+    return __filename;
+  }
+  /** @TJS-ignore */ get name(): string {
+    return this.constructor.name;
+  }
 
   /** @TJS-ignore */
   get fileMatch(): string[] {

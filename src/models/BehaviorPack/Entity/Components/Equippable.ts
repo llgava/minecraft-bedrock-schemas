@@ -2,7 +2,6 @@ export interface Equippable {
   slots?: Slots[];
 }
 
-
 interface Slots {
   accepted_items?: string[];
   interact_text?: string;

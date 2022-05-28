@@ -1,3 +1,1 @@
-export type MinecraftShapes =
-  | 'circle'
-  | 'line';
+export type MinecraftShapes = 'circle' | 'line';

@@ -1,5 +1,1 @@
-export type MinecraftTemperatures =
-  | 'cold'
-  | 'mild'
-  | 'ocean'
-  | 'warm';
+export type MinecraftTemperatures = 'cold' | 'mild' | 'ocean' | 'warm';

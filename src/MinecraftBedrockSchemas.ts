@@ -21,28 +21,34 @@ class MinecraftBedrockSchemas {
   constructor(version = '1.18.10') {
     this.version = version;
     this.schemas = [
-      new Manifest,
-      new Blocks,
-      new Items,
-      new Entities,
-      new Recipes,
-      new AnimationControllers,
-      new Animations,
-      new LootTables
+      new Manifest(),
+      new Blocks(),
+      new Items(),
+      new Entities(),
+      new Recipes(),
+      new AnimationControllers(),
+      new Animations(),
+      new LootTables(),
     ];
   }
 
   public generateSchemaFiles(saveTo: string): void {
-    console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating schemas...`);
+    console.log(
+      `${chalk.bold.magenta(`[v${this.version}]`)} Generating schemas...`
+    );
 
     if (!fs.existsSync(saveTo)) {
       fs.mkdirSync(`${saveTo}/${this.version}`, { recursive: true });
     }
 
-
     for (const i in this.schemas) {
-      const program = TJS.programFromConfig('./tsconfig.json', [path.resolve(this.schemas[i].path)]);
-      const schema = TJS.generateSchema(program, this.schemas[i].name, { required: true });
+      const program = TJS.programFromConfig('./tsconfig.json', [
+        path.resolve(this.schemas[i].path),
+      ]);
+
+      const schema = TJS.generateSchema(program, this.schemas[i].name, {
+        required: true,
+      });
 
       fs.writeFileSync(
         `${saveTo}/${this.version}/${this.schemas[i].fileName}.schema.json`,
@@ -55,7 +61,11 @@ class MinecraftBedrockSchemas {
   }
 
   public generateSettingsFile(saveTo: string): void {
-    console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating VSCode settings...`);
+    console.log(
+      `${chalk.bold.magenta(
+        `[v${this.version}]`
+      )} Generating VSCode settings...`
+    );
 
     if (!fs.existsSync(saveTo)) {
       fs.mkdirSync(saveTo, { recursive: true });
