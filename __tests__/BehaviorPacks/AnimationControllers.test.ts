@@ -1,7 +1,7 @@
 import faker from '@faker-js/faker';
 
-describe('Animation Controller name', () => {
-  it('should be a valid Animation Controller name for entities', () => {
+describe('Behavior Pack ❯ Animation Controllers', () => {
+  it('should be a valid Behavior Pack Animation Controller name', () => {
     const pattern = new RegExp('^(?:controller.animation.)+[a-z]+$');
 
     expect('controller.animation.name').toMatch(pattern);
