@@ -74,6 +74,13 @@
     },
     {
       "fileMatch": [
+        "resource_packs/*/textures/terrain_texture.json",
+        "development_resource_packs/*/textures/terrain_texture.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/terrain_texture.schema.json"
+    },
+    {
+      "fileMatch": [
         "resource_packs/*/blocks.json",
         "development_resource_packs/*/blocks.json"
       ],

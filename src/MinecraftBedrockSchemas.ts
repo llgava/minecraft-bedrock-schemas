@@ -12,7 +12,8 @@ import { RecipesSchema } from '@models/BehaviorPack/Recipes/Schema';
 import { AnimationControllersSchema } from '@models/BehaviorPack/AnimationControllers/Schema';
 import { AnimationsSchema } from '@models/BehaviorPack/Animations/Schema';
 import { LootTablesSchema } from '@models/BehaviorPack/LootTables/Schema';
-import { ItemTextureSchema } from '@models/ResourcePack/ItemTexture/Schema';
+import { ItemTextureSchema } from '@models/ResourcePack/ItemTexture';
+import { TerrainTextureSchema } from '@models/ResourcePack/TerrainTexture';
 import { BlocksTextureSchema } from '@models/ResourcePack/BlocksTexture/Schema';
 import { SoundsSchema } from '@models/ResourcePack/Sounds/Schema';
 import { SoundDefinitionsSchema } from '@models/ResourcePack/SoundDefinitions/Schema';
@@ -43,6 +44,7 @@ class MinecraftBedrockSchemas {
 
       // Resource Packs
       new ItemTextureSchema(),
+      new TerrainTextureSchema(),
       new BlocksTextureSchema(),
       new SoundsSchema(),
       new SoundDefinitionsSchema(),

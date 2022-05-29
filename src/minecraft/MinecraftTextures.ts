@@ -1,4 +1,4 @@
-export interface ItemTexture {
+export interface MinecraftTextures {
   textures?: string | string[] | Textures;
 }
 

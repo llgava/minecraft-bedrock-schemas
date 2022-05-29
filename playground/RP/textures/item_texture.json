@@ -2,8 +2,34 @@
   "resource_pack_name": "pack.name",
   "texture_name": "atlas.items",
   "texture_data": {
-    "example_item": {
+    "single_example_item": {
       "textures": "textures/items/example_item"
+    },
+
+    "array_example_item": {
+      "textures": [
+        "textures/items/array_example_item_0",
+        "textures/items/array_example_item_1",
+        "textures/items/array_example_item_2"
+      ]
+    },
+
+    "variantion_example_item": {
+      "textures": {
+        "path": "textures/items/variation_example_item",
+        "tint_color": "#FFF",
+        "overlay_color": "#00FF00",
+        "variations": [
+          {
+            "path": "textures/items/variation_example_item_0",
+            "weight": 50
+          },
+          {
+            "path": "textures/items/variation_example_item_1",
+            "weight": 50
+          }
+        ]
+      }
     }
   }
 }

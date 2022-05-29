@@ -1,5 +1,5 @@
 {
-  "$id": "llgava.resource_packs.ItemTexture",
+  "$id": "llgava.resource_packs.TerrainTexture",
   "type": "object",
   "properties": {
     "resource_pack_name": {
@@ -8,14 +8,22 @@
     "texture_name": {
       "type": "string",
       "enum": [
-        "atlas.items"
+        "atlas.terrain"
       ]
+    },
+    "num_mip_levels": {
+      "type": "number"
+    },
+    "padding": {
+      "type": "number"
     },
     "texture_data": {
       "$ref": "#/definitions/MinecraftTextureData"
     }
   },
   "required": [
+    "num_mip_levels",
+    "padding",
     "resource_pack_name",
     "texture_data",
     "texture_name"

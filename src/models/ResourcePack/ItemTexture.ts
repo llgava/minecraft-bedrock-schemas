@@ -1,10 +1,10 @@
-import { TextureData } from './TextureData';
+import { MinecraftTextureData } from '@minecraft/MinecraftTextureData';
 
 /** @$id llgava.resource_packs.ItemTexture */
 export class ItemTextureSchema {
   public resource_pack_name: string | 'pack.name';
   public texture_name: 'atlas.items';
-  public texture_data: TextureData;
+  public texture_data: MinecraftTextureData;
 
   /** @TJS-ignore */ get fileName(): string {
     return 'item_texture';

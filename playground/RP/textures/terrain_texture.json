@@ -1,0 +1,37 @@
+{
+  "resource_pack_name": "pack.name",
+  "texture_name": "atlas.terrain",
+  "num_mip_levels": 4,
+  "padding": 8,
+  "texture_data": {
+    "single_example_block": {
+      "textures": "textures/blocks/example_block"
+    },
+
+    "array_example_block": {
+      "textures": [
+        "textures/blocks/array_example_block_0",
+        "textures/blocks/array_example_block_1",
+        "textures/blocks/array_example_block_2"
+      ]
+    },
+
+    "variantion_example_block": {
+      "textures": {
+        "path": "textures/blocks/variation_example_block",
+        "tint_color": "#FFF",
+        "overlay_color": "#00FF00",
+        "variations": [
+          {
+            "path": "textures/blocks/variation_example_block_0",
+            "weight": 50
+          },
+          {
+            "path": "textures/blocks/variation_example_block_1",
+            "weight": 50
+          }
+        ]
+      }
+    }
+  }
+}
