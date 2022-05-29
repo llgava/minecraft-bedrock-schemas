@@ -1,3 +1,4 @@
+/** @$id llgava.global.Languages */
 export type Languages =
   | 'en_US'
   | 'en_GB'

@@ -1,0 +1,86 @@
+{
+  "$id": "llgava.resource_packs.ItemTexture",
+  "type": "object",
+  "properties": {
+    "resource_pack_name": {
+      "type": "string"
+    },
+    "texture_name": {
+      "type": "string",
+      "enum": [
+        "atlas.items"
+      ]
+    },
+    "texture_data": {
+      "$ref": "#/definitions/TextureData"
+    }
+  },
+  "required": [
+    "resource_pack_name",
+    "texture_data",
+    "texture_name"
+  ],
+  "definitions": {
+    "TextureData": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ItemTexture"
+      }
+    },
+    "ItemTexture": {
+      "type": "object",
+      "properties": {
+        "textures": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/definitions/Textures"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "Textures": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "overlay_color": {
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
+          "type": "string"
+        },
+        "tint_color": {
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
+          "type": "string"
+        },
+        "variations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Variations"
+          }
+        }
+      }
+    },
+    "Variations": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

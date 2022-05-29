@@ -13,6 +13,7 @@ import { RecipesSchema } from '@models/BehaviorPack/Recipes/Schema';
 import { AnimationControllersSchema } from '@models/BehaviorPack/AnimationControllers/Schema';
 import { AnimationsSchema } from '@models/BehaviorPack/Animations/Schema';
 import { LootTablesSchema } from '@models/BehaviorPack/LootTables/Schema';
+import { ItemTextureSchema } from '@models/ResourcePack/ItemTexture/Schema';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
@@ -23,8 +24,11 @@ class MinecraftBedrockSchemas {
   constructor(version = '1.18.10') {
     this.version = version;
     this.schemas = [
-      new Tick(),
+      // Global
       new ManifestSchema(),
+
+      // Behavior Packs
+      new Tick(),
       new BlocksSchema(),
       new ItemsSchema(),
       new EntitiesSchema(),
@@ -32,6 +36,9 @@ class MinecraftBedrockSchemas {
       new AnimationControllersSchema(),
       new AnimationsSchema(),
       new LootTablesSchema(),
+
+      // Resource Packs
+      new ItemTextureSchema(),
     ];
   }
 

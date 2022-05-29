@@ -1,4 +1,3 @@
-// tslint:disable: align
 import { Item } from './Item';
 
 /** @$id llgava.behavior_packs.Items */
