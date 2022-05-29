@@ -88,10 +88,17 @@
     },
     {
       "fileMatch": [
-        "resource_packs/*/sounds/sounds_definitions.json",
-        "development_resource_packs/*/sounds/sounds_definitions.json"
+        "resource_packs/*/sounds/sound_definitions.json",
+        "development_resource_packs/*/sounds/sound_definitions.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sounds_definition.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sound_definitions.schema.json"
+    },
+    {
+      "fileMatch": [
+        "resource_packs/*/sounds/music_definitions.json",
+        "development_resource_packs/*/sounds/music_definitions.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/music_definitions.schema.json"
     }
   ]
 }

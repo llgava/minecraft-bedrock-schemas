@@ -3,9 +3,8 @@ import chalk from 'chalk';
 import path from 'path';
 import * as TJS from 'typescript-json-schema';
 
-import { Tick } from '@models/BehaviorPack/Tick';
-
 import { ManifestSchema } from '@models/Manifests/Schema';
+import { Tick } from '@models/BehaviorPack/Tick';
 import { BlocksSchema } from '@models/BehaviorPack/Blocks/Schema';
 import { ItemsSchema } from '@models/BehaviorPack/Items/Schema';
 import { EntitiesSchema } from '@models/BehaviorPack/Entity/Schema';
@@ -16,7 +15,9 @@ import { LootTablesSchema } from '@models/BehaviorPack/LootTables/Schema';
 import { ItemTextureSchema } from '@models/ResourcePack/ItemTexture/Schema';
 import { BlocksTextureSchema } from '@models/ResourcePack/BlocksTexture/Schema';
 import { SoundsSchema } from '@models/ResourcePack/Sounds/Schema';
-import { SoundsDefinitionSchema } from '@models/ResourcePack/SoundsDefinition/Schema';
+import { SoundDefinitionsSchema } from '@models/ResourcePack/SoundDefinitions/Schema';
+import { MusicDefinitionsSchema } from '@models/ResourcePack/MusicDefinitions/Schema';
+
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
@@ -44,7 +45,8 @@ class MinecraftBedrockSchemas {
       new ItemTextureSchema(),
       new BlocksTextureSchema(),
       new SoundsSchema(),
-      new SoundsDefinitionSchema(),
+      new SoundDefinitionsSchema(),
+      new MusicDefinitionsSchema(),
     ];
   }
 

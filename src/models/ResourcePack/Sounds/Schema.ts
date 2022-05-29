@@ -12,17 +12,17 @@ export class SoundsSchema {
   individual_event_sounds?: IndividualEventSounds;
   interactive_sounds?: InteractiveSounds;
 
-  /** @TJS-ignore */ get fileName(): string | any {
+  /** @TJS-ignore */ get fileName(): string {
     return 'sounds';
   }
-  /** @TJS-ignore */ get path(): string | any {
+  /** @TJS-ignore */ get path(): string {
     return __filename;
   }
-  /** @TJS-ignore */ get name(): string | any {
+  /** @TJS-ignore */ get name(): string {
     return this.constructor.name;
   }
 
-  /** @TJS-ignore */ get fileMatch(): string[] | any {
+  /** @TJS-ignore */ get fileMatch(): string[] {
     return [
       'resource_packs/*/sounds.json',
       'development_resource_packs/*/sounds.json',
