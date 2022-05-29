@@ -16,6 +16,7 @@ import { LootTablesSchema } from '@models/BehaviorPack/LootTables/Schema';
 import { ItemTextureSchema } from '@models/ResourcePack/ItemTexture/Schema';
 import { BlocksTextureSchema } from '@models/ResourcePack/BlocksTexture/Schema';
 import { SoundsSchema } from '@models/ResourcePack/Sounds/Schema';
+import { SoundsDefinitionSchema } from '@models/ResourcePack/SoundsDefinition/Schema';
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
@@ -43,6 +44,7 @@ class MinecraftBedrockSchemas {
       new ItemTextureSchema(),
       new BlocksTextureSchema(),
       new SoundsSchema(),
+      new SoundsDefinitionSchema(),
     ];
   }
 

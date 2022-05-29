@@ -1,0 +1,120 @@
+{
+  "$id": "llgava.resource_packs.SoundsDefinition",
+  "type": "object",
+  "properties": {
+    "format_version": {
+      "type": "string"
+    },
+    "sound_definitions": {
+      "$ref": "#/definitions/SoundDefinition"
+    },
+    "__use_legacy_max_distance": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "SoundDefinition": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/SoundDefinitionProperties"
+      }
+    },
+    "SoundDefinitionProperties": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/MinecraftSoundCategories"
+        },
+        "sounds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SoundDefinitionProperty"
+          }
+        },
+        "max_distance": {
+          "type": "number"
+        },
+        "__use_legacy_max_distance": {
+          "type": "boolean"
+        }
+      }
+    },
+    "MinecraftSoundCategories": {
+      "enum": [
+        "ambient",
+        "block",
+        "bottle",
+        "bucket",
+        "hostile",
+        "music",
+        "neutral",
+        "player",
+        "record",
+        "ui",
+        "weather"
+      ],
+      "type": "string"
+    },
+    "SoundDefinitionProperty": {
+      "type": "object",
+      "properties": {
+        "is3D": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "load_on_low_memory": {
+          "type": "boolean"
+        },
+        "stream": {
+          "type": "boolean"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

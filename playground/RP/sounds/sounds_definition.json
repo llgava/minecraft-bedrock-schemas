@@ -1,0 +1,21 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "my_custom_sound": {
+      "category": "ui",
+      "__use_legacy_max_distance": true,
+      "max_distance": 10,
+      "sounds": [
+        {
+          "is3D": true,
+          "load_on_low_memory": false,
+          "name": "sounds/my_custom_sound",
+          "volume": 1,
+          "pitch": 1,
+          "stream": false,
+          "weight": 100
+        }
+      ]
+    }
+  }
+}

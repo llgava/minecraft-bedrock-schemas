@@ -85,6 +85,13 @@
         "development_resource_packs/*/sounds.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sounds.schema.json"
+    },
+    {
+      "fileMatch": [
+        "resource_packs/*/sounds/sounds_definitions.json",
+        "development_resource_packs/*/sounds/sounds_definitions.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sounds_definition.schema.json"
     }
   ]
 }

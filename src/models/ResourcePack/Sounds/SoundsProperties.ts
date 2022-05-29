@@ -4,11 +4,11 @@ import { IndividualEventSoundEvents } from './properties/IndividualEventSoundsPr
 import { InteractiveSoundsProperty } from './properties/InteractiveSoundsProperty';
 
 export interface BlockSounds {
-  [key: string]: BlockSoundsProperty;
+  [property_name: string]: BlockSoundsProperty;
 }
 
 export interface EntitySounds {
-  [key: string]: EntitySoundsProperty;
+  [property_name: string]: EntitySoundsProperty;
 }
 
 export interface IndividualEventSounds {
@@ -16,5 +16,5 @@ export interface IndividualEventSounds {
 }
 
 export interface InteractiveSounds {
-  [key: string]: InteractiveSoundsProperty;
+  [property_name: string]: InteractiveSoundsProperty;
 }

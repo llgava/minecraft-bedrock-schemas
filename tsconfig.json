@@ -19,5 +19,5 @@
     }
   },
 
-  "include": ["src/", "scripts/", "__tests__/"]
+  "include": ["src/"]
 }
