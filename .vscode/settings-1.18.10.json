@@ -71,6 +71,13 @@
         "development_resource_packs/*/textures/item_texture.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/item_texture.schema.json"
+    },
+    {
+      "fileMatch": [
+        "resource_packs/*/blocks.json",
+        "development_resource_packs/*/blocks.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/blocks_texture.schema.json"
     }
   ]
 }

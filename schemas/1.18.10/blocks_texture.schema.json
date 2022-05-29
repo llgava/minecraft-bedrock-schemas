@@ -1,0 +1,54 @@
+{
+  "$id": "llgava.resource_packs.BlocksTexture",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/definitions/BlockTexture"
+  },
+  "definitions": {
+    "BlockTexture": {
+      "type": "object",
+      "properties": {
+        "textures": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Textures"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "textures"
+      ]
+    },
+    "Textures": {
+      "type": "object",
+      "properties": {
+        "up": {
+          "type": "string"
+        },
+        "down": {
+          "type": "string"
+        },
+        "east": {
+          "type": "string"
+        },
+        "west": {
+          "type": "string"
+        },
+        "north": {
+          "type": "string"
+        },
+        "south": {
+          "type": "string"
+        },
+        "side": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
