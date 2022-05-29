@@ -19,8 +19,8 @@
     "variantion_example_block": {
       "textures": {
         "path": "textures/blocks/variation_example_block",
-        "tint_color": "#FFF",
-        "overlay_color": "#00FF00",
+        "tint_color": "#000",
+        "overlay_color": "#FF00FF",
         "variations": [
           {
             "path": "textures/blocks/variation_example_block_0",

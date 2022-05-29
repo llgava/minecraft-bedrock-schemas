@@ -1,0 +1,12 @@
+[
+  {
+    "atlas_index": 0,
+    "atlas_tile": 0,
+    "atlas_tile_variant": 0,
+    "blend_frames": true,
+    "flipbook_texture": "example_flipbook_texture",
+    "frames": [0, 1, 2, 3, 4, 5],
+    "replicate": 0,
+    "ticks_per_frame": 28
+  }
+]
