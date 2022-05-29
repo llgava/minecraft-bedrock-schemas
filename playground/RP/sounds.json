@@ -1,0 +1,49 @@
+{
+  "block_sounds": {
+    "llgava:example_block": {
+      "events": {
+        "place": {
+          "sound": "example_block.place",
+          "volume": 1,
+          "pitch": 1
+        }
+      }
+    }
+  },
+
+  "entity_sounds": {
+    "llgava:example_entity": {
+      "events": {
+        "ambient": {
+          "sound": "example_entity.land",
+          "volume": [0.5, 1],
+          "pitch": [0.25, 1.25]
+        }
+      }
+    }
+  },
+
+  "individual_event_sounds": {
+    "events": {
+      "armor.equip_diamond": {
+        "pitch": 0,
+        "volume": 0
+      }
+    }
+  },
+
+  "interactive_sounds": {
+    "llgava:example_block": {
+      "events": {
+        "jump": {
+          "sound": "example_block.jump",
+          "volume": 1,
+          "pitch": 1
+        }
+      },
+
+      "volume": 1,
+      "pitch": 1
+    }
+  }
+}

@@ -1,0 +1,955 @@
+{
+  "$id": "llgava.resource_packs.Sounds",
+  "type": "object",
+  "properties": {
+    "block_sounds": {
+      "$ref": "#/definitions/BlockSounds"
+    },
+    "entity_sounds": {
+      "$ref": "#/definitions/EntitySounds"
+    },
+    "individual_event_sounds": {
+      "$ref": "#/definitions/IndividualEventSounds"
+    },
+    "interactive_sounds": {
+      "$ref": "#/definitions/InteractiveSounds"
+    }
+  },
+  "definitions": {
+    "BlockSounds": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/BlockSoundsProperty"
+      }
+    },
+    "BlockSoundsProperty": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "$ref": "#/definitions/BlockSoundEvents"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
+    },
+    "BlockSoundEvents": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "break": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "hit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "place": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.use.on": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "power.off": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "power.on": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        }
+      }
+    },
+    "MinecraftSoundEvent": {
+      "type": "object",
+      "properties": {
+        "sound": {
+          "type": "string"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
+    },
+    "EntitySounds": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/EntitySoundsProperty"
+      }
+    },
+    "EntitySoundsProperty": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "$ref": "#/definitions/EntitySoundEvents"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
+    },
+    "EntitySoundEvents": {
+      "type": "object",
+      "properties": {
+        "ambient": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "hurt": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "death": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "step": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "fall.big": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "fall.small": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "splash": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ashootttack": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        }
+      }
+    },
+    "IndividualEventSounds": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "$ref": "#/definitions/IndividualEventSoundEvents"
+        }
+      }
+    },
+    "IndividualEventSoundEvents": {
+      "type": "object",
+      "properties": {
+        "ambient.basalt_deltas.additions": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.basalt_deltas.loop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.basalt_deltas.mood": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.candle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.cave": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.crimson_forest.additions": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.crimson_forest.loop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.crimson_forest.mood": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.nether_wastes.additions": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.nether_wastes.loop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.nether_wastes.mood": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.soulsand_valley.additions": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.soulsand_valley.loop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.soulsand_valley.mood": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.warped_forest.additions": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.warped_forest.loop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ambient.warped_forest.mood": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_chain": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_diamond": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_elytra": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_generic": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_gold": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_iron": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_leather": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "armor.equip_netherite": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "attach": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "beacon.activate": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "beacon.ambient": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "beacon.deactivate": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "beacon.power": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "blast": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.bamboo_sapling.place": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.barrel.close": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.barrel.open": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.beehive.drip": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.beehive.enter": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.beehive.exit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.beehive.shear": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.beehive.work": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.bell.hit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.blastfurnace.fire_crackle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.campfire.crackle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.cartography_table.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.click": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.click.fail": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.composter.empty": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.composter.fill": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.composter.fill_success": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.composter.ready": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.end_portal.spawn": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.end_portal_frame.fill": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.fletching_table.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.furnace.lit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.grindstone.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.loom.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.scaffolding.climb": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.smithing_table.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.smoker.smoke": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.stonecutter.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.sweet_berry_bush.hurt": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.sweet_berry_bush.pick": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.turtle_egg.attack": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.turtle_egg.break": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.turtle_egg.crack": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "block.turtle_egg.hatch": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bottle.dragonbreath": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bow": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bow.hit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "break": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bubble.down": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bubble.downinside": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bubble.pop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bubble.up": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bubble.upinside": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.empty.fish": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.empty.lava": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.empty.powder_snow": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.empty.water": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.fill.fish": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.fill.lava": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.fill.powder_snow": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bucket.fill.water": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "bullet.hit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "burp": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "cake.add_candle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "camera.take_picture": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "cauldron_drip.lava.pointed_dripstone": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "cauldron_drip.water.pointed_dripstone": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "chest.closed": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "chest.open": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "chime.amethyst_block": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "chorusdeath": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "chorusgrow": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "conduit.activate": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "conduit.ambient": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "conduit.attack": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "conduit.deactivate": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "conduit.short": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "convert_mooshroom": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "convert_to_drowned": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "convert_to_stray": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "converted_to_zombified": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "copper.wax.off": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "copper.wax.on": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.loading.end": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.loading.middle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.loading.start": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.quick_charge.end": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.quick_charge.middle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.quick_charge.start": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "crossbow.shoot": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "deny": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "detach": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "drip.lava.pointed_dripstone": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "drip.water.pointed_dripstone": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "drop.slot": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "enderchest.closed": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "enderchest.open": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "explode": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "extinguish.candle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "extinguish.fire": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "fire": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "fizz": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "glass": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "glow_squid.ink_squirt": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ignite": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.bone_meal.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.book.put": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.shield.block": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.spyglass.stop_using": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.spyglass.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.hit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.hit_ground": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.return": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.riptide_1": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.riptide_2": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.riptide_3": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.throw": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "item.trident.thunder": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "jump_to_block": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "large.blast": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "launch": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "lava.pop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "lay_egg": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "leashknot.break": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "leashknot.place": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "levelup": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "lodestone_compass.link_compass_to_lodestone": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "milk": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "milk.screamer": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "milk_suspiciously": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.armor_stand.break": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.armor_stand.hit": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.armor_stand.land": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.armor_stand.place": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.player.hurt_drown": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.player.hurt_freeze": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "mob.player.hurt_on_fire": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "note": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "particle.soul_escape.loud": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "particle.soul_escape.quiet": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "pick_berries.cave_vines": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "piston.in": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "piston.out": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "pop": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "portal": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "portal.travel": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "potion.brewed": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "power.off": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "power.on": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "pre_ram": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "pre_ram.screamer": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "raid.horn": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ram_impact": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ram_impact.screamer": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "random.anvil_use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.11": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.13": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.blocks": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.cat": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.chirp": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.far": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.mall": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.mellohi": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.otherside": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.pigstep": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.stal": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.strad": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.wait": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "record.ward": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "remedy": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "respawn_anchor.charge": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "respawn_anchor.deplete": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "respawn_anchor.set_spawn": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "saddle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "scrape": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "shear": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "shulkerbox.closed": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "shulkerbox.open": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "smithing_table.use": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "squid.ink_squirt": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "teleport": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "thorns": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "tilt_down.big_dripleaf": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "tilt_up.big_dripleaf": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "tripod": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "twinkle": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ui.cartography_table.take_result": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ui.loom.take_result": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "ui.stonecutter.take_result": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "unfect": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "water": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        }
+      }
+    },
+    "InteractiveSounds": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/InteractiveSoundsProperty"
+      }
+    },
+    "InteractiveSoundsProperty": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "$ref": "#/definitions/InteractiveSoundEvents"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "pitch": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      }
+    },
+    "InteractiveSoundEvents": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "fall": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "jump": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "land": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        },
+        "step": {
+          "$ref": "#/definitions/MinecraftSoundEvent"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
