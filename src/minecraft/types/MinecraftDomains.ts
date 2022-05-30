@@ -1,8 +1,1 @@
-export type MinecraftDomains =
-  | 'any'
-  | 'armor'
-  | 'feet'
-  | 'hand'
-  | 'head'
-  | 'leg'
-  | 'tors';
+export type MinecraftDomains = 'any' | 'armor' | 'feet' | 'hand' | 'head' | 'leg' | 'tors';

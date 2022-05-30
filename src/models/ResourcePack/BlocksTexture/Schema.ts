@@ -15,9 +15,6 @@ export class BlocksTextureSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] | any {
-    return [
-      'resource_packs/*/blocks.json',
-      'development_resource_packs/*/blocks.json',
-    ];
+    return ['resource_packs/*/blocks.json', 'development_resource_packs/*/blocks.json'];
   }
 }

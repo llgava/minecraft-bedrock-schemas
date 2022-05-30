@@ -16,9 +16,6 @@ export class EntitiesSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/entities/*.json',
-      'development_behavior_packs/*/entities/*.json',
-    ];
+    return ['behavior_packs/*/entities/*.json', 'development_behavior_packs/*/entities/*.json'];
   }
 }

@@ -81,13 +81,6 @@
     },
     {
       "fileMatch": [
-        "resource_packs/*/textures/flipbook_textures.json",
-        "development_resource_packs/*/textures/flipbook_textures.json"
-      ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/flipbook_textures.schema.json"
-    },
-    {
-      "fileMatch": [
         "resource_packs/*/blocks.json",
         "development_resource_packs/*/blocks.json"
       ],
@@ -113,6 +106,22 @@
         "development_resource_packs/*/sounds/music_definitions.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/music_definitions.schema.json"
+    },
+    {
+      "fileMatch": [
+        "resource_packs/*/texts/languages.json",
+        "behavior_packs/*/texts/languages.json",
+        "development_resource_packs/*/texts/languages.json",
+        "development_behavior_packs/*/texts/languages.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/languages.schema.json"
+    },
+    {
+      "fileMatch": [
+        "resource_packs/*/textures/flipbook_textures.json",
+        "development_resource_packs/*/textures/flipbook_textures.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/flipbook_textures.schema.json"
     }
   ]
 }

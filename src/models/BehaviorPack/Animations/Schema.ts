@@ -16,9 +16,6 @@ export class AnimationsSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/animations/*.json',
-      'development_behavior_packs/*/animations/*.json',
-    ];
+    return ['behavior_packs/*/animations/*.json', 'development_behavior_packs/*/animations/*.json'];
   }
 }

@@ -14,9 +14,6 @@ export class Tick {
 
   /** @TJS-ignore */
   get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/functions/tick.json',
-      'development_behavior_packs/*/functions/tick.json',
-    ];
+    return ['behavior_packs/*/functions/tick.json', 'development_behavior_packs/*/functions/tick.json'];
   }
 }

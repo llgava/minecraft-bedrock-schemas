@@ -16,9 +16,6 @@ export class LootTablesSchema {
 
   /** @TJS-ignore */
   get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/loot_tables/*.json',
-      'development_behavior_packs/*/loot_tables/*.json',
-    ];
+    return ['behavior_packs/*/loot_tables/*.json', 'development_behavior_packs/*/loot_tables/*.json'];
   }
 }

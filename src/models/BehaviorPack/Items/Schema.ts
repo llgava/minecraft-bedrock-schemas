@@ -16,9 +16,6 @@ export class ItemsSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/items/*.json',
-      'development_behavior_packs/*/items/*.json',
-    ];
+    return ['behavior_packs/*/items/*.json', 'development_behavior_packs/*/items/*.json'];
   }
 }

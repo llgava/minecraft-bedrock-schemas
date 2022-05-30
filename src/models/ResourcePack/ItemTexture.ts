@@ -17,9 +17,6 @@ export class ItemTextureSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'resource_packs/*/textures/item_texture.json',
-      'development_resource_packs/*/textures/item_texture.json',
-    ];
+    return ['resource_packs/*/textures/item_texture.json', 'development_resource_packs/*/textures/item_texture.json'];
   }
 }

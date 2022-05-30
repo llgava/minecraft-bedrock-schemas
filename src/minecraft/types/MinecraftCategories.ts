@@ -1,5 +1,1 @@
-export type MinecraftCategories =
-  | 'construction'
-  | 'equipment'
-  | 'items'
-  | 'nature';
+export type MinecraftCategories = 'construction' | 'equipment' | 'items' | 'nature';

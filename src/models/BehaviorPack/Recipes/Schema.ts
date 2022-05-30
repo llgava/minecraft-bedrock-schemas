@@ -23,9 +23,6 @@ export class RecipesSchema {
 
   /** @TJS-ignore */
   get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/recipes/*.json',
-      'development_behavior_packs/*/recipes/*.json',
-    ];
+    return ['behavior_packs/*/recipes/*.json', 'development_behavior_packs/*/recipes/*.json'];
   }
 }

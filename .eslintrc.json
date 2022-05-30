@@ -27,6 +27,10 @@
       "*.schema.{json,jsonc}": "./schemas/*/**"
     }],
 
+    "prettier/prettier": ["error", {
+      "printWidth": 120
+    }],
+
     "no-useless-escape": "off"
   }
 }

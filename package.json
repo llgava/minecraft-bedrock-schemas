@@ -3,6 +3,7 @@
   "name": "minecraft-bedrock-schemas",
   "description": "Minecraft Bedrock JSON Schemas for addons development.",
   "author": "llgava <llgavamt@gmail.com>",
+  "types": "index.d.ts",
   "keywords": [
     "Minecraft",
     "Minecraft Development",

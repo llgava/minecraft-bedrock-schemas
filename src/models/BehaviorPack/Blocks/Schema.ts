@@ -16,9 +16,6 @@ export class BlocksSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'behavior_packs/*/blocks/*.json',
-      'development_behavior_packs/*/blocks/*.json',
-    ];
+    return ['behavior_packs/*/blocks/*.json', 'development_behavior_packs/*/blocks/*.json'];
   }
 }

@@ -52,54 +52,48 @@ class MinecraftBedrockSchemas {
     ];
   }
 
-  public generateSchemaFiles(saveTo: string): void {
-    console.log(
-      `${chalk.bold.magenta(`[v${this.version}]`)} Generating schemas...`
-    );
-
-    if (!fs.existsSync(saveTo)) {
-      fs.mkdirSync(`${saveTo}/${this.version}`, { recursive: true });
-    }
+  public generateDynamicSchemas(save_to: string): void {
+    console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating dynamic schemas...`);
 
     for (const i in this.schemas) {
-      const program = TJS.programFromConfig('./tsconfig.json', [
-        path.resolve(this.schemas[i].path),
-      ]);
-
-      const schema = TJS.generateSchema(program, this.schemas[i].name, {
-        required: true,
-      });
-
-      fs.writeFileSync(
-        `${saveTo}/${this.version}/${this.schemas[i].fileName}.schema.json`,
-        JSON.stringify(schema, null, 2),
-        { encoding: 'utf-8' }
-      );
+      this.generateSchemaFromFile(this.schemas[i].name, this.schemas[i].fileName, this.schemas[i].path, save_to);
     }
 
     console.log(`${chalk.bold.green('✔')} Generated schemas!\n`);
   }
 
-  public generateSettingsFile(saveTo: string): void {
-    console.log(
-      `${chalk.bold.magenta(
-        `[v${this.version}]`
-      )} Generating VSCode settings...`
-    );
+  public generateSettingsFile(save_to: string): void {
+    console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating VSCode settings...`);
 
-    if (!fs.existsSync(saveTo)) {
-      fs.mkdirSync(saveTo, { recursive: true });
+    if (!fs.existsSync(save_to)) {
+      fs.mkdirSync(save_to, { recursive: true });
     }
 
     const vscode = new VSCodeSettings(this.schemas, this.version);
 
     fs.writeFileSync(
-      `${saveTo}/settings-${this.version}.json`,
+      `${save_to}/settings-${this.version}.json`,
       JSON.stringify({ ['json.schemas']: vscode['json.schemas'] }, null, 2),
       { encoding: 'utf8' }
     );
 
     console.log(`${chalk.bold.green('✔')} Generated VSCode settings!\n`);
+  }
+
+  public generateSchemaFromFile(schema_name: string, file_name: string, file_path: string, save_to: string): void {
+    if (!fs.existsSync(save_to)) {
+      fs.mkdirSync(`${save_to}/${this.version}`, { recursive: true });
+    }
+
+    const program = TJS.programFromConfig('./tsconfig.json', [path.resolve(file_path)]);
+
+    const schema = TJS.generateSchema(program, schema_name, {
+      required: true,
+    });
+
+    fs.writeFileSync(`${save_to}/${this.version}/${file_name}.schema.json`, JSON.stringify(schema, null, 2), {
+      encoding: 'utf-8',
+    });
   }
 }
 

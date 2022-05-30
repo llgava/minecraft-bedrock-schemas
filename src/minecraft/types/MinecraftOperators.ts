@@ -1,11 +1,1 @@
-export type MinecraftOperators =
-  | '!='
-  | '<'
-  | '<='
-  | '<>'
-  | '='
-  | '=='
-  | '>'
-  | '>='
-  | 'equals'
-  | 'not';
+export type MinecraftOperators = '!=' | '<' | '<=' | '<>' | '=' | '==' | '>' | '>=' | 'equals' | 'not';

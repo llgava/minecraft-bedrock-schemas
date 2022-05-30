@@ -1,9 +1,4 @@
-import {
-  Description,
-  Permutations,
-  Components,
-  Events,
-} from './BlockProperties';
+import { Description, Permutations, Components, Events } from './BlockProperties';
 
 export class Block {
   public description: Description;

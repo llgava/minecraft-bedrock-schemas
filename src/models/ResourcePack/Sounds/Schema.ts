@@ -1,9 +1,4 @@
-import {
-  BlockSounds,
-  EntitySounds,
-  IndividualEventSounds,
-  InteractiveSounds,
-} from './SoundsProperties';
+import { BlockSounds, EntitySounds, IndividualEventSounds, InteractiveSounds } from './SoundsProperties';
 
 /** @$id llgava.resource_packs.Sounds */
 export class SoundsSchema {
@@ -23,9 +18,6 @@ export class SoundsSchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'resource_packs/*/sounds.json',
-      'development_resource_packs/*/sounds.json',
-    ];
+    return ['resource_packs/*/sounds.json', 'development_resource_packs/*/sounds.json'];
   }
 }

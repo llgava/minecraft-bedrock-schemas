@@ -1,9 +1,4 @@
-import {
-  ComponentGroups,
-  Components,
-  Description,
-  Events,
-} from './EntityProperties';
+import { ComponentGroups, Components, Description, Events } from './EntityProperties';
 
 export class Entity {
   public description: Description;

@@ -10,9 +10,20 @@ function requireTS(path) {
 
 function main() {
   const MinecraftBedrockSchemas = requireTS('../src/MinecraftBedrockSchemas');
+  const Languages = requireTS('../src/models/Languages');
+  const FlipbookTextures = requireTS('../src/models/ResourcePack/FlipbookTextures');
 
-  MinecraftBedrockSchemas.generateSchemaFiles('schemas/');
+  MinecraftBedrockSchemas.generateDynamicSchemas('schemas/');
   MinecraftBedrockSchemas.generateSettingsFile('.vscode/');
+
+  // Static Schemas
+  MinecraftBedrockSchemas.generateSchemaFromFile(Languages.name, Languages.fileName, Languages.path, 'schemas/');
+  MinecraftBedrockSchemas.generateSchemaFromFile(
+    FlipbookTextures.name,
+    FlipbookTextures.fileName,
+    FlipbookTextures.path,
+    'schemas/'
+  );
 }
 
 main();
