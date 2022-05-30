@@ -67,6 +67,13 @@
     },
     {
       "fileMatch": [
+        "resource_packs/*/splashes.json",
+        "development_resource_packs/*/splashes.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/splashes.schema.json"
+    },
+    {
+      "fileMatch": [
         "resource_packs/*/textures/item_texture.json",
         "development_resource_packs/*/textures/item_texture.json"
       ],

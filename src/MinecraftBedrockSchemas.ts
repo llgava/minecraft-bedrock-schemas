@@ -16,6 +16,7 @@ import { ItemTextureSchema } from '@models/ResourcePack/ItemTexture';
 import { TerrainTextureSchema } from '@models/ResourcePack/TerrainTexture';
 import { BlocksTextureSchema } from '@models/ResourcePack/BlocksTexture/Schema';
 import { SoundsSchema } from '@models/ResourcePack/Sounds/Schema';
+import { SplashesSchema } from '@models/ResourcePack/Splashes';
 import { SoundDefinitionsSchema } from '@models/ResourcePack/SoundDefinitions/Schema';
 import { MusicDefinitionsSchema } from '@models/ResourcePack/MusicDefinitions/Schema';
 
@@ -43,6 +44,7 @@ class MinecraftBedrockSchemas {
       new LootTablesSchema(),
 
       // Resource Packs
+      new SplashesSchema(),
       new ItemTextureSchema(),
       new TerrainTextureSchema(),
       new BlocksTextureSchema(),
