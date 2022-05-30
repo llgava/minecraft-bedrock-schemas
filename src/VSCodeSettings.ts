@@ -1,6 +1,7 @@
 import { JSONSchema, Schemas } from './types/Schemas';
 
 import * as Languages from '@models/Languages';
+import * as LanguageNames from '@models/LanguageNames';
 import * as FlipbookTextures from '@models/ResourcePack/FlipbookTextures';
 
 const BASE_URL =
@@ -29,6 +30,7 @@ export class VSCodeSettings {
 
     // Generate Static Schemas config
     this.generateSchemaConfig(Languages.fileName, Languages.fileMatch);
+    this.generateSchemaConfig(LanguageNames.fileName, LanguageNames.fileMatch);
     this.generateSchemaConfig(FlipbookTextures.fileName, FlipbookTextures.fileMatch);
   }
 

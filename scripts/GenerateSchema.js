@@ -11,6 +11,7 @@ function requireTS(path) {
 function main() {
   const MinecraftBedrockSchemas = requireTS('../src/MinecraftBedrockSchemas');
   const Languages = requireTS('../src/models/Languages');
+  const LanguageNames = requireTS('../src/models/LanguageNames');
   const FlipbookTextures = requireTS('../src/models/ResourcePack/FlipbookTextures');
 
   MinecraftBedrockSchemas.generateDynamicSchemas('schemas/');
@@ -18,6 +19,12 @@ function main() {
 
   // Static Schemas
   MinecraftBedrockSchemas.generateSchemaFromFile(Languages.name, Languages.fileName, Languages.path, 'schemas/');
+  MinecraftBedrockSchemas.generateSchemaFromFile(
+    LanguageNames.name,
+    LanguageNames.fileName,
+    LanguageNames.path,
+    'schemas/'
+  );
   MinecraftBedrockSchemas.generateSchemaFromFile(
     FlipbookTextures.name,
     FlipbookTextures.fileName,
