@@ -1,6 +1,5 @@
 import fs from 'fs';
 import chalk from 'chalk';
-import path from 'path';
 import * as TJSchema from 'ts-json-schema-generator';
 
 import { ManifestSchema } from '@models/global/Manifest';
@@ -54,6 +53,7 @@ class MinecraftBedrockSchemas {
     ];
   }
 
+  /** Generate all dynamic schemas. */
   public generateDynamicSchemas(save_to: string): void {
     console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating dynamic schemas...`);
 
@@ -64,6 +64,7 @@ class MinecraftBedrockSchemas {
     console.log(`${chalk.bold.green('✔')} Generated schemas!\n`);
   }
 
+  /** Generate .vscode/settings.json with [json.schema] property. */
   public generateSettingsFile(save_to: string): void {
     console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating VSCode settings...`);
 
