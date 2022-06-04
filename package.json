@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "chalk": "4.1.2",
-    "typescript-json-schema": "^0.53.0"
+    "ts-json-schema-generator": "^1.0.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^6.0.0",

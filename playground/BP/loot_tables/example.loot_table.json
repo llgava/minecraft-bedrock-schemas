@@ -2,6 +2,11 @@
   "pools": [
     {
       "rools": 1,
+      "conditions": [
+        {
+          
+        }
+      ],
       "entries": [
         {
           "type": "item",

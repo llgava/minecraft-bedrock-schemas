@@ -18,12 +18,16 @@
     },
 
     "component_groups": {
-      "group:despawn": {
+      "llgava:despawn": {
         "minecraft:instant_despawn": {}
       }
     },
 
     "components": {
+      "minecraft:type_family": {
+        "family": ["custom", "mob"]
+      },
+
       "minecraft:damage_sensor": {
         "triggers": [
           {
@@ -37,7 +41,7 @@
                 "other_with_families": "player"
               },
 
-              "event": "event:despawn"
+              "event": "llgava:despawn"
             }
           }
         ]
@@ -45,9 +49,9 @@
     },
 
     "events": {
-      "event:despawn": {
+      "llgava:despawn": {
         "add": {
-          "component_groups": ["group:despawn"]
+          "component_groups": ["llgava:despawn"]
         }
       }
     }

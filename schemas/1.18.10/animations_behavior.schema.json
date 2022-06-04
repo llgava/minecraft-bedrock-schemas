@@ -1,19 +1,24 @@
 {
-  "$id": "llgava.behavior_packs.Animations",
-  "type": "object",
-  "properties": {
-    "format_version": {
-      "type": "string"
-    },
-    "animations": {
-      "$ref": "#/definitions/Animation"
-    }
-  },
-  "required": [
-    "animations",
-    "format_version"
-  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/AnimationsSchema",
   "definitions": {
+    "AnimationsSchema": {
+      "type": "object",
+      "properties": {
+        "format_version": {
+          "type": "string"
+        },
+        "animations": {
+          "$ref": "#/definitions/Animation"
+        }
+      },
+      "required": [
+        "format_version",
+        "animations"
+      ],
+      "additionalProperties": false,
+      "$id": "llgava.behavior_packs.Animations"
+    },
     "Animation": {
       "type": "object",
       "additionalProperties": {
@@ -34,10 +39,11 @@
         }
       },
       "required": [
-        "animation_length",
         "loop",
-        "timeline"
-      ]
+        "timeline",
+        "animation_length"
+      ],
+      "additionalProperties": false
     },
     "Timeline": {
       "type": "object",
@@ -48,6 +54,5 @@
         }
       }
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

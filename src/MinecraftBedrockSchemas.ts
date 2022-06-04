@@ -1,7 +1,7 @@
 import fs from 'fs';
 import chalk from 'chalk';
 import path from 'path';
-import * as TJS from 'typescript-json-schema';
+import * as TJSchema from 'ts-json-schema-generator';
 
 import { ManifestSchema } from '@models/global/Manifest';
 import { Tick } from '@models/behavior_packs/Tick';
@@ -58,7 +58,7 @@ class MinecraftBedrockSchemas {
     console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating dynamic schemas...`);
 
     for (const i in this.schemas) {
-      this.generateSchemaFromFile(this.schemas[i].name, this.schemas[i].fileName, this.schemas[i].path, save_to);
+      this.generateSchemaFromFile(this.schemas[i].fileName, this.schemas[i].path, save_to);
     }
 
     console.log(`${chalk.bold.green('✔')} Generated schemas!\n`);
@@ -82,16 +82,19 @@ class MinecraftBedrockSchemas {
     console.log(`${chalk.bold.green('✔')} Generated VSCode settings!\n`);
   }
 
-  public generateSchemaFromFile(schema_name: string, file_name: string, file_path: string, save_to: string): void {
+  /** Use ts-json-schema-generator to generate JSON schema. */
+  public generateSchemaFromFile(file_name: string, file_path: string, save_to: string): void {
     if (!fs.existsSync(save_to)) {
       fs.mkdirSync(`${save_to}/${this.version}`, { recursive: true });
     }
 
-    const program = TJS.programFromConfig('./tsconfig.json', [path.resolve(file_path)]);
+    const config = {
+      path: file_path,
+      tsconfig: './tsconfig.json',
+      type: '*',
+    };
 
-    const schema = TJS.generateSchema(program, schema_name, {
-      required: true,
-    });
+    const schema = TJSchema.createGenerator(config).createSchema(config.type);
 
     fs.writeFileSync(`${save_to}/${this.version}/${file_name}.schema.json`, JSON.stringify(schema, null, 2), {
       encoding: 'utf-8',

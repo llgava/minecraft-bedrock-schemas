@@ -13,24 +13,15 @@ function main() {
   const Languages = requireTS('../src/models/global/Languages');
   const LanguageNames = requireTS('../src/models/resource_packs/LanguageNames');
   const FlipbookTextures = requireTS('../src/models/resource_packs/FlipbookTextures');
+  const output = 'schemas/';
 
-  MinecraftBedrockSchemas.generateDynamicSchemas('schemas/');
+  MinecraftBedrockSchemas.generateDynamicSchemas(output);
   MinecraftBedrockSchemas.generateSettingsFile('.vscode/');
 
   // Static Schemas
-  MinecraftBedrockSchemas.generateSchemaFromFile(Languages.name, Languages.fileName, Languages.path, 'schemas/');
-  MinecraftBedrockSchemas.generateSchemaFromFile(
-    LanguageNames.name,
-    LanguageNames.fileName,
-    LanguageNames.path,
-    'schemas/'
-  );
-  MinecraftBedrockSchemas.generateSchemaFromFile(
-    FlipbookTextures.name,
-    FlipbookTextures.fileName,
-    FlipbookTextures.path,
-    'schemas/'
-  );
+  MinecraftBedrockSchemas.generateSchemaFromFile(Languages.fileName, Languages.path, output);
+  MinecraftBedrockSchemas.generateSchemaFromFile(LanguageNames.fileName, LanguageNames.path, output);
+  MinecraftBedrockSchemas.generateSchemaFromFile(FlipbookTextures.fileName, FlipbookTextures.path, output);
 }
 
 main();

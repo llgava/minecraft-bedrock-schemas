@@ -1,4 +1,4 @@
-/** @$id llgava.resource_packs.Splashes */
+/** @id llgava.resource_packs.Splashes */
 export class SplashesSchema {
   public splashes: string[];
 
@@ -15,4 +15,4 @@ export class SplashesSchema {
   /** @TJS-ignore */ get fileMatch(): string[] {
     return ['resource_packs/*/splashes.json', 'development_resource_packs/*/splashes.json'];
   }
-};
+}

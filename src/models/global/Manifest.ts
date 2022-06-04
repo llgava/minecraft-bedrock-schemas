@@ -4,7 +4,7 @@ import { Header } from './properties/Header';
 import { Metadata } from './properties/Metadata';
 import { Modules } from './properties/Modules';
 
-/** @$id llgava.global.Manifest */
+/** @id llgava.global.Manifest */
 export class ManifestSchema {
   public format_version: 2;
   public header: Header;

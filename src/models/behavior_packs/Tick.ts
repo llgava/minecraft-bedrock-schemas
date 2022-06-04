@@ -1,4 +1,4 @@
-/** @$id llgava.behavior_packs.functions.Tick */
+/** @id llgava.behavior_packs.functions.Tick */
 export class Tick {
   public values?: string[];
 

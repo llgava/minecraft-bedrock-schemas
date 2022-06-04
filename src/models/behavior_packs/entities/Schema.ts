@@ -1,6 +1,6 @@
 import { Entity } from './Entity';
 
-/** @$id llgava.behavior_packs.Entities */
+/** @id llgava.behavior_packs.Entities */
 export class EntitiesSchema {
   public format_version: string | '1.18.0';
   public 'minecraft:entity': Entity;

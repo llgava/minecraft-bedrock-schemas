@@ -1,6 +1,6 @@
 import { BlockSounds, EntitySounds, IndividualEventSounds, InteractiveSounds } from './SoundsProperties';
 
-/** @$id llgava.resource_packs.Sounds */
+/** @id llgava.resource_packs.Sounds */
 export class SoundsSchema {
   block_sounds?: BlockSounds;
   entity_sounds?: EntitySounds;

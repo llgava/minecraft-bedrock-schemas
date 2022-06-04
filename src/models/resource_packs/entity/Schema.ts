@@ -1,6 +1,6 @@
-import { SoundDefinition } from './ClientEntity';
+import { ClientEntity } from './ClientEntity';
 
-/** @$id llgava.resource_packs.SoundsDefinition */
+/** @id llgava.resource_packs.SoundsDefinition */
 export class ClientEntitySchema {
   public format_version?: string | '1.10.0';
   public ['minecraft:client_entity']?: ClientEntity;

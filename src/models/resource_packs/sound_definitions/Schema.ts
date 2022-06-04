@@ -1,6 +1,6 @@
 import { SoundDefinition } from './SoundDefinition';
 
-/** @$id llgava.resource_packs.SoundsDefinition */
+/** @id llgava.resource_packs.SoundsDefinition */
 export class SoundDefinitionsSchema {
   public format_version?: string | '1.14.0';
   public sound_definitions?: SoundDefinition;

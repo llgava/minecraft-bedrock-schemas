@@ -1,41 +1,44 @@
 {
-  "$id": "llgava.global.Manifest",
-  "type": "object",
-  "properties": {
-    "format_version": {
-      "type": "number",
-      "enum": [
-        2
-      ]
-    },
-    "header": {
-      "$ref": "#/definitions/Header"
-    },
-    "modules": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Modules"
-      }
-    },
-    "dependencies": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Dependencies"
-      }
-    },
-    "metadata": {
-      "$ref": "#/definitions/Metadata"
-    },
-    "capabilities": {
-      "$ref": "#/definitions/Capabilities"
-    }
-  },
-  "required": [
-    "format_version",
-    "header",
-    "modules"
-  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/ManifestSchema",
   "definitions": {
+    "ManifestSchema": {
+      "type": "object",
+      "properties": {
+        "format_version": {
+          "type": "number",
+          "const": 2
+        },
+        "header": {
+          "$ref": "#/definitions/Header"
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Modules"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dependencies"
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "capabilities": {
+          "$ref": "#/definitions/Capabilities"
+        }
+      },
+      "required": [
+        "format_version",
+        "header",
+        "modules"
+      ],
+      "additionalProperties": false,
+      "$id": "llgava.global.Manifest"
+    },
     "Header": {
       "type": "object",
       "properties": {
@@ -49,43 +52,29 @@
           "anyOf": [
             {
               "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
+              "items": {
+                "type": "number"
+              },
               "minItems": 3,
               "maxItems": 3
             },
             {
               "type": "array",
+              "minItems": 3,
               "items": [
                 {
                   "type": "number",
-                  "enum": [
-                    1
-                  ]
+                  "const": 1
                 },
                 {
                   "type": "number",
-                  "enum": [
-                    0
-                  ]
+                  "const": 0
                 },
                 {
                   "type": "number",
-                  "enum": [
-                    0
-                  ]
+                  "const": 0
                 }
               ],
-              "minItems": 3,
               "maxItems": 3
             }
           ]
@@ -94,43 +83,29 @@
           "anyOf": [
             {
               "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
+              "items": {
+                "type": "number"
+              },
               "minItems": 3,
               "maxItems": 3
             },
             {
               "type": "array",
+              "minItems": 3,
               "items": [
                 {
                   "type": "number",
-                  "enum": [
-                    1
-                  ]
+                  "const": 1
                 },
                 {
                   "type": "number",
-                  "enum": [
-                    18
-                  ]
+                  "const": 18
                 },
                 {
                   "type": "number",
-                  "enum": [
-                    0
-                  ]
+                  "const": 0
                 }
               ],
-              "minItems": 3,
               "maxItems": 3
             }
           ]
@@ -139,43 +114,29 @@
           "anyOf": [
             {
               "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
+              "items": {
+                "type": "number"
+              },
               "minItems": 3,
               "maxItems": 3
             },
             {
               "type": "array",
+              "minItems": 3,
               "items": [
                 {
                   "type": "number",
-                  "enum": [
-                    1
-                  ]
+                  "const": 1
                 },
                 {
                   "type": "number",
-                  "enum": [
-                    16
-                  ]
+                  "const": 16
                 },
                 {
                   "type": "number",
-                  "enum": [
-                    0
-                  ]
+                  "const": 0
                 }
               ],
-              "minItems": 3,
               "maxItems": 3
             }
           ]
@@ -184,16 +145,19 @@
           "type": "boolean"
         },
         "uuid": {
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
-          "type": "string"
+          "$ref": "#/definitions/UUID"
         }
       },
       "required": [
-        "description",
         "name",
-        "uuid",
-        "version"
-      ]
+        "description",
+        "version",
+        "uuid"
+      ],
+      "additionalProperties": false
+    },
+    "UUID": {
+      "type": "string"
     },
     "Modules": {
       "type": "object",
@@ -206,61 +170,44 @@
         },
         "version": {
           "type": "array",
-          "items": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "number"
-            }
-          ],
+          "items": {
+            "type": "number"
+          },
           "minItems": 3,
           "maxItems": 3
         },
         "uuid": {
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
-          "type": "string"
+          "$ref": "#/definitions/UUID"
         }
       },
       "required": [
         "type",
-        "uuid",
-        "version"
-      ]
+        "version",
+        "uuid"
+      ],
+      "additionalProperties": false
     },
     "MinecraftManifests": {
+      "type": "string",
       "enum": [
-        "client_data",
-        "data",
-        "interface",
         "resources",
+        "data",
+        "client_data",
+        "interface",
         "world_template"
-      ],
-      "type": "string"
+      ]
     },
     "Dependencies": {
       "type": "object",
       "properties": {
         "uuid": {
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
-          "type": "string"
+          "$ref": "#/definitions/UUID"
         },
         "version": {
           "type": "array",
-          "items": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "number"
-            }
-          ],
+          "items": {
+            "type": "number"
+          },
           "minItems": 3,
           "maxItems": 3
         }
@@ -268,7 +215,8 @@
       "required": [
         "uuid",
         "version"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Metadata": {
       "type": "object",
@@ -290,7 +238,8 @@
         "authors",
         "license",
         "url"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Capabilities": {
       "type": "object",
@@ -309,8 +258,8 @@
         "chemistry",
         "experimental_custom_ui",
         "raytraced"
-      ]
+      ],
+      "additionalProperties": false
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

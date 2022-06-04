@@ -1,6 +1,6 @@
 import { BlockTexture } from './BlockTexture';
 
-/** @$id llgava.resource_packs.BlocksTexture */
+/** @id llgava.resource_packs.BlocksTexture */
 export class BlocksTextureSchema {
   [property_name: string]: BlockTexture;
 

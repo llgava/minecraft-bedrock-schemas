@@ -1,6 +1,6 @@
 import { Animation } from './Animation';
 
-/** @$id llgava.behavior_packs.Animations */
+/** @id llgava.behavior_packs.Animations */
 export class AnimationsSchema {
   public format_version: string | '1.10.0';
   public 'animations': Animation;

@@ -1,21 +1,26 @@
 {
-  "$id": "llgava.resource_packs.Sounds",
-  "type": "object",
-  "properties": {
-    "block_sounds": {
-      "$ref": "#/definitions/BlockSounds"
-    },
-    "entity_sounds": {
-      "$ref": "#/definitions/EntitySounds"
-    },
-    "individual_event_sounds": {
-      "$ref": "#/definitions/IndividualEventSounds"
-    },
-    "interactive_sounds": {
-      "$ref": "#/definitions/InteractiveSounds"
-    }
-  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SoundsSchema",
   "definitions": {
+    "SoundsSchema": {
+      "type": "object",
+      "properties": {
+        "block_sounds": {
+          "$ref": "#/definitions/BlockSounds"
+        },
+        "entity_sounds": {
+          "$ref": "#/definitions/EntitySounds"
+        },
+        "individual_event_sounds": {
+          "$ref": "#/definitions/IndividualEventSounds"
+        },
+        "interactive_sounds": {
+          "$ref": "#/definitions/InteractiveSounds"
+        }
+      },
+      "additionalProperties": false,
+      "$id": "llgava.resource_packs.Sounds"
+    },
     "BlockSounds": {
       "type": "object",
       "additionalProperties": {
@@ -25,50 +30,41 @@
     "BlockSoundsProperty": {
       "type": "object",
       "properties": {
-        "events": {
-          "$ref": "#/definitions/BlockSoundEvents"
-        },
         "volume": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
         },
         "pitch": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
+        },
+        "events": {
+          "$ref": "#/definitions/BlockSoundEvents"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "BlockSoundEvents": {
       "type": "object",
@@ -94,55 +90,47 @@
         "power.on": {
           "$ref": "#/definitions/MinecraftSoundEvent"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "MinecraftSoundEvent": {
       "type": "object",
       "properties": {
-        "sound": {
-          "type": "string"
-        },
         "volume": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
         },
         "pitch": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
+        },
+        "sound": {
+          "type": "string"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "EntitySounds": {
       "type": "object",
@@ -153,50 +141,41 @@
     "EntitySoundsProperty": {
       "type": "object",
       "properties": {
-        "events": {
-          "$ref": "#/definitions/EntitySoundEvents"
-        },
         "volume": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
         },
         "pitch": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
+        },
+        "events": {
+          "$ref": "#/definitions/EntitySoundEvents"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "EntitySoundEvents": {
       "type": "object",
@@ -225,7 +204,8 @@
         "ashootttack": {
           "$ref": "#/definitions/MinecraftSoundEvent"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "IndividualEventSounds": {
       "type": "object",
@@ -233,7 +213,8 @@
         "events": {
           "$ref": "#/definitions/IndividualEventSoundEvents"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "IndividualEventSoundEvents": {
       "type": "object",
@@ -874,7 +855,8 @@
         "water": {
           "$ref": "#/definitions/MinecraftSoundEvent"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "InteractiveSounds": {
       "type": "object",
@@ -885,50 +867,41 @@
     "InteractiveSoundsProperty": {
       "type": "object",
       "properties": {
-        "events": {
-          "$ref": "#/definitions/InteractiveSoundEvents"
-        },
         "volume": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
         },
         "pitch": {
           "anyOf": [
             {
-              "type": "array",
-              "items": [
-                {
-                  "type": "number"
-                },
-                {
-                  "type": "number"
-                }
-              ],
-              "minItems": 2,
-              "maxItems": 2
+              "type": "number"
             },
             {
-              "type": "number"
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
             }
           ]
+        },
+        "events": {
+          "$ref": "#/definitions/InteractiveSoundEvents"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "InteractiveSoundEvents": {
       "type": "object",
@@ -948,8 +921,8 @@
         "step": {
           "$ref": "#/definitions/MinecraftSoundEvent"
         }
-      }
+      },
+      "additionalProperties": false
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

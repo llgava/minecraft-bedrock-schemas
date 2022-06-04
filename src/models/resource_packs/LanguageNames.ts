@@ -1,6 +1,6 @@
 import { MinecraftLanguages } from '@minecraft/types/MinecraftLanguages';
 
-/** @$id llgava.global.LanguageNames */
+/** @id llgava.global.LanguageNames */
 export type LanguageNames = Array<[MinecraftLanguages, string]>;
 
 export const name = 'LanguageNames';

@@ -1,19 +1,24 @@
 {
-  "$id": "llgava.behavior_packs.AnimationControllers",
-  "type": "object",
-  "properties": {
-    "format_version": {
-      "type": "string"
-    },
-    "animation_controllers": {
-      "$ref": "#/definitions/AnimationController"
-    }
-  },
-  "required": [
-    "animation_controllers",
-    "format_version"
-  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/AnimationControllersSchema",
   "definitions": {
+    "AnimationControllersSchema": {
+      "type": "object",
+      "properties": {
+        "format_version": {
+          "type": "string"
+        },
+        "animation_controllers": {
+          "$ref": "#/definitions/AnimationController"
+        }
+      },
+      "required": [
+        "format_version",
+        "animation_controllers"
+      ],
+      "additionalProperties": false,
+      "$id": "llgava.behavior_packs.AnimationControllers"
+    },
     "AnimationController": {
       "type": "object",
       "additionalProperties": {
@@ -29,7 +34,8 @@
         "states": {
           "$ref": "#/definitions/States"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "States": {
       "type": "object",
@@ -84,7 +90,8 @@
             "type": "string"
           }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "MinecraftQueryAnimation": {
       "type": "object",
@@ -92,6 +99,5 @@
         "type": "string"
       }
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

@@ -1,6 +1,6 @@
 import { LootTablePool } from './LootTableProperties';
 
-/** @$id llgava.behavior_packs.LootTables */
+/** @id llgava.behavior_packs.LootTables */
 export class LootTablesSchema {
   public pools?: LootTablePool[];
 

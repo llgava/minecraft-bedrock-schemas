@@ -1,6 +1,6 @@
 import { MinecraftTextureData } from '@minecraft/MinecraftTextureData';
 
-/** @$id llgava.resource_packs.TerrainTexture */
+/** @id llgava.resource_packs.TerrainTexture */
 export class TerrainTextureSchema {
   public resource_pack_name: string | 'pack.name';
   public texture_name: 'atlas.terrain';

@@ -1,5 +1,5 @@
 import { ClientEntityProperties } from './ClientEntityProperties';
 
-export interface SoundDefinition {
+export interface ClientEntity {
   description: ClientEntityProperties;
 }

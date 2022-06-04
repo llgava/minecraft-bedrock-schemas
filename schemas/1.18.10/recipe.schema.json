@@ -1,30 +1,35 @@
 {
-  "$id": "llgava.behavior_packs.Recipes",
-  "type": "object",
-  "properties": {
-    "format_version": {
-      "type": "string"
-    },
-    "minecraft:recipe_shaped": {
-      "$ref": "#/definitions/RecipeShape"
-    },
-    "minecraft:recipe_shapeless": {
-      "$ref": "#/definitions/RecipeShape"
-    },
-    "minecraft:recipe_brewing_container": {
-      "$ref": "#/definitions/RecipeBrewing"
-    },
-    "minecraft:recipe_brewing_mix": {
-      "$ref": "#/definitions/RecipeBrewing"
-    },
-    "minecraft:recipe_furnace": {
-      "$ref": "#/definitions/RecipeFurnace"
-    }
-  },
-  "required": [
-    "format_version"
-  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/RecipesSchema",
   "definitions": {
+    "RecipesSchema": {
+      "type": "object",
+      "properties": {
+        "format_version": {
+          "type": "string"
+        },
+        "minecraft:recipe_shaped": {
+          "$ref": "#/definitions/RecipeShape"
+        },
+        "minecraft:recipe_shapeless": {
+          "$ref": "#/definitions/RecipeShape"
+        },
+        "minecraft:recipe_brewing_container": {
+          "$ref": "#/definitions/RecipeBrewing"
+        },
+        "minecraft:recipe_brewing_mix": {
+          "$ref": "#/definitions/RecipeBrewing"
+        },
+        "minecraft:recipe_furnace": {
+          "$ref": "#/definitions/RecipeFurnace"
+        }
+      },
+      "required": [
+        "format_version"
+      ],
+      "additionalProperties": false,
+      "$id": "llgava.behavior_packs.Recipes"
+    },
     "RecipeShape": {
       "type": "object",
       "properties": {
@@ -33,19 +38,14 @@
         },
         "tags": {
           "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "enum": [
-                "crafting_table"
-              ]
-            }
-          ],
+          "items": {
+            "type": "string",
+            "const": "crafting_table"
+          },
           "minItems": 1,
           "maxItems": 1
         },
         "pattern": {
-          "pattern": "^[a-zA-Z0-9 !@#$%&]{3}$",
           "type": "array",
           "items": {
             "type": "string"
@@ -63,24 +63,26 @@
         "priority": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Description": {
       "type": "object",
       "properties": {
         "identifier": {
-          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$",
           "type": "string"
         }
       },
       "required": [
         "identifier"
-      ]
+      ],
+      "additionalProperties": false
     },
     "RecipeKey": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/definitions/MinecraftRecipeItemProperties"
+        "$ref": "#/definitions/MinecraftRecipeItemProperties",
+        "maxLength": 1
       }
     },
     "MinecraftRecipeItemProperties": {
@@ -95,7 +97,8 @@
         "data": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "RecipeResult": {
       "type": "object",
@@ -109,7 +112,8 @@
         "count": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "RecipeBrewing": {
       "type": "object",
@@ -128,18 +132,15 @@
         },
         "tags": {
           "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "enum": [
-                "brewing_stand"
-              ]
-            }
-          ],
+          "items": {
+            "type": "string",
+            "const": "brewing_stand"
+          },
           "minItems": 1,
           "maxItems": 1
         }
-      }
+      },
+      "additionalProperties": false
     },
     "RecipeFurnace": {
       "type": "object",
@@ -156,18 +157,21 @@
         "tags": {
           "type": "array",
           "items": {
-            "enum": [
-              "blast_furnace",
-              "campfire",
-              "furnace",
-              "smoker",
-              "soul_campfire"
-            ],
-            "type": "string"
+            "$ref": "#/definitions/MinecraftFurnaceRecipeTags"
           }
         }
-      }
+      },
+      "additionalProperties": false
+    },
+    "MinecraftFurnaceRecipeTags": {
+      "type": "string",
+      "enum": [
+        "furnace",
+        "blast_furnace",
+        "smoker",
+        "campfire",
+        "soul_campfire"
+      ]
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

@@ -1,10 +1,14 @@
 {
-  "$id": "llgava.resource_packs.MusicDefinitions",
-  "type": "object",
-  "additionalProperties": {
-    "$ref": "#/definitions/MusicDefinition"
-  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/MusicDefinitionsSchema",
   "definitions": {
+    "MusicDefinitionsSchema": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/MusicDefinition"
+      },
+      "$id": "llgava.resource_packs.MusicDefinitions"
+    },
     "MusicDefinition": {
       "type": "object",
       "properties": {
@@ -17,32 +21,32 @@
         "min_delay": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "MinecraftMusicEvents": {
+      "type": "string",
       "enum": [
+        "music.menu",
         "music.game",
         "music.game.creative",
         "music.game.credits",
-        "music.game.crimson_forest",
-        "music.game.dripstone_caves",
         "music.game.end",
         "music.game.endboss",
+        "music.game.nether",
+        "music.game.nether_wastes",
+        "music.game.crimson_forest",
+        "music.game.dripstone_caves",
         "music.game.frozen_peaks",
         "music.game.grove",
         "music.game.jagged_peaks",
         "music.game.lush_caves",
         "music.game.meadow",
-        "music.game.nether",
-        "music.game.nether_wastes",
         "music.game.snowy_slopes",
         "music.game.soulsand_valley",
         "music.game.stony_peaks",
-        "music.game.water",
-        "music.menu"
-      ],
-      "type": "string"
+        "music.game.water"
+      ]
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

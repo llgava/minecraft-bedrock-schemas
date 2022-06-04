@@ -1,34 +1,53 @@
 {
-  "$id": "llgava.resource_packs.TerrainTexture",
-  "type": "object",
-  "properties": {
-    "resource_pack_name": {
-      "type": "string"
-    },
-    "texture_name": {
-      "type": "string",
-      "enum": [
-        "atlas.terrain"
-      ]
-    },
-    "num_mip_levels": {
-      "type": "number"
-    },
-    "padding": {
-      "type": "number"
-    },
-    "texture_data": {
-      "$ref": "#/definitions/MinecraftTextureData"
-    }
-  },
-  "required": [
-    "num_mip_levels",
-    "padding",
-    "resource_pack_name",
-    "texture_data",
-    "texture_name"
-  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/TerrainTextureSchema",
   "definitions": {
+    "TerrainTextureSchema": {
+      "type": "object",
+      "properties": {
+        "resource_pack_name": {
+          "type": "string"
+        },
+        "texture_name": {
+          "type": "string",
+          "const": "atlas.terrain"
+        },
+        "num_mip_levels": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number",
+              "const": 4
+            }
+          ]
+        },
+        "padding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number",
+              "const": 8
+            }
+          ]
+        },
+        "texture_data": {
+          "$ref": "#/definitions/MinecraftTextureData"
+        }
+      },
+      "required": [
+        "resource_pack_name",
+        "texture_name",
+        "num_mip_levels",
+        "padding",
+        "texture_data"
+      ],
+      "additionalProperties": false,
+      "$id": "llgava.resource_packs.TerrainTexture"
+    },
     "MinecraftTextureData": {
       "type": "object",
       "additionalProperties": {
@@ -41,6 +60,9 @@
         "textures": {
           "anyOf": [
             {
+              "type": "string"
+            },
+            {
               "type": "array",
               "items": {
                 "type": "string"
@@ -48,13 +70,11 @@
             },
             {
               "$ref": "#/definitions/Textures"
-            },
-            {
-              "type": "string"
             }
           ]
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Textures": {
       "type": "object",
@@ -63,11 +83,9 @@
           "type": "string"
         },
         "overlay_color": {
-          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
           "type": "string"
         },
         "tint_color": {
-          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$",
           "type": "string"
         },
         "variations": {
@@ -76,7 +94,8 @@
             "$ref": "#/definitions/Variations"
           }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Variations": {
       "type": "object",
@@ -87,8 +106,8 @@
         "weight": {
           "type": "number"
         }
-      }
+      },
+      "additionalProperties": false
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

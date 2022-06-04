@@ -1,16 +1,22 @@
 {
-  "$id": "llgava.resource_packs.Splashes",
-  "type": "object",
-  "properties": {
-    "splashes": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SplashesSchema",
+  "definitions": {
+    "SplashesSchema": {
+      "type": "object",
+      "properties": {
+        "splashes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "splashes"
+      ],
+      "additionalProperties": false,
+      "$id": "llgava.resource_packs.Splashes"
     }
-  },
-  "required": [
-    "splashes"
-  ],
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  }
 }

@@ -1,6 +1,6 @@
 import { MusicDefinition } from './MusicDefinition';
 
-/** @$id llgava.resource_packs.MusicDefinitions */
+/** @id llgava.resource_packs.MusicDefinitions */
 export class MusicDefinitionsSchema {
   [property_name: string]: MusicDefinition;
 
