@@ -1,5 +1,5 @@
 {
-  "$id": "llgava.global.Languages",
+  "$id": "llgava.global.LanguageNames",
   "type": "array",
   "items": {
     "type": "array",

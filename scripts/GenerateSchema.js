@@ -10,9 +10,9 @@ function requireTS(path) {
 
 function main() {
   const MinecraftBedrockSchemas = requireTS('../src/MinecraftBedrockSchemas');
-  const Languages = requireTS('../src/models/Languages');
-  const LanguageNames = requireTS('../src/models/LanguageNames');
-  const FlipbookTextures = requireTS('../src/models/ResourcePack/FlipbookTextures');
+  const Languages = requireTS('../src/models/global/Languages');
+  const LanguageNames = requireTS('../src/models/resource_packs/LanguageNames');
+  const FlipbookTextures = requireTS('../src/models/resource_packs/FlipbookTextures');
 
   MinecraftBedrockSchemas.generateDynamicSchemas('schemas/');
   MinecraftBedrockSchemas.generateSettingsFile('.vscode/');

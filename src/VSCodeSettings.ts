@@ -1,8 +1,8 @@
 import { JSONSchema, Schemas } from './types/Schemas';
 
-import * as Languages from '@models/Languages';
-import * as LanguageNames from '@models/LanguageNames';
-import * as FlipbookTextures from '@models/ResourcePack/FlipbookTextures';
+import * as Languages from '@models/global/Languages';
+import * as LanguageNames from '@models/resource_packs/LanguageNames';
+import * as FlipbookTextures from '@models/resource_packs/FlipbookTextures';
 
 const BASE_URL =
   'https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/$VERSION/$FILE_NAME.schema.json';
