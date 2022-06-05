@@ -6,7 +6,7 @@ export class ClientEntitySchema {
   public ['minecraft:client_entity']?: ClientEntity;
 
   /** @TJS-ignore */ get fileName(): string {
-    return 'sound_definitions';
+    return 'client_entity';
   }
   /** @TJS-ignore */ get path(): string {
     return __filename;
@@ -16,9 +16,6 @@ export class ClientEntitySchema {
   }
 
   /** @TJS-ignore */ get fileMatch(): string[] {
-    return [
-      'resource_packs/*/sounds/sound_definitions.json',
-      'development_resource_packs/*/sounds/sound_definitions.json',
-    ];
+    return ['resource_packs/*/entity/*.json', 'development_resource_packs/*/entity/*.json'];
   }
 }

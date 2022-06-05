@@ -22,7 +22,8 @@
     "AnimationController": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/definitions/AnimationControllerProperties"
+        "$ref": "#/definitions/AnimationControllerProperties",
+        "pattern": "^(?:controller.animation.)+[a-z]+$"
       }
     },
     "AnimationControllerProperties": {

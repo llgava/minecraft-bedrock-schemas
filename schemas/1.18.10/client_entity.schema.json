@@ -1,0 +1,528 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/ClientEntitySchema",
+  "definitions": {
+    "ClientEntitySchema": {
+      "type": "object",
+      "properties": {
+        "format_version": {
+          "type": "string"
+        },
+        "minecraft:client_entity": {
+          "$ref": "#/definitions/ClientEntity"
+        }
+      },
+      "additionalProperties": false,
+      "$id": "llgava.resource_packs.SoundsDefinition"
+    },
+    "ClientEntity": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/ClientEntityProperties"
+        }
+      },
+      "required": [
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "ClientEntityProperties": {
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$"
+        },
+        "render_controllers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RenderController"
+          }
+        },
+        "enable_attachables": {
+          "type": "boolean"
+        },
+        "hide_armor": {
+          "type": "boolean"
+        },
+        "min_engine_version": {
+          "type": "string"
+        },
+        "sound_effects": {
+          "$ref": "#/definitions/SoundEffects"
+        },
+        "particle_emitters": {
+          "$ref": "#/definitions/ParticleEmitters"
+        },
+        "queryable_geometry": {
+          "type": "string"
+        },
+        "materials": {
+          "$ref": "#/definitions/Materials"
+        },
+        "geometry": {
+          "$ref": "#/definitions/Geometry"
+        },
+        "particle_effects": {
+          "$ref": "#/definitions/ParticleEffects"
+        },
+        "textures": {
+          "$ref": "#/definitions/ClientTextures"
+        },
+        "animations": {
+          "$ref": "#/definitions/Animations"
+        },
+        "scripts": {
+          "$ref": "#/definitions/ClientScripts"
+        },
+        "spawn_egg": {
+          "$ref": "#/definitions/SpawnEgg"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RenderController": {
+      "type": "string",
+      "pattern": "^(?:controller.render.)+[a-z]+$"
+    },
+    "SoundEffects": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ParticleEmitters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "Materials": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "Geometry": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^(?:geometry.)+[a-z_]+$"
+      }
+    },
+    "ParticleEffects": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ClientTextures": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "Animations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^(?:animation.|controller.animation.)+[a-z]+$"
+      }
+    },
+    "ClientScripts": {
+      "type": "object",
+      "properties": {
+        "pre_animation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "initialize": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent_setup": {
+          "type": "string"
+        },
+        "scale": {
+          "type": "string"
+        },
+        "scalex": {
+          "type": "string"
+        },
+        "scaley": {
+          "type": "string"
+        },
+        "scalez": {
+          "type": "string"
+        },
+        "should_update_bones_and_effects_offscreen": {
+          "type": [
+            "string",
+            "boolean"
+          ]
+        },
+        "should_update_effects_offscreen": {
+          "type": [
+            "string",
+            "boolean"
+          ]
+        },
+        "variables": {
+          "$ref": "#/definitions/MinecraftClientVariables"
+        },
+        "animate": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MinecraftClientVariables": {
+      "type": "object",
+      "properties": {
+        "variable.angles": {
+          "type": "string"
+        },
+        "variable.animation_speed": {
+          "type": "string"
+        },
+        "variable.AnimationAmountBlen": {
+          "type": "string"
+        },
+        "variable.attack": {
+          "type": "string"
+        },
+        "variable.attack2": {
+          "type": "string"
+        },
+        "variable.attack_body_rot_y": {
+          "type": "string"
+        },
+        "variable.attack_head_rot": {
+          "type": "string"
+        },
+        "variable.attack_time": {
+          "type": "string"
+        },
+        "variable.backLegMultiplier": {
+          "type": "string"
+        },
+        "variable.base_scale": {
+          "type": "string"
+        },
+        "variable.bite_anim_duration": {
+          "type": "string"
+        },
+        "variable.bit_neck_length": {
+          "type": "string"
+        },
+        "variable.body_base_rotation": {
+          "type": "string"
+        },
+        "variable.body_roll_progress": {
+          "type": "string"
+        },
+        "variable.body_rot_z": {
+          "type": "string"
+        },
+        "variable.body_shake_angle": {
+          "type": "string"
+        },
+        "variable.boot_layer_visible": {
+          "type": "string"
+        },
+        "variable.bounce": {
+          "type": "string"
+        },
+        "variable.bristle_flow": {
+          "type": "string"
+        },
+        "variable.bristle_range_mod": {
+          "type": "string"
+        },
+        "variable.bristle_speed_mod": {
+          "type": "string"
+        },
+        "variable.chest_layer_visible": {
+          "type": "string"
+        },
+        "variable.current_frame": {
+          "type": "string"
+        },
+        "variable.dance.x": {
+          "type": "string"
+        },
+        "variable.dance.y": {
+          "type": "string"
+        },
+        "variable.deg_rotation": {
+          "type": "string"
+        },
+        "variable.display_normal_skin": {
+          "type": "string"
+        },
+        "variable.first_person_rotation_factor": {
+          "type": "string"
+        },
+        "variable.flash": {
+          "type": "string"
+        },
+        "variable.flipbook": {
+          "type": "string"
+        },
+        "variable.frames": {
+          "type": "string"
+        },
+        "variable.frontLegMultiplier": {
+          "type": "string"
+        },
+        "variable.hand_bob": {
+          "type": "string"
+        },
+        "variable.head_roll_progress": {
+          "type": "string"
+        },
+        "variable.head_rot_z": {
+          "type": "string"
+        },
+        "variable.height": {
+          "type": "string"
+        },
+        "variable.helmet_layer_scale_amount": {
+          "type": "string"
+        },
+        "variable.horizontal_scale_amount": {
+          "type": "string"
+        },
+        "variable.hp": {
+          "type": "string"
+        },
+        "variable.is_blinking": {
+          "type": "string"
+        },
+        "variable.is_holding_right": {
+          "type": "string"
+        },
+        "variable.is_invulnerable": {
+          "type": "string"
+        },
+        "variable.item_use_normalized": {
+          "type": "string"
+        },
+        "variable.last_blink_time": {
+          "type": "string"
+        },
+        "variable.leg_layer_visible": {
+          "type": "string"
+        },
+        "variable.leg_rot": {
+          "type": "string"
+        },
+        "variable.legSpeedMultiplier": {
+          "type": "string"
+        },
+        "variable.level_index": {
+          "type": "string"
+        },
+        "variable.map_angle": {
+          "type": "string"
+        },
+        "variable.max_frames": {
+          "type": "string"
+        },
+        "variable.modified_tcos0": {
+          "type": "string"
+        },
+        "variable.num_professions": {
+          "type": "string"
+        },
+        "variable.num_tiers": {
+          "type": "string"
+        },
+        "variable.page": {
+          "type": "string"
+        },
+        "variable.profession_index": {
+          "type": "string"
+        },
+        "variable.radius": {
+          "type": "string"
+        },
+        "variable.roar_length": {
+          "type": "string"
+        },
+        "variable.runtimeid": {
+          "type": "string"
+        },
+        "variable.scale_xz": {
+          "type": "string"
+        },
+        "variable.scale_y": {
+          "type": "string"
+        },
+        "variable.Shulker.EastFacing": {
+          "type": "string"
+        },
+        "variable.Shulker.LidPositionFactor": {
+          "type": "string"
+        },
+        "variable.Shulker.LidRotationFactor": {
+          "type": "string"
+        },
+        "variable.Shulker.NorthFacing": {
+          "type": "string"
+        },
+        "variable.Shulker.SouthFacing": {
+          "type": "string"
+        },
+        "variable.Shulker.UpFacing": {
+          "type": "string"
+        },
+        "variable.Shulker.WestFacing": {
+          "type": "string"
+        },
+        "variable.Shulker.XOffset": {
+          "type": "string"
+        },
+        "variable.Shulker.XPreRotation": {
+          "type": "string"
+        },
+        "variable.Shulker.Yoffset": {
+          "type": "string"
+        },
+        "variable.Shulker.ZOffset": {
+          "type": "string"
+        },
+        "variable.Shulker.ZPreRotation": {
+          "type": "string"
+        },
+        "variable.slime_squish_factor": {
+          "type": "string"
+        },
+        "variable.speed": {
+          "type": "string"
+        },
+        "variable.spike_animation_speed": {
+          "type": "string"
+        },
+        "variable.spike_extension": {
+          "type": "string"
+        },
+        "variable.spike_shake": {
+          "type": "string"
+        },
+        "variable.squish_factor": {
+          "type": "string"
+        },
+        "variable.state": {
+          "type": "string"
+        },
+        "variable.swell_adjustment": {
+          "type": "string"
+        },
+        "variable.swell_clamped": {
+          "type": "string"
+        },
+        "variable.swelling_scale1": {
+          "type": "string"
+        },
+        "variable.swelling_scale2": {
+          "type": "string"
+        },
+        "variable.tail_animation_speed": {
+          "type": "string"
+        },
+        "variable.tail_base_angle": {
+          "type": "string"
+        },
+        "variable.tail_rool_progress": {
+          "type": "string"
+        },
+        "variable.tail_rot_z": {
+          "type": "string"
+        },
+        "variable.tail_swim": {
+          "type": "string"
+        },
+        "variable.tailrotx": {
+          "type": "string"
+        },
+        "variable.tcos0": {
+          "type": "string"
+        },
+        "variable.tcos_left_side": {
+          "type": "string"
+        },
+        "variable.tcos_right_side": {
+          "type": "string"
+        },
+        "variable.texture_fps": {
+          "type": "string"
+        },
+        "variable.timeMultiplier": {
+          "type": "string"
+        },
+        "variable.timer": {
+          "type": "string"
+        },
+        "variable.upper_body_roll_progress": {
+          "type": "string"
+        },
+        "variable.upper_body_rot_z": {
+          "type": "string"
+        },
+        "variable.upper_body_rotation": {
+          "type": "string"
+        },
+        "variable.vertical_scale_amount": {
+          "type": "string"
+        },
+        "variable.wing_flap": {
+          "type": "string"
+        },
+        "variable.wingrotz": {
+          "type": "string"
+        },
+        "variable.wobble": {
+          "type": "string"
+        },
+        "variable.x_bob": {
+          "type": "string"
+        },
+        "variable.z_bob": {
+          "type": "string"
+        },
+        "variable.ZRot": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SpawnEgg": {
+      "type": "object",
+      "properties": {
+        "base_color": {
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+        },
+        "overlay_color": {
+          "type": "string"
+        },
+        "texture_index": {
+          "type": "number"
+        },
+        "texture": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

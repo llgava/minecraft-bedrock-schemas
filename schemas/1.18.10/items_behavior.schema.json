@@ -38,7 +38,8 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$"
         },
         "category": {
           "$ref": "#/definitions/MinecraftCategories"

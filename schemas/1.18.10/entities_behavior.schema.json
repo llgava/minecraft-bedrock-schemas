@@ -3,7 +3,6 @@
   "$ref": "#/definitions/EntitiesSchema",
   "definitions": {
     "EntitiesSchema": {
-      de
       "type": "object",
       "properties": {
         "format_version": {
@@ -45,7 +44,8 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$"
         },
         "is_spawnable": {
           "type": "boolean"
@@ -6664,7 +6664,7 @@
             "sequence": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/interface-1441221135-25062-25262-1441221135-0-25575"
+                "$ref": "#/definitions/interface-1441221135-25058-25258-1441221135-0-25571"
               }
             },
             "trigger": {
@@ -6709,7 +6709,7 @@
             "sequence": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/interface-1441221135-25062-25262-1441221135-0-25575"
+                "$ref": "#/definitions/interface-1441221135-25058-25258-1441221135-0-25571"
               }
             },
             "trigger": {
@@ -6754,7 +6754,7 @@
             "sequence": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/interface-1441221135-25062-25262-1441221135-0-25575"
+                "$ref": "#/definitions/interface-1441221135-25058-25258-1441221135-0-25571"
               }
             },
             "trigger": {
@@ -6799,7 +6799,7 @@
             "sequence": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/interface-1441221135-25062-25262-1441221135-0-25575"
+                "$ref": "#/definitions/interface-1441221135-25058-25258-1441221135-0-25571"
               }
             },
             "trigger": {
@@ -6845,7 +6845,7 @@
           "sequence": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/interface-1441221135-25062-25262-1441221135-0-25575"
+              "$ref": "#/definitions/interface-1441221135-25058-25258-1441221135-0-25571"
             }
           },
           "trigger": {
@@ -6867,7 +6867,7 @@
       },
       "additionalProperties": false
     },
-    "interface-1441221135-25062-25262-1441221135-0-25575": {
+    "interface-1441221135-25058-25258-1441221135-0-25571": {
       "type": "object",
       "properties": {
         "add": {
@@ -6903,7 +6903,7 @@
         "sequence": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/interface-1441221135-25062-25262-1441221135-0-25575"
+            "$ref": "#/definitions/interface-1441221135-25058-25258-1441221135-0-25571"
           }
         },
         "trigger": {

@@ -452,7 +452,8 @@
           "const": "fill_container"
         },
         "loot_table": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^(?:loot_tables/)+[a-z]+$"
         }
       },
       "additionalProperties": false
@@ -776,7 +777,8 @@
           "const": "loot_table"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^(?:loot_tables/)+[a-z]+$"
         },
         "pools": {
           "type": "array",

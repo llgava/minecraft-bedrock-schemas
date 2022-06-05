@@ -178,7 +178,7 @@ import { BehaviorWork } from './components/BehaviorWork';
 
 // Description
 export interface Description {
-  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
+  /** @pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   is_spawnable?: boolean;
   is_summonable?: boolean;

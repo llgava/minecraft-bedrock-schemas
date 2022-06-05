@@ -2,7 +2,7 @@ import { LootTablePool } from '@models/behavior_packs/loot_tables/LootTablePrope
 
 export interface LootTableType {
   type?: 'loot_table';
-  /** @TJS-pattern ^(?:loot_tables/)+[a-z]+$ */
+  /** @pattern ^(?:loot_tables/)+[a-z]+$ */
   name?: string;
   pools?: LootTablePool[];
 }

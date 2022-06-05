@@ -18,6 +18,7 @@ import { SoundsSchema } from '@models/resource_packs/sounds/Schema';
 import { SplashesSchema } from '@models/resource_packs/Splashes';
 import { SoundDefinitionsSchema } from '@models/resource_packs/sound_definitions/Schema';
 import { MusicDefinitionsSchema } from '@models/resource_packs/music_definitions/Schema';
+import { ClientEntitySchema } from '@models/resource_packs/entity/Schema';
 
 import { Schemas } from './types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
@@ -50,6 +51,7 @@ class MinecraftBedrockSchemas {
       new SoundsSchema(),
       new SoundDefinitionsSchema(),
       new MusicDefinitionsSchema(),
+      new ClientEntitySchema(),
     ];
   }
 

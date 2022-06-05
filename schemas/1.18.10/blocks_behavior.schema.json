@@ -47,7 +47,8 @@
       "type": "object",
       "properties": {
         "identifier": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$"
         },
         "is_experimental": {
           "type": "boolean"
@@ -179,7 +180,8 @@
           "type": "string"
         },
         "minecraft:map_color": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
         },
         "minecraft:onlypistonpush": {
           "type": "boolean"
@@ -1267,7 +1269,7 @@
           "sequence": {
             "type": "array",
             "items": {
-              "$ref": "#/definitions/interface-1735349870-4241-4762-1735349870-0-4763"
+              "$ref": "#/definitions/interface-1735349870-4233-4754-1735349870-0-4755"
             }
           },
           "add_mob_effect": {
@@ -1321,13 +1323,13 @@
         "additionalProperties": false
       }
     },
-    "interface-1735349870-4241-4762-1735349870-0-4763": {
+    "interface-1735349870-4233-4754-1735349870-0-4755": {
       "type": "object",
       "properties": {
         "sequence": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/interface-1735349870-4241-4762-1735349870-0-4763"
+            "$ref": "#/definitions/interface-1735349870-4233-4754-1735349870-0-4755"
           }
         },
         "add_mob_effect": {

@@ -24,7 +24,7 @@ import { CraftingTable } from './components/CraftingTable';
 
 // Description
 export interface Description {
-  /** @TJS-pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
+  /** @pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   is_experimental?: boolean;
   register_to_creative_menu?: boolean;
@@ -50,7 +50,7 @@ export interface Components extends ExperimentalComponents {
   ['minecraft:immovable']?: boolean;
   ['minecraft:loot']?: string;
 
-  /** @TJS-pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
+  /** @pattern ^#(?:[0-9a-fA-F]{3}){1,2}$ */
   ['minecraft:map_color']?: string;
   ['minecraft:onlypistonpush']?: boolean;
   ['minecraft:placement_filter']?: PlacementFilter;

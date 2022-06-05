@@ -6,7 +6,7 @@ export interface RecipeShape {
   description?: Description;
   tags?: ['crafting_table'];
 
-  /** @TJS-pattern ^[a-zA-Z0-9 !@#$%&]{3}$ */
+  /** @pattern ^[a-zA-Z0-9 !@#$%&]{3}$ */
   pattern?: string[];
 
   key?: RecipeKey;

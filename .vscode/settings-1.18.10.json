@@ -116,6 +116,13 @@
     },
     {
       "fileMatch": [
+        "resource_packs/*/entity/*.json",
+        "development_resource_packs/*/entity/*.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/client_entity.schema.json"
+    },
+    {
+      "fileMatch": [
         "resource_packs/*/texts/languages.json",
         "behavior_packs/*/texts/languages.json",
         "development_resource_packs/*/texts/languages.json",

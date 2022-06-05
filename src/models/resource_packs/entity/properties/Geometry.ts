@@ -1,4 +1,4 @@
 export interface Geometry {
-  /** @TJS-pattern ^(?:geometry.)+[a-z]+$ */
+  /** @pattern ^(?:geometry.)+[a-z_]+$ */
   [property_name: string]: string;
 }

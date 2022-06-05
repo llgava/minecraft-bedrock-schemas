@@ -83,10 +83,12 @@
           "type": "string"
         },
         "overlay_color": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
         },
         "tint_color": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
         },
         "variations": {
           "type": "array",
