@@ -31,7 +31,11 @@
           "$ref": "#/definitions/Capabilities"
         }
       },
-      "required": ["format_version", "header", "modules"],
+      "required": [
+        "format_version",
+        "header",
+        "modules"
+      ],
       "additionalProperties": false,
       "$id": "llgava.global.Manifest"
     },
@@ -144,7 +148,12 @@
           "$ref": "#/definitions/UUID"
         }
       },
-      "required": ["name", "description", "version", "uuid"],
+      "required": [
+        "name",
+        "description",
+        "version",
+        "uuid"
+      ],
       "additionalProperties": false
     },
     "UUID": {
@@ -172,12 +181,22 @@
           "$ref": "#/definitions/UUID"
         }
       },
-      "required": ["type", "version", "uuid"],
+      "required": [
+        "type",
+        "version",
+        "uuid"
+      ],
       "additionalProperties": false
     },
     "MinecraftManifests": {
       "type": "string",
-      "enum": ["resources", "data", "client_data", "interface", "world_template"]
+      "enum": [
+        "resources",
+        "data",
+        "client_data",
+        "interface",
+        "world_template"
+      ]
     },
     "Dependencies": {
       "type": "object",
@@ -194,7 +213,10 @@
           "maxItems": 3
         }
       },
-      "required": ["uuid", "version"],
+      "required": [
+        "uuid",
+        "version"
+      ],
       "additionalProperties": false
     },
     "Metadata": {
@@ -213,7 +235,11 @@
           "type": "string"
         }
       },
-      "required": ["authors", "license", "url"],
+      "required": [
+        "authors",
+        "license",
+        "url"
+      ],
       "additionalProperties": false
     },
     "Capabilities": {
@@ -229,7 +255,11 @@
           "type": "boolean"
         }
       },
-      "required": ["chemistry", "experimental_custom_ui", "raytraced"],
+      "required": [
+        "chemistry",
+        "experimental_custom_ui",
+        "raytraced"
+      ],
       "additionalProperties": false
     }
   }

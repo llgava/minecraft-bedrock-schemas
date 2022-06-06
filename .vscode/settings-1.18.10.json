@@ -10,23 +10,38 @@
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/manifest.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/functions/tick.json", "development_behavior_packs/*/functions/tick.json"],
+      "fileMatch": [
+        "behavior_packs/*/functions/tick.json",
+        "development_behavior_packs/*/functions/tick.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/tick.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/blocks/*.json", "development_behavior_packs/*/blocks/*.json"],
+      "fileMatch": [
+        "behavior_packs/*/blocks/*.json",
+        "development_behavior_packs/*/blocks/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/blocks_behavior.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/items/*.json", "development_behavior_packs/*/items/*.json"],
+      "fileMatch": [
+        "behavior_packs/*/items/*.json",
+        "development_behavior_packs/*/items/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/items_behavior.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/entities/*.json", "development_behavior_packs/*/entities/*.json"],
+      "fileMatch": [
+        "behavior_packs/*/entities/*.json",
+        "development_behavior_packs/*/entities/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/entities_behavior.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/recipes/*.json", "development_behavior_packs/*/recipes/*.json"],
+      "fileMatch": [
+        "behavior_packs/*/recipes/*.json",
+        "development_behavior_packs/*/recipes/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/recipe.schema.json"
     },
     {
@@ -37,15 +52,24 @@
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animation_controllers_behavior.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/animations/*.json", "development_behavior_packs/*/animations/*.json"],
+      "fileMatch": [
+        "behavior_packs/*/animations/*.json",
+        "development_behavior_packs/*/animations/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animations_behavior.schema.json"
     },
     {
-      "fileMatch": ["behavior_packs/*/loot_tables/*.json", "development_behavior_packs/*/loot_tables/*.json"],
+      "fileMatch": [
+        "behavior_packs/*/loot_tables/*.json",
+        "development_behavior_packs/*/loot_tables/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/loot_tables.schema.json"
     },
     {
-      "fileMatch": ["resource_packs/*/splashes.json", "development_resource_packs/*/splashes.json"],
+      "fileMatch": [
+        "resource_packs/*/splashes.json",
+        "development_resource_packs/*/splashes.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/splashes.schema.json"
     },
     {
@@ -63,11 +87,17 @@
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/terrain_texture.schema.json"
     },
     {
-      "fileMatch": ["resource_packs/*/blocks.json", "development_resource_packs/*/blocks.json"],
+      "fileMatch": [
+        "resource_packs/*/blocks.json",
+        "development_resource_packs/*/blocks.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/blocks_texture.schema.json"
     },
     {
-      "fileMatch": ["resource_packs/*/sounds.json", "development_resource_packs/*/sounds.json"],
+      "fileMatch": [
+        "resource_packs/*/sounds.json",
+        "development_resource_packs/*/sounds.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sounds.schema.json"
     },
     {
@@ -85,7 +115,10 @@
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/music_definitions.schema.json"
     },
     {
-      "fileMatch": ["resource_packs/*/entity/*.json", "development_resource_packs/*/entity/*.json"],
+      "fileMatch": [
+        "resource_packs/*/entity/*.json",
+        "development_resource_packs/*/entity/*.json"
+      ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/client_entity.schema.json"
     },
     {

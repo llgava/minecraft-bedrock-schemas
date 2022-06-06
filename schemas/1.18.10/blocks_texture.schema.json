@@ -23,7 +23,9 @@
           ]
         }
       },
-      "required": ["textures"],
+      "required": [
+        "textures"
+      ],
       "additionalProperties": false
     },
     "Textures": {

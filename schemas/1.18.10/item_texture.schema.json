@@ -16,7 +16,11 @@
           "$ref": "#/definitions/MinecraftTextureData"
         }
       },
-      "required": ["resource_pack_name", "texture_name", "texture_data"],
+      "required": [
+        "resource_pack_name",
+        "texture_name",
+        "texture_data"
+      ],
       "additionalProperties": false,
       "$id": "llgava.resource_packs.ItemTexture"
     },

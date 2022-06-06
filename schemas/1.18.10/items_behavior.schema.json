@@ -12,7 +12,10 @@
           "$ref": "#/definitions/Item"
         }
       },
-      "required": ["format_version", "minecraft:item"],
+      "required": [
+        "format_version",
+        "minecraft:item"
+      ],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Items"
     },
@@ -20,16 +23,18 @@
       "type": "object",
       "properties": {
         "description": {
-          "$ref": "#/definitions/Description"
+          "$ref": "#/definitions/ItemDescription"
         },
         "components": {
-          "$ref": "#/definitions/Components"
+          "$ref": "#/definitions/ItemComponents"
         }
       },
-      "required": ["description"],
+      "required": [
+        "description"
+      ],
       "additionalProperties": false
     },
-    "Description": {
+    "ItemDescription": {
       "type": "object",
       "properties": {
         "identifier": {
@@ -43,14 +48,22 @@
           "type": "boolean"
         }
       },
-      "required": ["identifier", "category"],
+      "required": [
+        "identifier",
+        "category"
+      ],
       "additionalProperties": false
     },
     "MinecraftCategories": {
       "type": "string",
-      "enum": ["construction", "equipment", "items", "nature"]
+      "enum": [
+        "construction",
+        "equipment",
+        "items",
+        "nature"
+      ]
     },
-    "Components": {
+    "ItemComponents": {
       "type": "object",
       "properties": {
         "minecraft:armor": {
@@ -133,7 +146,17 @@
     },
     "MinecraftArmorTextureTypes": {
       "type": "string",
-      "enum": ["none", "elytra", "turtle", "gold", "leather", "chain", "iron", "diamond", "netherite"]
+      "enum": [
+        "none",
+        "elytra",
+        "turtle",
+        "gold",
+        "leather",
+        "chain",
+        "iron",
+        "diamond",
+        "netherite"
+      ]
     },
     "BlockPlacer": {
       "type": "object",
@@ -914,7 +937,10 @@
                 "type": "number"
               }
             },
-            "required": ["block", "speed"],
+            "required": [
+              "block",
+              "speed"
+            ],
             "additionalProperties": false
           }
         },
@@ -941,7 +967,16 @@
     },
     "MinecraftSubjects": {
       "type": "string",
-      "enum": ["block", "damager", "item", "other", "parent", "player", "self", "target"]
+      "enum": [
+        "block",
+        "damager",
+        "item",
+        "other",
+        "parent",
+        "player",
+        "self",
+        "target"
+      ]
     },
     "DisplayName": {
       "type": "object",

@@ -12,7 +12,9 @@
           }
         }
       },
-      "required": ["splashes"],
+      "required": [
+        "splashes"
+      ],
       "additionalProperties": false,
       "$id": "llgava.resource_packs.Splashes"
     }
