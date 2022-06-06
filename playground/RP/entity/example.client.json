@@ -7,9 +7,7 @@
         "default": "entity_alphatest"
       },
 
-      "render_controllers": [
-        "controller.render.default"
-      ],
+      "render_controllers": ["controller.render.default"],
 
       "geometry": {
         "default": "geometry.custom_model"

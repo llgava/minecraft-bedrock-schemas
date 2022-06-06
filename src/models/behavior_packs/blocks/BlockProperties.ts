@@ -23,21 +23,21 @@ import { TransformItem } from './events/TransformItem';
 import { CraftingTable } from './components/CraftingTable';
 
 // Description
-export interface Description {
+export interface BlockDescription {
   /** @pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   is_experimental?: boolean;
   register_to_creative_menu?: boolean;
-  properties?: Properties;
+  properties?: BlockProperties;
 }
 
 // Properties
-interface Properties {
+interface BlockProperties {
   [property_name: string]: number[] | boolean[];
 }
 
 // Components
-export interface Components extends ExperimentalComponents {
+export interface BlockComponents extends BlockExperimentalComponents {
   ['minecraft:block_light_emission']?: number;
   ['minecraft:block_light_filter']?: number;
   ['minecraft:breakonpush']?: boolean;
@@ -71,7 +71,7 @@ export interface Components extends ExperimentalComponents {
 }
 
 // Experimental Components
-export interface ExperimentalComponents {
+export interface BlockExperimentalComponents {
   /** Experimental toggles required: Holiday Creator Features Experiment */
   ['minecraft:aim_collision']?: boolean | MinecraftCollision;
   /** Experimental toggles required: Holiday Creator Features Experiment */
@@ -91,18 +91,18 @@ export interface ExperimentalComponents {
 }
 
 // Permutations
-export interface Permutations {
-  components?: Components;
+export interface BlockPermutations {
+  components?: BlockComponents;
   conditions?: [];
 }
 
 // Events
-export interface Events {
-  [property_name: string]: EventsReponse;
+export interface BlockEvents {
+  [property_name: string]: BlockEventsReponse;
 }
 
-interface EventsReponse {
-  sequence?: EventsReponse[];
+interface BlockEventsReponse {
+  sequence?: BlockEventsReponse[];
   add_mob_effect?: AddMobEffect;
   damage?: Damage;
   decrement_stack?: Record<string, unknown>;

@@ -1,0 +1,8 @@
+# Folders
+scripts
+
+# Files
+.eslintrc.js
+webpack.config.js
+index.js
+MinecraftBedrockSchemas.ts

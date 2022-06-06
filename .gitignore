@@ -5,6 +5,7 @@
 
 # Files
 **/yarn-error.log
+index.js
 
 # Temp
 **/pt_BR

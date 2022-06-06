@@ -24,9 +24,7 @@
           "$ref": "#/definitions/RecipeFurnace"
         }
       },
-      "required": [
-        "format_version"
-      ],
+      "required": ["format_version"],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Recipes"
     },
@@ -75,9 +73,7 @@
           "pattern": "^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$"
         }
       },
-      "required": [
-        "identifier"
-      ],
+      "required": ["identifier"],
       "additionalProperties": false
     },
     "RecipeKey": {
@@ -167,13 +163,7 @@
     },
     "MinecraftFurnaceRecipeTags": {
       "type": "string",
-      "enum": [
-        "furnace",
-        "blast_furnace",
-        "smoker",
-        "campfire",
-        "soul_campfire"
-      ]
+      "enum": ["furnace", "blast_furnace", "smoker", "campfire", "soul_campfire"]
     }
   }
 }

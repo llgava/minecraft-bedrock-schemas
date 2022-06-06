@@ -2,22 +2,25 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "declaration": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
+    "removeComments": true,
     "esModuleInterop": true,
     "strictNullChecks": false,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
 
-    "rootDir": ".",
+    "declarationDir": "./@types",
+    "declaration": true,
+    "disableReferencedProjectLoad": true,
+
     "baseUrl": "./src",
     "paths": {
       "@minecraft/*": ["./minecraft/*"],
-      "@models/*": ["./models/*"],
-      "@types/*": ["./types/*"]
+      "@models/*": ["./models/*"]
     }
   },
 
-  "include": ["src/", "__tests__/", "scripts/", "index.d.ts"]
+  "include": ["src/", "src/index.ts"],
+  "exclude": ["node_modules", "__tests__", "scripts"]
 }

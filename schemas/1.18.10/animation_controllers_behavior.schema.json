@@ -12,10 +12,7 @@
           "$ref": "#/definitions/AnimationController"
         }
       },
-      "required": [
-        "format_version",
-        "animation_controllers"
-      ],
+      "required": ["format_version", "animation_controllers"],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.AnimationControllers"
     },

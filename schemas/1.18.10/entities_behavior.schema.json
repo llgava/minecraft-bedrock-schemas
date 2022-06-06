@@ -12,10 +12,7 @@
           "$ref": "#/definitions/Entity"
         }
       },
-      "required": [
-        "format_version",
-        "minecraft:entity"
-      ],
+      "required": ["format_version", "minecraft:entity"],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Entities"
     },
@@ -35,9 +32,7 @@
           "$ref": "#/definitions/Events"
         }
       },
-      "required": [
-        "description"
-      ],
+      "required": ["description"],
       "additionalProperties": false
     },
     "Description": {
@@ -66,9 +61,7 @@
           "$ref": "#/definitions/ScriptProperties"
         }
       },
-      "required": [
-        "identifier"
-      ],
+      "required": ["identifier"],
       "additionalProperties": false
     },
     "AnimationProperties": {
@@ -87,9 +80,7 @@
           }
         }
       },
-      "required": [
-        "animate"
-      ],
+      "required": ["animate"],
       "additionalProperties": false
     },
     "ComponentGroups": {
@@ -789,9 +780,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "entity_type"
-      ],
+      "required": ["entity_type"],
       "additionalProperties": false
     },
     "AdmireItem": {
@@ -1171,31 +1160,11 @@
     },
     "MinecraftSubjects": {
       "type": "string",
-      "enum": [
-        "block",
-        "damager",
-        "item",
-        "other",
-        "parent",
-        "player",
-        "self",
-        "target"
-      ]
+      "enum": ["block", "damager", "item", "other", "parent", "player", "self", "target"]
     },
     "MinecraftOperators": {
       "type": "string",
-      "enum": [
-        "!=",
-        "<",
-        "<=",
-        "<>",
-        "=",
-        "==",
-        ">",
-        ">=",
-        "equals",
-        "not"
-      ]
+      "enum": ["!=", "<", "<=", "<>", "=", "==", ">", ">=", "equals", "not"]
     },
     "DistanceToNearestPlayer": {
       "type": "object",
@@ -1388,15 +1357,7 @@
     },
     "MinecraftDomains": {
       "type": "string",
-      "enum": [
-        "any",
-        "armor",
-        "feet",
-        "hand",
-        "head",
-        "leg",
-        "tors"
-      ]
+      "enum": ["any", "armor", "feet", "hand", "head", "leg", "tors"]
     },
     "HasMobEffect": {
       "type": "object",
@@ -1919,12 +1880,7 @@
     },
     "MinecraftDifficulty": {
       "type": "string",
-      "enum": [
-        "easy",
-        "hard",
-        "normal",
-        "peaceful"
-      ]
+      "enum": ["easy", "hard", "normal", "peaceful"]
     },
     "IsFamily": {
       "type": "object",
@@ -2292,12 +2248,7 @@
     },
     "MinecraftTemperatures": {
       "type": "string",
-      "enum": [
-        "cold",
-        "mild",
-        "ocean",
-        "warm"
-      ]
+      "enum": ["cold", "mild", "ocean", "warm"]
     },
     "IsTemperatureValue": {
       "type": "object",
@@ -2687,9 +2638,7 @@
           "maxItems": 2
         }
       },
-      "required": [
-        "attack_cooldown_time"
-      ],
+      "required": ["attack_cooldown_time"],
       "additionalProperties": false
     },
     "Barter": {
@@ -3746,14 +3695,7 @@
     },
     "MinecraftContainer": {
       "type": "string",
-      "enum": [
-        "horse",
-        "minecart_chest",
-        "minecart_hopper",
-        "inventory",
-        "container",
-        "hopper"
-      ]
+      "enum": ["horse", "minecart_chest", "minecart_hopper", "inventory", "container", "hopper"]
     },
     "JumpStatic": {
       "type": "object",
@@ -4636,9 +4578,7 @@
           "maxItems": 3
         }
       },
-      "required": [
-        "spawn_offset"
-      ],
+      "required": ["spawn_offset"],
       "additionalProperties": false
     },
     "Transformation": {
@@ -5720,11 +5660,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "Any",
-              "Water",
-              "Lava"
-            ]
+            "enum": ["Any", "Water", "Lava"]
           }
         }
       },
@@ -6501,10 +6437,7 @@
     },
     "MinecraftShapes": {
       "type": "string",
-      "enum": [
-        "circle",
-        "line"
-      ]
+      "enum": ["circle", "line"]
     },
     "BehaviorSwell": {
       "type": "object",

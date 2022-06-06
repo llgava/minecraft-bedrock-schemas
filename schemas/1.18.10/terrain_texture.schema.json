@@ -38,13 +38,7 @@
           "$ref": "#/definitions/MinecraftTextureData"
         }
       },
-      "required": [
-        "resource_pack_name",
-        "texture_name",
-        "num_mip_levels",
-        "padding",
-        "texture_data"
-      ],
+      "required": ["resource_pack_name", "texture_name", "num_mip_levels", "padding", "texture_data"],
       "additionalProperties": false,
       "$id": "llgava.resource_packs.TerrainTexture"
     },

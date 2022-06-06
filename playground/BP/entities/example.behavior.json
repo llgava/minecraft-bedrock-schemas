@@ -33,9 +33,7 @@
           {
             "on_damage": {
               "filters": {
-                "all_of": [
-                  { "test": "has_damage", "operator": "!=", "value": "projectile" }
-                ],
+                "all_of": [{ "test": "has_damage", "operator": "!=", "value": "projectile" }],
 
                 "player_with_instabuild": true,
                 "other_with_families": "player"

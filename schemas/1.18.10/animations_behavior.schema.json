@@ -12,10 +12,7 @@
           "$ref": "#/definitions/Animation"
         }
       },
-      "required": [
-        "format_version",
-        "animations"
-      ],
+      "required": ["format_version", "animations"],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Animations"
     },
@@ -39,11 +36,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "loop",
-        "timeline",
-        "animation_length"
-      ],
+      "required": ["loop", "timeline", "animation_length"],
       "additionalProperties": false
     },
     "Timeline": {

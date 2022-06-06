@@ -1,4 +1,4 @@
-export interface Schemas {
+export interface JSONSchemas {
   fileName: string;
   fileMatch: string[];
   name: string;

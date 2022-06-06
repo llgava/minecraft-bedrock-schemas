@@ -1,4 +1,4 @@
-import { JSONSchema, Schemas } from './types/Schemas';
+import { JSONSchema, JSONSchemas } from './@types/Schemas';
 
 import * as Languages from '@models/global/Languages';
 import * as LanguageNames from '@models/resource_packs/LanguageNames';
@@ -8,13 +8,13 @@ const BASE_URL =
   'https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/$VERSION/$FILE_NAME.schema.json';
 
 export class VSCodeSettings {
-  public schemas: Schemas[];
+  public schemas: JSONSchemas[];
   public version: string;
   public baseUrl: string;
 
   public ['json.schemas']: JSONSchema[] = [];
 
-  constructor(schemas: Schemas[], version = '1.18.10', base_url = BASE_URL) {
+  constructor(schemas: JSONSchemas[], version = '1.18.10', base_url = BASE_URL) {
     this.schemas = schemas;
     this.version = version;
     this.baseUrl = base_url;

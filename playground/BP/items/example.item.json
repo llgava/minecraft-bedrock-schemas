@@ -10,10 +10,7 @@
     "components": {
       "minecraft:block_placer": {
         "block": "llgava:example_block",
-        "use_on": [
-          "minecraft:wool",
-          "minecraft:allow"
-        ]
+        "use_on": ["minecraft:wool", "minecraft:allow"]
       }
     }
   }

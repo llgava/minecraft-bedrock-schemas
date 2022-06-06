@@ -21,14 +21,14 @@ import { Throwable } from './components/Throwable';
 import { Weapon } from './components/Weapon';
 import { Wearable } from './components/Wearable';
 
-export interface Description {
+export interface ItemDescription {
   /** @pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   category: MinecraftCategories;
   is_experimental?: boolean;
 }
 
-export interface Components {
+export interface ItemComponents {
   ['minecraft:armor']?: Armor;
   ['minecraft:block_placer']?: BlockPlacer;
   ['minecraft:cooldown']?: Cooldown;

@@ -22,9 +22,7 @@
           "$ref": "#/definitions/ClientEntityProperties"
         }
       },
-      "required": [
-        "description"
-      ],
+      "required": ["description"],
       "additionalProperties": false
     },
     "ClientEntityProperties": {
@@ -161,16 +159,10 @@
           "type": "string"
         },
         "should_update_bones_and_effects_offscreen": {
-          "type": [
-            "string",
-            "boolean"
-          ]
+          "type": ["string", "boolean"]
         },
         "should_update_effects_offscreen": {
-          "type": [
-            "string",
-            "boolean"
-          ]
+          "type": ["string", "boolean"]
         },
         "variables": {
           "$ref": "#/definitions/MinecraftClientVariables"

@@ -1,6 +1,6 @@
-import { Components, Description } from './ItemProperties';
+import { ItemComponents, ItemDescription } from './ItemProperties';
 
 export class Item {
-  public description: Description;
-  public components?: Components;
+  public description: ItemDescription;
+  public components?: ItemComponents;
 }

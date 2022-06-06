@@ -12,10 +12,7 @@
           "$ref": "#/definitions/Block"
         }
       },
-      "required": [
-        "format_version",
-        "minecraft:block"
-      ],
+      "required": ["format_version", "minecraft:block"],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Blocks"
     },
@@ -38,9 +35,7 @@
           "$ref": "#/definitions/Events"
         }
       },
-      "required": [
-        "description"
-      ],
+      "required": ["description"],
       "additionalProperties": false
     },
     "Description": {
@@ -76,9 +71,7 @@
           }
         }
       },
-      "required": [
-        "identifier"
-      ],
+      "required": ["identifier"],
       "additionalProperties": false
     },
     "Permutations": {
@@ -122,10 +115,7 @@
         },
         "minecraft:breathability": {
           "type": "string",
-          "enum": [
-            "solid",
-            "air"
-          ],
+          "enum": ["solid", "air"],
           "description": "Experimental toggles required: Holiday Creator Features Experiment"
         },
         "minecraft:display_name": {
@@ -268,12 +258,7 @@
           },
           "render_method": {
             "type": "string",
-            "enum": [
-              "opaque",
-              "double_sided",
-              "blend",
-              "alpha_test"
-            ]
+            "enum": ["opaque", "double_sided", "blend", "alpha_test"]
           },
           "texture": {
             "type": "string"
@@ -419,16 +404,7 @@
     },
     "BlockFaces": {
       "type": "string",
-      "enum": [
-        "up",
-        "down",
-        "north",
-        "south",
-        "east",
-        "west",
-        "side",
-        "all"
-      ]
+      "enum": ["up", "down", "north", "south", "east", "west", "side", "all"]
     },
     "MinecraftBlocks": {
       "type": "string",
@@ -1174,16 +1150,7 @@
     },
     "MinecraftSubjects": {
       "type": "string",
-      "enum": [
-        "block",
-        "damager",
-        "item",
-        "other",
-        "parent",
-        "player",
-        "self",
-        "target"
-      ]
+      "enum": ["block", "damager", "item", "other", "parent", "player", "self", "target"]
     },
     "Ticking": {
       "type": "object",
@@ -1241,9 +1208,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "min_fall_distance"
-      ],
+      "required": ["min_fall_distance"],
       "additionalProperties": false
     },
     "MinecraftTriggerConditioning": {

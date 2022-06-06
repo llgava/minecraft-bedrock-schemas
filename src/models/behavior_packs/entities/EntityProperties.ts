@@ -177,7 +177,7 @@ import { BehaviorWitherTargetHighestDamage } from './components/BehaviorWitherTa
 import { BehaviorWork } from './components/BehaviorWork';
 
 // Description
-export interface Description {
+export interface EntityDescription {
   /** @pattern ^(?:(?:(?!minecraft|minecon))+[a-z]*:[a-z_]*)+$ */
   identifier: string;
   is_spawnable?: boolean;
@@ -199,10 +199,10 @@ export interface ScriptProperties {
 
 // Components
 export interface ComponentGroups {
-  [property_name: string]: Components;
+  [property_name: string]: EntityComponents;
 }
 
-export interface Components {
+export interface EntityComponents {
   ['minecraft:addrider']?: Addrider;
   ['minecraft:admire_item']?: AdmireItem;
   ['minecraft:ageable']?: Ageable;
@@ -475,22 +475,22 @@ export interface Components {
 }
 
 // Events
-export interface Events {
-  ['minecraft:entity_born']?: EventsReponse;
-  ['minecraft:entity_spawned']?: EventsReponse;
-  ['minecraft:entity_transformed']?: EventsReponse;
-  ['minecraft:on_prime']?: EventsReponse;
-  [property_name: string]: EventsReponse;
+export interface EntityEvents {
+  ['minecraft:entity_born']?: EntityEventsReponse;
+  ['minecraft:entity_spawned']?: EntityEventsReponse;
+  ['minecraft:entity_transformed']?: EntityEventsReponse;
+  ['minecraft:on_prime']?: EntityEventsReponse;
+  [property_name: string]: EntityEventsReponse;
 }
 
-interface EventsReponse extends EventsComponentGroupsController {
+interface EntityEventsReponse extends EventsComponentGroupsController {
   filters?: MinecraftFilters;
-  randomize?: EventsRandomize[];
-  sequence?: EventsReponse[];
+  randomize?: EntityEventsRandomize[];
+  sequence?: EntityEventsReponse[];
   trigger?: MinecraftTriggerFiltered;
 }
 
-interface EventsRandomize extends EventsComponentGroupsController {
+interface EntityEventsRandomize extends EventsComponentGroupsController {
   weight?: number;
   trigger?: MinecraftTriggerFiltered;
 }

@@ -1,57 +1,40 @@
 import fs from 'fs';
 import chalk from 'chalk';
 import * as TJSchema from 'ts-json-schema-generator';
+import * as Schemas from '..';
 
-import { ManifestSchema } from '@models/global/Manifest';
-import { Tick } from '@models/behavior_packs/Tick';
-import { BlocksSchema } from '@models/behavior_packs/blocks/Schema';
-import { ItemsSchema } from '@models/behavior_packs/items/Schema';
-import { EntitiesSchema } from '@models/behavior_packs/entities/Schema';
-import { RecipesSchema } from '@models/behavior_packs/recipes/Schema';
-import { AnimationControllersSchema } from '@models/behavior_packs/animation_controllers/Schema';
-import { AnimationsSchema } from '@models/behavior_packs/animations/Schema';
-import { LootTablesSchema } from '@models/behavior_packs/loot_tables/Schema';
-import { ItemTextureSchema } from '@models/resource_packs/ItemTexture';
-import { TerrainTextureSchema } from '@models/resource_packs/TerrainTexture';
-import { BlocksTextureSchema } from '@models/resource_packs/blocks_texture/Schema';
-import { SoundsSchema } from '@models/resource_packs/sounds/Schema';
-import { SplashesSchema } from '@models/resource_packs/Splashes';
-import { SoundDefinitionsSchema } from '@models/resource_packs/sound_definitions/Schema';
-import { MusicDefinitionsSchema } from '@models/resource_packs/music_definitions/Schema';
-import { ClientEntitySchema } from '@models/resource_packs/entity/Schema';
-
-import { Schemas } from './types/Schemas';
+import { JSONSchemas } from './@types/Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
 class MinecraftBedrockSchemas {
   public version: string;
-  public schemas: Schemas[];
+  public schemas: JSONSchemas[];
 
   constructor(version = '1.18.10') {
     this.version = version;
     this.schemas = [
       // Global
-      new ManifestSchema(),
+      new Schemas.ManifestSchema(),
 
       // Behavior Packs
-      new Tick(),
-      new BlocksSchema(),
-      new ItemsSchema(),
-      new EntitiesSchema(),
-      new RecipesSchema(),
-      new AnimationControllersSchema(),
-      new AnimationsSchema(),
-      new LootTablesSchema(),
+      new Schemas.Tick(),
+      new Schemas.BlocksSchema(),
+      new Schemas.ItemsSchema(),
+      new Schemas.EntitiesSchema(),
+      new Schemas.RecipesSchema(),
+      new Schemas.AnimationControllersSchema(),
+      new Schemas.AnimationsSchema(),
+      new Schemas.LootTablesSchema(),
 
       // Resource Packs
-      new SplashesSchema(),
-      new ItemTextureSchema(),
-      new TerrainTextureSchema(),
-      new BlocksTextureSchema(),
-      new SoundsSchema(),
-      new SoundDefinitionsSchema(),
-      new MusicDefinitionsSchema(),
-      new ClientEntitySchema(),
+      new Schemas.SplashesSchema(),
+      new Schemas.ItemTextureSchema(),
+      new Schemas.TerrainTextureSchema(),
+      new Schemas.BlocksTextureSchema(),
+      new Schemas.SoundsSchema(),
+      new Schemas.SoundDefinitionsSchema(),
+      new Schemas.MusicDefinitionsSchema(),
+      new Schemas.ClientEntitySchema(),
     ];
   }
 
