@@ -1,9 +1,6 @@
 const { register } = require('ts-node');
 const { compilerOptions } = require('../tsconfig.json');
 
-const SCHEMAS_DIR = 'schemas/';
-const SETTINGS_DIR = '.vscode/';
-
 function requireTS(path) {
   register({ compilerOptions });
   const TSFile = require(path);
@@ -13,10 +10,10 @@ function requireTS(path) {
 
 function main() {
   const { MinecraftBedrock } = requireTS('../src/MinecraftBedrock');
-
   const MCB = new MinecraftBedrock();
-  MCB.generateSchemasDynamic(SCHEMAS_DIR);
-  MCB.settings.generateVSCodeDynamic().saveVSCodeSettings(SETTINGS_DIR);
+
+  MCB.generateSchemasDynamic('schemas/');
+  MCB.settings.generateVSCodeDynamic().saveVSCodeSettings('.vscode/');
 }
 
 main();
