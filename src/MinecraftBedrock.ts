@@ -4,7 +4,6 @@ import * as TJSchema from 'ts-json-schema-generator';
 import { Schemas } from './Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
-import { SchemaBase } from 'types/SchemaBase';
 import Utils from './utils/Utils';
 
 export class MinecraftBedrock {

@@ -12,7 +12,6 @@ function requireTS(path) {
 }
 
 function main() {
-  console.clear();
   const { MinecraftBedrock } = requireTS('../src/MinecraftBedrock');
 
   const MCB = new MinecraftBedrock();
