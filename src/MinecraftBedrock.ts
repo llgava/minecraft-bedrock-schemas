@@ -7,7 +7,7 @@ import { VSCodeSettings } from './VSCodeSettings';
 import { SchemaBase } from 'types/SchemaBase';
 import Utils from './utils/Utils';
 
-export class MinecraftBedrockSchemas {
+export class MinecraftBedrock {
   public version: string;
   public schemas: SchemaBase[];
   public settings: VSCodeSettings;

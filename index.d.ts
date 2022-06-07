@@ -1,4 +1,4 @@
-export declare class MinecraftBedrockSchemas {
+export declare class MinecraftBedrock {
   version: string;
   schemas: SchemaBase[];
   settings: VSCodeSettings;

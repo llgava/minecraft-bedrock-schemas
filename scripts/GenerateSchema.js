@@ -13,7 +13,7 @@ function requireTS(path) {
 
 function main() {
   const SchemasConfig = require('../src/models/schemas.json');
-  const { MinecraftBedrockSchemas } = requireTS('../src/MinecraftBedrockSchemas');
+  const { MinecraftBedrock } = requireTS('../src/MinecraftBedrock');
 
   const Languages = requireTS('../src/models/global/Languages');
   const LanguageNames = requireTS('../src/models/resource_packs/LanguageNames');
@@ -24,31 +24,31 @@ function main() {
   /*
     GENERATE SCHEMAS
     Schemas where is not a interface, should be added manually via
-    `MinecraftBedrockSchemas#generateSchemaStatic` method.
+    `MinecraftBedrockSchemas.generateSchemaStatic` method.
   */
-  const mcs = new MinecraftBedrockSchemas();
-  mcs.generateSchemasDynamic(SCHEMAS_DIR);
-  mcs.generateSchemaStatic(SchemasConfig['Languages'].file_name, Languages.path, SCHEMAS_DIR);
-  mcs.generateSchemaStatic(SchemasConfig['LanguageNames'].file_name, LanguageNames.path, SCHEMAS_DIR);
-  mcs.generateSchemaStatic(SchemasConfig['FlipbookTextures'].file_name, FlipbookTextures.path, SCHEMAS_DIR);
+  const MCB = new MinecraftBedrock();
+  MCB.generateSchemasDynamic(SCHEMAS_DIR);
+  MCB.generateSchemaStatic(SchemasConfig['Languages'].file_name, Languages.path, SCHEMAS_DIR);
+  MCB.generateSchemaStatic(SchemasConfig['LanguageNames'].file_name, LanguageNames.path, SCHEMAS_DIR);
+  MCB.generateSchemaStatic(SchemasConfig['FlipbookTextures'].file_name, FlipbookTextures.path, SCHEMAS_DIR);
 
   /*
     GENERATE VSCODE SETTINGS
     Schemas where is not a interface, should be added manually via
-    `VSCodeSettings#generateSchemaConfig` method.
+    `MinecraftBedrockSchemas[settings].generateSchemaConfig` method.
   */
-  mcs.settings.generateVSCodeDynamic();
-  mcs.settings.generateSchemaFileMatch(SchemasConfig['Languages'].file_name, SchemasConfig['Languages'].file_match);
-  mcs.settings.generateSchemaFileMatch(
+  MCB.settings.generateVSCodeDynamic();
+  MCB.settings.generateSchemaFileMatch(SchemasConfig['Languages'].file_name, SchemasConfig['Languages'].file_match);
+  MCB.settings.generateSchemaFileMatch(
     SchemasConfig['LanguageNames'].file_name,
     SchemasConfig['LanguageNames'].file_match
   );
-  mcs.settings.generateSchemaFileMatch(
+  MCB.settings.generateSchemaFileMatch(
     SchemasConfig['FlipbookTextures'].file_name,
     SchemasConfig['FlipbookTextures'].file_match
   );
 
-  mcs.settings.saveVSCodeSettings(SETTINGS_DIR);
+  MCB.settings.saveVSCodeSettings(SETTINGS_DIR);
 }
 
 main();
