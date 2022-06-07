@@ -5,9 +5,6 @@
     "ItemsSchema": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string"
-        },
         "format_version": {
           "type": "string"
         },
@@ -17,8 +14,7 @@
       },
       "required": [
         "format_version",
-        "minecraft:item",
-        "path"
+        "minecraft:item"
       ],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Items"

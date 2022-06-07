@@ -1,7 +1,7 @@
 import { SchemaBase } from 'types/SchemaBase';
 
 /** @id llgava.resource_packs.Splashes */
-export class SplashesSchema implements SchemaBase {
+export class SplashesSchema {
   public splashes: string[];
 
   /** @ignore */

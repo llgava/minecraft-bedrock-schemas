@@ -1,9 +1,8 @@
 export declare class MinecraftBedrock {
   version: string;
-  schemas: SchemaBase[];
   settings: VSCodeSettings;
   constructor(version?: string);
-  generateSchemasDynamic(save_to: string): void;
+  generateSchemasDynamic(save_to: string): this;
   generateSchemaStatic(file_name: string, file_path: string, save_to: string): void;
 }
 
@@ -3233,7 +3232,7 @@ export declare type MinecraftSubjects =
 
 export declare type MinecraftTemperatures = 'cold' | 'mild' | 'ocean' | 'warm';
 
-export declare class Tick implements SchemaBase {
+export declare class Tick {
   values?: string[];
   get path(): string;
 }
@@ -3250,7 +3249,7 @@ export interface States {
   [property_name: string]: StatesProperty;
 }
 
-export declare class AnimationControllersSchema implements SchemaBase {
+export declare class AnimationControllersSchema {
   format_version: string | '1.10.0';
   'animation_controllers': AnimationController;
   get path(): string;
@@ -3276,7 +3275,7 @@ export interface Timeline {
   [property_name: string]: string[];
 }
 
-export declare class AnimationsSchema implements SchemaBase {
+export declare class AnimationsSchema {
   format_version: string | '1.10.0';
   'animations': Animation;
   get path(): string;
@@ -3362,7 +3361,7 @@ interface BlockEventsReponse {
   transform_item?: TransformItem;
 }
 
-export declare class BlocksSchema implements SchemaBase {
+export declare class BlocksSchema {
   format_version: string | '1.18.0';
   'minecraft:block': Block;
   get path(): string;
@@ -3780,7 +3779,7 @@ export interface EventComponentGroups {
   component_groups?: string[];
 }
 
-export declare class EntitiesSchema implements SchemaBase {
+export declare class EntitiesSchema {
   format_version: string | '1.18.0';
   'minecraft:entity': Entity;
   get path(): string;
@@ -5217,7 +5216,7 @@ export interface ItemComponents {
   ['minecraft:wearable']?: Wearable;
 }
 
-export declare class ItemsSchema implements SchemaBase {
+export declare class ItemsSchema {
   format_version: string | '1.18.0';
   'minecraft:item': Item;
   get path(): string;
@@ -5360,7 +5359,7 @@ export interface LootTablePool {
   entries?: MinecraftEntriesType[];
 }
 
-export declare class LootTablesSchema implements SchemaBase {
+export declare class LootTablesSchema {
   pools?: LootTablePool[];
   get path(): string;
 }
@@ -5394,7 +5393,7 @@ export interface RecipeShape {
   priority?: number;
 }
 
-export declare class RecipesSchema implements SchemaBase {
+export declare class RecipesSchema {
   format_version: string | '1.18.10';
   ['minecraft:recipe_shaped']?: RecipeShape;
   ['minecraft:recipe_shapeless']?: RecipeShape;
@@ -5414,10 +5413,11 @@ export interface RecipeResult {
   count?: number;
 }
 
-export declare type Languages = Array<MinecraftLanguages>;
-export declare const path: string;
+export declare class Languages extends Array<MinecraftLanguages> {
+  get path(): string;
+}
 
-export declare class ManifestSchema implements SchemaBase {
+export declare class ManifestSchema {
   format_version: 2;
   header: Header;
   modules: Modules[];
@@ -5463,25 +5463,27 @@ export interface Modules {
   uuid: UUID;
 }
 
-export declare type FlipbookTextures = Array<MinecraftFlipbookTexture>;
-export declare const path: string;
+export declare class FlipbookTextures extends Array<MinecraftFlipbookTexture> {
+  get path(): string;
+}
 
-export declare class ItemTextureSchema implements SchemaBase {
+export declare class ItemTextureSchema {
   resource_pack_name: string | 'pack.name';
   texture_name: 'atlas.items';
   texture_data: MinecraftTextureData;
   get path(): string;
 }
 
-export declare type LanguageNames = Array<[MinecraftLanguages, string]>;
-export declare const path: string;
+export declare class LanguageNames extends Array<[MinecraftLanguages, string]> {
+  get path(): string;
+}
 
-export declare class SplashesSchema implements SchemaBase {
+export declare class SplashesSchema {
   splashes: string[];
   get path(): string;
 }
 
-export declare class TerrainTextureSchema implements SchemaBase {
+export declare class TerrainTextureSchema {
   resource_pack_name: string | 'pack.name';
   texture_name: 'atlas.terrain';
   num_mip_levels: number | 4;
@@ -5503,7 +5505,7 @@ export interface Textures {
   side?: string;
 }
 
-export declare class BlocksTextureSchema implements SchemaBase {
+export declare class BlocksTextureSchema {
   [property_name: string]: BlockTexture;
   get path(): string | any;
 }
@@ -5530,7 +5532,7 @@ export interface ClientEntityProperties {
   spawn_egg?: SpawnEgg;
 }
 
-export declare class ClientEntitySchema implements SchemaBase {
+export declare class ClientEntitySchema {
   format_version?: string | '1.10.0';
   ['minecraft:client_entity']?: ClientEntity;
   get path(): string;
@@ -5593,12 +5595,12 @@ export interface MusicDefinition {
   min_delay?: number;
 }
 
-export declare class MusicDefinitionsSchema implements SchemaBase {
+export declare class MusicDefinitionsSchema {
   [property_name: string]: MusicDefinition;
   get path(): string | any;
 }
 
-export declare class SoundDefinitionsSchema implements SchemaBase {
+export declare class SoundDefinitionsSchema {
   format_version?: string | '1.14.0';
   sound_definitions?: SoundDefinition;
   __use_legacy_max_distance?: boolean;
@@ -5624,7 +5626,7 @@ export interface SoundDefinitionProperty extends MinecraftSound {
   stream?: boolean;
 }
 
-export declare class SoundsSchema implements SchemaBase {
+export declare class SoundsSchema {
   block_sounds?: BlockSounds;
   entity_sounds?: EntitySounds;
   individual_event_sounds?: IndividualEventSounds;

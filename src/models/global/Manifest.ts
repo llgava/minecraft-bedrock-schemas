@@ -6,7 +6,7 @@ import { Metadata } from './properties/Metadata';
 import { Modules } from './properties/Modules';
 
 /** @id llgava.global.Manifest */
-export class ManifestSchema implements SchemaBase {
+export class ManifestSchema {
   public format_version: 2;
   public header: Header;
   public modules: Modules[];

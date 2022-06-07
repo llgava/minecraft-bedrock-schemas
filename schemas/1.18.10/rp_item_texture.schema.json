@@ -5,9 +5,6 @@
     "ItemTextureSchema": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string"
-        },
         "resource_pack_name": {
           "type": "string"
         },
@@ -20,10 +17,9 @@
         }
       },
       "required": [
-        "path",
         "resource_pack_name",
-        "texture_data",
-        "texture_name"
+        "texture_name",
+        "texture_data"
       ],
       "additionalProperties": false,
       "$id": "llgava.resource_packs.ItemTexture"

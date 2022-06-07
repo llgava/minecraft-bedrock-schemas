@@ -11,6 +11,15 @@
     },
     {
       "fileMatch": [
+        "resource_packs/*/texts/languages.json",
+        "behavior_packs/*/texts/languages.json",
+        "development_resource_packs/*/texts/languages.json",
+        "development_behavior_packs/*/texts/languages.json"
+      ],
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/languages.schema.json"
+    },
+    {
+      "fileMatch": [
         "behavior_packs/*/functions/tick.json",
         "development_behavior_packs/*/functions/tick.json"
       ],
@@ -123,12 +132,10 @@
     },
     {
       "fileMatch": [
-        "resource_packs/*/texts/languages.json",
-        "behavior_packs/*/texts/languages.json",
-        "development_resource_packs/*/texts/languages.json",
-        "development_behavior_packs/*/texts/languages.json"
+        "resource_packs/*/textures/flipbook_textures.json",
+        "development_resource_packs/*/textures/flipbook_textures.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/languages.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_flipbook_textures.schema.json"
     },
     {
       "fileMatch": [
@@ -136,13 +143,6 @@
         "development_resource_packs/*/texts/language_names.json"
       ],
       "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_language_names.schema.json"
-    },
-    {
-      "fileMatch": [
-        "resource_packs/*/textures/flipbook_textures.json",
-        "development_resource_packs/*/textures/flipbook_textures.json"
-      ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_flipbook_textures.schema.json"
     }
   ]
 }

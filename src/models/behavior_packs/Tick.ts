@@ -1,7 +1,7 @@
 import { SchemaBase } from 'types/SchemaBase';
 
 /** @id llgava.behavior_packs.functions.Tick */
-export class Tick implements SchemaBase {
+export class Tick {
   public values?: string[];
 
   /** @ignore */

@@ -5,9 +5,6 @@
     "BlocksSchema": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string"
-        },
         "format_version": {
           "type": "string"
         },
@@ -17,8 +14,7 @@
       },
       "required": [
         "format_version",
-        "minecraft:block",
-        "path"
+        "minecraft:block"
       ],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Blocks"

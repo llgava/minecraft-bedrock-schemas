@@ -9,21 +9,21 @@ import Utils from './utils/Utils';
 
 export class MinecraftBedrock {
   public version: string;
-  public schemas: SchemaBase[];
   public settings: VSCodeSettings;
 
   constructor(version = '1.18.10') {
     this.version = version;
-    this.schemas = Schemas;
     this.settings = new VSCodeSettings(Schemas);
   }
 
   /** Generate all dynamic schemas. */
-  public generateSchemasDynamic(save_to: string): void {
-    for (const i in this.schemas) {
-      const config = Utils.findSchemaConfig(this.schemas[i].constructor.name);
-      this.generateSchemaStatic(config.file_name, this.schemas[i].path, save_to);
+  public generateSchemasDynamic(save_to: string): this {
+    for (const i in Schemas) {
+      const config = Utils.findSchemaConfig(Schemas[i].constructor.name);
+      this.generateSchemaStatic(config.file_name, Schemas[i].path, save_to);
     }
+
+    return this;
   }
 
   /** Use ts-json-schema-generator to generate JSON schema. */

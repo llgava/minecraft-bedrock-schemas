@@ -2,7 +2,7 @@ import { SchemaBase } from 'types/SchemaBase';
 import { MusicDefinition } from './MusicDefinition';
 
 /** @id llgava.resource_packs.MusicDefinitions */
-export class MusicDefinitionsSchema implements SchemaBase {
+export class MusicDefinitionsSchema {
   [property_name: string]: MusicDefinition;
 
   /** @ignore */

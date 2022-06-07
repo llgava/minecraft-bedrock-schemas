@@ -1,9 +1,7 @@
 import { SchemaBase } from 'types/SchemaBase';
 
-// global
 import { ManifestSchema } from '@models/global/Manifest';
-
-// behavior_packs
+import { Languages } from '@models/global/Languages';
 import { AnimationControllersSchema } from '@models/behavior_packs/animation_controllers/Schema';
 import { AnimationsSchema } from '@models/behavior_packs/animations/Schema';
 import { BlocksSchema } from '@models/behavior_packs/blocks/Schema';
@@ -12,8 +10,6 @@ import { ItemsSchema } from '@models/behavior_packs/items/Schema';
 import { LootTablesSchema } from '@models/behavior_packs/loot_tables/Schema';
 import { RecipesSchema } from '@models/behavior_packs/recipes/Schema';
 import { Tick } from '@models/behavior_packs/Tick';
-
-// resource_packs
 import { BlocksTextureSchema } from '@models/resource_packs/blocks_texture/Schema';
 import { ClientEntitySchema } from '@models/resource_packs/entity/Schema';
 import { MusicDefinitionsSchema } from '@models/resource_packs/music_definitions/Schema';
@@ -22,11 +18,12 @@ import { SoundsSchema } from '@models/resource_packs/sounds/Schema';
 import { ItemTextureSchema } from '@models/resource_packs/ItemTexture';
 import { SplashesSchema } from '@models/resource_packs/Splashes';
 import { TerrainTextureSchema } from '@models/resource_packs/TerrainTexture';
+import { FlipbookTextures } from '@models/resource_packs/FlipbookTextures';
+import { LanguageNames } from '@models/resource_packs/LanguageNames';
 
 export const Schemas: SchemaBase[] = [
   new ManifestSchema(),
-
-  // BPacks
+  new Languages(),
   new Tick(),
   new BlocksSchema(),
   new ItemsSchema(),
@@ -35,8 +32,6 @@ export const Schemas: SchemaBase[] = [
   new AnimationControllersSchema(),
   new AnimationsSchema(),
   new LootTablesSchema(),
-
-  // RPacks
   new SplashesSchema(),
   new ItemTextureSchema(),
   new TerrainTextureSchema(),
@@ -45,4 +40,6 @@ export const Schemas: SchemaBase[] = [
   new SoundDefinitionsSchema(),
   new MusicDefinitionsSchema(),
   new ClientEntitySchema(),
+  new FlipbookTextures(),
+  new LanguageNames(),
 ];

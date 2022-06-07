@@ -2,7 +2,7 @@ import { SchemaBase } from 'types/SchemaBase';
 import { MinecraftTextureData } from '@minecraft/MinecraftTextureData';
 
 /** @id llgava.resource_packs.TerrainTexture */
-export class TerrainTextureSchema implements SchemaBase {
+export class TerrainTextureSchema {
   public resource_pack_name: string | 'pack.name';
   public texture_name: 'atlas.terrain';
   public num_mip_levels: number | 4;

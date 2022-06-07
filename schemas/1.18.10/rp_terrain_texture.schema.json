@@ -5,9 +5,6 @@
     "TerrainTextureSchema": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string"
-        },
         "resource_pack_name": {
           "type": "string"
         },
@@ -42,12 +39,11 @@
         }
       },
       "required": [
+        "resource_pack_name",
+        "texture_name",
         "num_mip_levels",
         "padding",
-        "path",
-        "resource_pack_name",
-        "texture_data",
-        "texture_name"
+        "texture_data"
       ],
       "additionalProperties": false,
       "$id": "llgava.resource_packs.TerrainTexture"

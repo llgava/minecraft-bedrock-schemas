@@ -5,9 +5,6 @@
     "RecipesSchema": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string"
-        },
         "format_version": {
           "type": "string"
         },
@@ -28,8 +25,7 @@
         }
       },
       "required": [
-        "format_version",
-        "path"
+        "format_version"
       ],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Recipes"

@@ -5,9 +5,6 @@
     "EntitiesSchema": {
       "type": "object",
       "properties": {
-        "path": {
-          "type": "string"
-        },
         "format_version": {
           "type": "string"
         },
@@ -17,8 +14,7 @@
       },
       "required": [
         "format_version",
-        "minecraft:entity",
-        "path"
+        "minecraft:entity"
       ],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Entities"
