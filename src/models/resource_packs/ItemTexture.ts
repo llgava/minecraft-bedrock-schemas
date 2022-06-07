@@ -7,7 +7,6 @@ export class ItemTextureSchema implements SchemaBase {
   public texture_name: 'atlas.items';
   public texture_data: MinecraftTextureData;
 
-  /** @ignore */
   get path(): string {
     return __filename;
   }

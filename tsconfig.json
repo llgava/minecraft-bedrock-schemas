@@ -23,6 +23,6 @@
     }
   },
 
-  "include": ["src/", "src/index.ts"],
+  "include": ["src/", "src/index.ts", "index.d.ts"],
   "exclude": ["node_modules", "__tests__", "scripts"]
 }

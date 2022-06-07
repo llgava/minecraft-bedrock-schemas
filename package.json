@@ -11,13 +11,12 @@
     "TypeScript"
   ],
   "license": "MIT",
-  "main": "./src/index.ts",
+  "main": "./src/Schemas.ts",
   "scripts": {
+    "build": "webpack && yarn post-build && yarn generate-schemas",
+    "build:npm": "webpack && npm post-build && npm generate-schemas",
     "generate-schemas": "node -r tsconfig-paths/register scripts/GenerateSchema.js",
-    "build": "webpack --progress && yarn post-build",
-    "build:npm": "webpack --progress && npm post-build",
     "post-build": "eslint index.d.ts --fix",
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only scripts/generate-schemas.ts",
     "lint": "yarn eslint . --ext .ts",
     "bump": "yarn upgrade --latest",
     "test": "jest"

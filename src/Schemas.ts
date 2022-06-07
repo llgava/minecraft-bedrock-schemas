@@ -1,5 +1,6 @@
+import { SchemaBase } from 'types/SchemaBase';
+
 // global
-import { Languages } from '@models/global/Languages';
 import { ManifestSchema } from '@models/global/Manifest';
 
 // behavior_packs
@@ -18,31 +19,30 @@ import { ClientEntitySchema } from '@models/resource_packs/entity/Schema';
 import { MusicDefinitionsSchema } from '@models/resource_packs/music_definitions/Schema';
 import { SoundDefinitionsSchema } from '@models/resource_packs/sound_definitions/Schema';
 import { SoundsSchema } from '@models/resource_packs/sounds/Schema';
-import { FlipbookTextures } from '@models/resource_packs/FlipbookTextures';
 import { ItemTextureSchema } from '@models/resource_packs/ItemTexture';
-import { LanguageNames } from '@models/resource_packs/LanguageNames';
 import { SplashesSchema } from '@models/resource_packs/Splashes';
 import { TerrainTextureSchema } from '@models/resource_packs/TerrainTexture';
 
-export {
-  AnimationControllersSchema,
-  AnimationsSchema,
-  BlocksSchema,
-  BlocksTextureSchema,
-  ClientEntitySchema,
-  EntitiesSchema,
-  FlipbookTextures,
-  ItemTextureSchema,
-  ItemsSchema,
-  LanguageNames,
-  Languages,
-  LootTablesSchema,
-  ManifestSchema,
-  MusicDefinitionsSchema,
-  RecipesSchema,
-  SoundDefinitionsSchema,
-  SoundsSchema,
-  SplashesSchema,
-  TerrainTextureSchema,
-  Tick,
-};
+export const Schemas: SchemaBase[] = [
+  new ManifestSchema(),
+
+  // BPacks
+  new Tick(),
+  new BlocksSchema(),
+  new ItemsSchema(),
+  new EntitiesSchema(),
+  new RecipesSchema(),
+  new AnimationControllersSchema(),
+  new AnimationsSchema(),
+  new LootTablesSchema(),
+
+  // RPacks
+  new SplashesSchema(),
+  new ItemTextureSchema(),
+  new TerrainTextureSchema(),
+  new BlocksTextureSchema(),
+  new SoundsSchema(),
+  new SoundDefinitionsSchema(),
+  new MusicDefinitionsSchema(),
+  new ClientEntitySchema(),
+];

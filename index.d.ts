@@ -1,46 +1,24 @@
 export declare class MinecraftBedrockSchemas {
   version: string;
   schemas: SchemaBase[];
+  settings: VSCodeSettings;
   constructor(version?: string);
-  generateDynamicSchemas(save_to: string): void;
-  generateSettingsFile(save_to: string): void;
-  generateSchemaFromFile(file_name: string, file_path: string, save_to: string): void;
+  generateSchemasDynamic(save_to: string): void;
+  generateSchemaStatic(file_name: string, file_path: string, save_to: string): void;
 }
-export declare const _default: MinecraftBedrockSchemas;
-export default _default;
+
+export declare const Schemas: SchemaBase[];
 
 export declare class VSCodeSettings {
-  schemas: SchemaBase[];
   version: string;
   baseUrl: string;
+  schemas: SchemaBase[];
   ['json.schemas']: SchemaConfig[];
   constructor(schemas: SchemaBase[], version?: string, base_url?: string);
-  private mountConfig;
-  private generateSchemaConfig;
+  generateVSCodeDynamic(): this;
+  generateSchemaFileMatch(file_name: string, file_match: string[]): this;
+  saveVSCodeSettings(save_to: string): void;
 }
-
-export {
-  AnimationControllersSchema,
-  AnimationsSchema,
-  BlocksSchema,
-  BlocksTextureSchema,
-  ClientEntitySchema,
-  EntitiesSchema,
-  FlipbookTextures,
-  ItemTextureSchema,
-  ItemsSchema,
-  LanguageNames,
-  Languages,
-  LootTablesSchema,
-  ManifestSchema,
-  MusicDefinitionsSchema,
-  RecipesSchema,
-  SoundDefinitionsSchema,
-  SoundsSchema,
-  SplashesSchema,
-  TerrainTextureSchema,
-  Tick,
-};
 
 export interface LootTableEntry {
   type?: 'loot_table';
