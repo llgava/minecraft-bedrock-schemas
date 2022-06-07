@@ -5,6 +5,9 @@
     "LootTablesSchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "pools": {
           "type": "array",
           "items": {
@@ -13,6 +16,9 @@
         }
       },
       "additionalProperties": false,
+      "required": [
+        "path"
+      ],
       "$id": "llgava.behavior_packs.LootTables"
     },
     "LootTablePool": {

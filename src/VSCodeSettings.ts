@@ -1,20 +1,19 @@
-import { JSONSchema, JSONSchemas } from './@types/Schemas';
+import { SchemaBase, SchemaConfig } from './types/SchemaBase';
 
-import * as Languages from '@models/global/Languages';
-import * as LanguageNames from '@models/resource_packs/LanguageNames';
-import * as FlipbookTextures from '@models/resource_packs/FlipbookTextures';
+import * as SchemasConfig from '@models/schemas.json';
+import Utils from './utils/Utils';
 
 const BASE_URL =
   'https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/$VERSION/$FILE_NAME.schema.json';
 
 export class VSCodeSettings {
-  public schemas: JSONSchemas[];
+  public schemas: SchemaBase[];
   public version: string;
   public baseUrl: string;
 
-  public ['json.schemas']: JSONSchema[] = [];
+  public ['json.schemas']: SchemaConfig[] = [];
 
-  constructor(schemas: JSONSchemas[], version = '1.18.10', base_url = BASE_URL) {
+  constructor(schemas: SchemaBase[], version = '1.18.10', base_url = BASE_URL) {
     this.schemas = schemas;
     this.version = version;
     this.baseUrl = base_url;
@@ -25,13 +24,18 @@ export class VSCodeSettings {
   private mountConfig(): void {
     // Generate Dynamic Schemas config
     for (const i in this.schemas) {
-      this.generateSchemaConfig(this.schemas[i].fileName, this.schemas[i].fileMatch);
+      const config = Utils.findSchemaConfig(this.schemas[i].constructor.name);
+
+      this.generateSchemaConfig(config.file_name, config.file_match);
     }
 
     // Generate Static Schemas config
-    this.generateSchemaConfig(Languages.fileName, Languages.fileMatch);
-    this.generateSchemaConfig(LanguageNames.fileName, LanguageNames.fileMatch);
-    this.generateSchemaConfig(FlipbookTextures.fileName, FlipbookTextures.fileMatch);
+    this.generateSchemaConfig(SchemasConfig['Languages'].file_name, SchemasConfig['Languages'].file_match);
+    this.generateSchemaConfig(SchemasConfig['LanguageNames'].file_name, SchemasConfig['LanguageNames'].file_match);
+    this.generateSchemaConfig(
+      SchemasConfig['FlipbookTextures'].file_name,
+      SchemasConfig['FlipbookTextures'].file_match
+    );
   }
 
   private generateSchemaConfig(file_name: string, file_match: string[]): void {

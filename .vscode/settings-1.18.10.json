@@ -14,112 +14,112 @@
         "behavior_packs/*/functions/tick.json",
         "development_behavior_packs/*/functions/tick.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/tick.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_tick.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/blocks/*.json",
         "development_behavior_packs/*/blocks/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/blocks_behavior.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_blocks.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/items/*.json",
         "development_behavior_packs/*/items/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/items_behavior.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_item.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/entities/*.json",
         "development_behavior_packs/*/entities/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/entities_behavior.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_entity.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/recipes/*.json",
         "development_behavior_packs/*/recipes/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/recipe.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_recipe.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/animation_controllers/*.json",
         "development_behavior_packs/*/animation_controllers/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animation_controllers_behavior.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_animation_controllers.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/animations/*.json",
         "development_behavior_packs/*/animations/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/animations_behavior.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_animation_controllers.schema.json"
     },
     {
       "fileMatch": [
         "behavior_packs/*/loot_tables/*.json",
         "development_behavior_packs/*/loot_tables/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/loot_tables.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/bp_loot_tables.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/splashes.json",
         "development_resource_packs/*/splashes.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/splashes.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_splashes.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/textures/item_texture.json",
         "development_resource_packs/*/textures/item_texture.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/item_texture.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_item_texture.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/textures/terrain_texture.json",
         "development_resource_packs/*/textures/terrain_texture.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/terrain_texture.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_terrain_texture.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/blocks.json",
         "development_resource_packs/*/blocks.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/blocks_texture.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_blocks_texture.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/sounds.json",
         "development_resource_packs/*/sounds.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sounds.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_sounds.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/sounds/sound_definitions.json",
         "development_resource_packs/*/sounds/sound_definitions.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/sound_definitions.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_sound_definitions.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/sounds/music_definitions.json",
         "development_resource_packs/*/sounds/music_definitions.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/music_definitions.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_music_definitions.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/entity/*.json",
         "development_resource_packs/*/entity/*.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/client_entity.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_entity.schema.json"
     },
     {
       "fileMatch": [
@@ -135,14 +135,14 @@
         "resource_packs/*/texts/language_names.json",
         "development_resource_packs/*/texts/language_names.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/language_names.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_language_names.schema.json"
     },
     {
       "fileMatch": [
         "resource_packs/*/textures/flipbook_textures.json",
         "development_resource_packs/*/textures/flipbook_textures.json"
       ],
-      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/flipbook_textures.schema.json"
+      "url": "https://raw.githubusercontent.com/llgava/minecraft-bedrock-schemas/master/schemas/1.18.10/rp_flipbook_textures.schema.json"
     }
   ]
 }

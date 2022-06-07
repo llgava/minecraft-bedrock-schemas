@@ -7,6 +7,14 @@
       "additionalProperties": {
         "$ref": "#/definitions/MusicDefinition"
       },
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
       "$id": "llgava.resource_packs.MusicDefinitions"
     },
     "MusicDefinition": {

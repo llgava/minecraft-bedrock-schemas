@@ -7,6 +7,14 @@
       "additionalProperties": {
         "$ref": "#/definitions/BlockTexture"
       },
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path"
+      ],
       "$id": "llgava.resource_packs.BlocksTexture"
     },
     "BlockTexture": {

@@ -5,6 +5,9 @@
     "SplashesSchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "splashes": {
           "type": "array",
           "items": {
@@ -13,6 +16,7 @@
         }
       },
       "required": [
+        "path",
         "splashes"
       ],
       "additionalProperties": false,

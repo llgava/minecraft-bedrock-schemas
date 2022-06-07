@@ -5,6 +5,9 @@
     "Tick": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "values": {
           "type": "array",
           "items": {
@@ -13,6 +16,9 @@
         }
       },
       "additionalProperties": false,
+      "required": [
+        "path"
+      ],
       "$id": "llgava.behavior_packs.functions.Tick"
     }
   }

@@ -1,0 +1,132 @@
+{
+  "Languages": {
+    "file_name": "languages",
+    "file_match": [
+      "resource_packs/*/texts/languages.json",
+      "behavior_packs/*/texts/languages.json",
+      "development_resource_packs/*/texts/languages.json",
+      "development_behavior_packs/*/texts/languages.json"
+    ]
+  },
+
+  "ManifestSchema": {
+    "file_name": "manifest",
+    "file_match": [
+      "behavior_packs/*/manifest.json",
+      "resource_packs/*/manifest.json",
+      "development_behavior_packs/*/manifest.json",
+      "development_resource_packs/*/manifest.json"
+    ]
+  },
+
+  "AnimationControllersSchema": {
+    "file_name": "bp_animation_controllers",
+    "file_match": [
+      "behavior_packs/*/animation_controllers/*.json",
+      "development_behavior_packs/*/animation_controllers/*.json"
+    ]
+  },
+
+  "AnimationsSchema": {
+    "file_name": "bp_animation_controllers",
+    "file_match": ["behavior_packs/*/animations/*.json", "development_behavior_packs/*/animations/*.json"]
+  },
+
+  "BlocksSchema": {
+    "file_name": "bp_blocks",
+    "file_match": ["behavior_packs/*/blocks/*.json", "development_behavior_packs/*/blocks/*.json"]
+  },
+
+  "EntitiesSchema": {
+    "file_name": "bp_entity",
+    "file_match": ["behavior_packs/*/entities/*.json", "development_behavior_packs/*/entities/*.json"]
+  },
+
+  "ItemsSchema": {
+    "file_name": "bp_item",
+    "file_match": ["behavior_packs/*/items/*.json", "development_behavior_packs/*/items/*.json"]
+  },
+
+  "LootTablesSchema": {
+    "file_name": "bp_loot_tables",
+    "file_match": ["behavior_packs/*/loot_tables/*.json", "development_behavior_packs/*/loot_tables/*.json"]
+  },
+
+  "RecipesSchema": {
+    "file_name": "bp_recipe",
+    "file_match": ["behavior_packs/*/recipes/*.json", "development_behavior_packs/*/recipes/*.json"]
+  },
+
+  "Tick": {
+    "file_name": "bp_tick",
+    "file_match": ["behavior_packs/*/functions/tick.json", "development_behavior_packs/*/functions/tick.json"]
+  },
+
+  "BlocksTextureSchema": {
+    "file_name": "rp_blocks_texture",
+    "file_match": ["resource_packs/*/blocks.json", "development_resource_packs/*/blocks.json"]
+  },
+
+  "ClientEntitySchema": {
+    "file_name": "rp_entity",
+    "file_match": ["resource_packs/*/entity/*.json", "development_resource_packs/*/entity/*.json"]
+  },
+
+  "MusicDefinitionsSchema": {
+    "file_name": "rp_music_definitions",
+    "file_match": [
+      "resource_packs/*/sounds/music_definitions.json",
+      "development_resource_packs/*/sounds/music_definitions.json"
+    ]
+  },
+
+  "SoundDefinitionsSchema": {
+    "file_name": "rp_sound_definitions",
+    "file_match": [
+      "resource_packs/*/sounds/sound_definitions.json",
+      "development_resource_packs/*/sounds/sound_definitions.json"
+    ]
+  },
+
+  "SoundsSchema": {
+    "file_name": "rp_sounds",
+    "file_match": ["resource_packs/*/sounds.json", "development_resource_packs/*/sounds.json"]
+  },
+
+  "FlipbookTextures": {
+    "file_name": "rp_flipbook_textures",
+    "file_match": [
+      "resource_packs/*/textures/flipbook_textures.json",
+      "development_resource_packs/*/textures/flipbook_textures.json"
+    ]
+  },
+
+  "ItemTextureSchema": {
+    "file_name": "rp_item_texture",
+    "file_match": [
+      "resource_packs/*/textures/item_texture.json",
+      "development_resource_packs/*/textures/item_texture.json"
+    ]
+  },
+
+  "LanguageNames": {
+    "file_name": "rp_language_names",
+    "file_match": [
+      "resource_packs/*/texts/language_names.json",
+      "development_resource_packs/*/texts/language_names.json"
+    ]
+  },
+
+  "SplashesSchema": {
+    "file_name": "rp_splashes",
+    "file_match": ["resource_packs/*/splashes.json", "development_resource_packs/*/splashes.json"]
+  },
+
+  "TerrainTextureSchema": {
+    "file_name": "rp_terrain_texture",
+    "file_match": [
+      "resource_packs/*/textures/terrain_texture.json",
+      "development_resource_packs/*/textures/terrain_texture.json"
+    ]
+  }
+}

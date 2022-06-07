@@ -3,12 +3,13 @@ import chalk from 'chalk';
 import * as TJSchema from 'ts-json-schema-generator';
 import * as Schemas from '..';
 
-import { JSONSchemas } from './@types/Schemas';
+import { SchemaBase } from 'types/SchemaBase';
 import { VSCodeSettings } from './VSCodeSettings';
+import Utils from './utils/Utils';
 
 class MinecraftBedrockSchemas {
   public version: string;
-  public schemas: JSONSchemas[];
+  public schemas: SchemaBase[];
 
   constructor(version = '1.18.10') {
     this.version = version;
@@ -43,7 +44,9 @@ class MinecraftBedrockSchemas {
     console.log(`${chalk.bold.magenta(`[v${this.version}]`)} Generating dynamic schemas...`);
 
     for (const i in this.schemas) {
-      this.generateSchemaFromFile(this.schemas[i].fileName, this.schemas[i].path, save_to);
+      const config = Utils.findSchemaConfig(this.schemas[i].constructor.name);
+
+      this.generateSchemaFromFile(config.file_name, this.schemas[i].path, save_to);
     }
 
     console.log(`${chalk.bold.green('✔')} Generated schemas!\n`);

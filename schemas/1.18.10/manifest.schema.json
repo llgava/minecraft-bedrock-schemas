@@ -5,6 +5,9 @@
     "ManifestSchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "format_version": {
           "type": "number",
           "const": 2
@@ -34,7 +37,8 @@
       "required": [
         "format_version",
         "header",
-        "modules"
+        "modules",
+        "path"
       ],
       "additionalProperties": false,
       "$id": "llgava.global.Manifest"

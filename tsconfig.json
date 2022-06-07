@@ -9,6 +9,7 @@
     "strictNullChecks": false,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
+    "preserveConstEnums": false,
 
     "declarationDir": "./@types",
     "declaration": true,
@@ -17,7 +18,8 @@
     "baseUrl": "./src",
     "paths": {
       "@minecraft/*": ["./minecraft/*"],
-      "@models/*": ["./models/*"]
+      "@models/*": ["./models/*"],
+      "types/*": ["./types/*"]
     }
   },
 

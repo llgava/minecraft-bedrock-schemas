@@ -5,6 +5,9 @@
     "ClientEntitySchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "format_version": {
           "type": "string"
         },
@@ -13,6 +16,9 @@
         }
       },
       "additionalProperties": false,
+      "required": [
+        "path"
+      ],
       "$id": "llgava.resource_packs.SoundsDefinition"
     },
     "ClientEntity": {

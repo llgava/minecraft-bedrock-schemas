@@ -5,6 +5,9 @@
     "AnimationsSchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "format_version": {
           "type": "string"
         },
@@ -13,8 +16,9 @@
         }
       },
       "required": [
+        "animations",
         "format_version",
-        "animations"
+        "path"
       ],
       "additionalProperties": false,
       "$id": "llgava.behavior_packs.Animations"

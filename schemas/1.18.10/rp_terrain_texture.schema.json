@@ -1,28 +1,56 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/ItemTextureSchema",
+  "$ref": "#/definitions/TerrainTextureSchema",
   "definitions": {
-    "ItemTextureSchema": {
+    "TerrainTextureSchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "resource_pack_name": {
           "type": "string"
         },
         "texture_name": {
           "type": "string",
-          "const": "atlas.items"
+          "const": "atlas.terrain"
+        },
+        "num_mip_levels": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number",
+              "const": 4
+            }
+          ]
+        },
+        "padding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number",
+              "const": 8
+            }
+          ]
         },
         "texture_data": {
           "$ref": "#/definitions/MinecraftTextureData"
         }
       },
       "required": [
+        "num_mip_levels",
+        "padding",
+        "path",
         "resource_pack_name",
-        "texture_name",
-        "texture_data"
+        "texture_data",
+        "texture_name"
       ],
       "additionalProperties": false,
-      "$id": "llgava.resource_packs.ItemTexture"
+      "$id": "llgava.resource_packs.TerrainTexture"
     },
     "MinecraftTextureData": {
       "type": "object",

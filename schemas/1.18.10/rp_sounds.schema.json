@@ -5,6 +5,9 @@
     "SoundsSchema": {
       "type": "object",
       "properties": {
+        "path": {
+          "type": "string"
+        },
         "block_sounds": {
           "$ref": "#/definitions/BlockSounds"
         },
@@ -19,6 +22,9 @@
         }
       },
       "additionalProperties": false,
+      "required": [
+        "path"
+      ],
       "$id": "llgava.resource_packs.Sounds"
     },
     "BlockSounds": {
