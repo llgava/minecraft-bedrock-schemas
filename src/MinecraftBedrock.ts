@@ -1,7 +1,7 @@
 import fs from 'fs';
 import chalk from 'chalk';
 import * as TJSchema from 'ts-json-schema-generator';
-import { Schemas } from './Schemas';
+import { schemas } from './Schemas';
 import { VSCodeSettings } from './VSCodeSettings';
 
 import Utils from './utils/Utils';
@@ -12,14 +12,14 @@ export class MinecraftBedrock {
 
   constructor(version = '1.18.10') {
     this.version = version;
-    this.settings = new VSCodeSettings(Schemas);
+    this.settings = new VSCodeSettings(schemas);
   }
 
   /** Generate all dynamic schemas. */
   public generateSchemasDynamic(save_to: string): this {
-    for (const i in Schemas) {
-      const config = Utils.findSchemaConfig(Schemas[i].constructor.name);
-      this.generateSchemaStatic(config.file_name, Schemas[i].path, save_to);
+    for (const i in schemas) {
+      const config = Utils.findSchemaConfig(schemas[i].constructor.name);
+      this.generateSchemaStatic(config.file_name, schemas[i].path, save_to);
     }
 
     return this;

@@ -21,7 +21,7 @@ import { TerrainTextureSchema } from '@models/resource_packs/TerrainTexture';
 import { FlipbookTextures } from '@models/resource_packs/FlipbookTextures';
 import { LanguageNames } from '@models/resource_packs/LanguageNames';
 
-export const Schemas: SchemaBase[] = [
+export const schemas: SchemaBase[] = [
   new ManifestSchema(),
   new Languages(),
   new Tick(),
